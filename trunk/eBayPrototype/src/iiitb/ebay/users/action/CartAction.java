@@ -171,7 +171,7 @@ public class CartAction extends ActionSupport {
 
 	public String execute(){
 
-		
+		Double total=0.0;
 		session = ActionContext.getContext().getSession();
 
 		if(session.get("login")==null){
@@ -257,6 +257,15 @@ public class CartAction extends ActionSupport {
 
 									/* set the new variable to modified here!!!! */
 									sessionCart.get(i).getCartProduct().get(j).setIsNew("modified");
+									
+									
+									/* Totals */
+									Double price = Double.parseDouble(sessionCart.get(i).getCartProduct().get(j).getPrice());
+									/*Double qty = Double.parseDouble(sessionCart.get(i).getCartProduct().get(j).getQuantitySelected());*/
+									Double subTotal = price * qty ;
+									sessionCart.get(i).getCartProduct().get(j).setSubTotal(subTotal); 
+									total += sessionCart.get(i).getCartProduct().get(j).getSubTotal();
+									sessionCart.get(i).setTotal(total);
 
 									break;
 								}
@@ -276,8 +285,22 @@ public class CartAction extends ActionSupport {
 							productDetails.setQuantitySelected(quantity);
 							productDetails.setImage1(ProductService.getProductImage(productID));
 							image1=ProductService.getProductImage(productID);
+							
+							
+							/* Totals */
+							/*Double qty = Double.parseDouble(sessionCart.get(i).getCartProduct().get(j).getQuantitySelected());*/
+							Double subTotal = Double.parseDouble(price) * Double.parseDouble(productDetails.getQuantitySelected()) ;
+							productDetails.setSubTotal(subTotal); 
+							total += productDetails.getSubTotal();
+							sessionCart.get(i).setTotal(total);
+							
+							
+							
 
 							sessionCart.get(i).getCartProduct().add(productDetails);
+							
+							
+							
 							break;
 
 						}
@@ -302,6 +325,15 @@ public class CartAction extends ActionSupport {
 						productDetails.setQuantitySelected(quantity);
 						productDetails.setImage1(ProductService.getProductImage(productID));
 						image1=ProductService.getProductImage(productID);
+						
+						
+						/* Totals */
+						/*Double qty = Double.parseDouble(sessionCart.get(i).getCartProduct().get(j).getQuantitySelected());*/
+						Double subTotal = Double.parseDouble(price) * Double.parseDouble(productDetails.getQuantitySelected()) ;
+						productDetails.setSubTotal(subTotal); 
+						total += productDetails.getSubTotal();
+						sessionCart.get(i).setTotal(total);
+						
 
 						cartItem.setSellerID(sellerID);
 						userCreds =  UserService.getUserCredentials(Integer.parseInt(sellerID));
@@ -334,6 +366,14 @@ public class CartAction extends ActionSupport {
 					productDetails.setQuantitySelected(quantity);
 					productDetails.setImage1(ProductService.getProductImage(productID));
 					image1=ProductService.getProductImage(productID);
+					
+					
+					/* Totals */
+					/*Double qty = Double.parseDouble(sessionCart.get(i).getCartProduct().get(j).getQuantitySelected());*/
+					Double subTotal = Double.parseDouble(price) * Double.parseDouble(productDetails.getQuantitySelected()) ;
+					productDetails.setSubTotal(subTotal); 
+					total += productDetails.getSubTotal();
+					cartItem.setTotal(total);
 
 					cartItem.setSellerID(sellerID);
 					userCreds =  UserService.getUserCredentials(Integer.parseInt(sellerID));
@@ -361,19 +401,39 @@ public class CartAction extends ActionSupport {
 	
 	@SuppressWarnings("unchecked")
 	public String updateTotal(){
-		session = ActionContext.getContext().getSession();
-		System.out.println("inside update total - sellerID = "+sellerID);
+		
+		System.out.println("inside update total ");
 		Double total = 0.0;
+		/*
+		for (Cart crt : this.getSessionCart()) {
+			System.out.println("Value : "+crt.getSellerID());
+			for (Category cat : crt.getCartProduct()) {
+				System.out.println("---val "+cat.getQuantitySelected()+" "+cat.getName()+" "+cat.getSellerID());
+			}
+		}
+		*/
+		
+		/* Cart object for changes in quantity done on page */
+		ArrayList<Cart> tempCart = this.getSessionCart();
+				
+		/* Session object with complete data */
+		session = ActionContext.getContext().getSession();
 		sessionCart = (ArrayList<Cart>) session.get("SessionCart");
+		
+		
+		
+		
 		for (int i = 0; i < sessionCart.size(); i++) {
 			for (int j = 0; j < sessionCart.get(i).getCartProduct().size(); j++){
-				if(sessionCart.get(i).getSellerID().equalsIgnoreCase(sellerID)){
+				if(sessionCart.get(i).getSellerID().equalsIgnoreCase(tempCart.get(i).getSellerID())){
 					Double price = Double.parseDouble(sessionCart.get(i).getCartProduct().get(j).getPrice());
-					Double qty = Double.parseDouble(sessionCart.get(i).getCartProduct().get(j).getQuantitySelected());
+					/*Double qty = Double.parseDouble(sessionCart.get(i).getCartProduct().get(j).getQuantitySelected());*/
+					Double qty = Double.parseDouble(tempCart.get(i).getCartProduct().get(j).getQuantitySelected());
 					Double subTotal = price * qty ;
 					sessionCart.get(i).getCartProduct().get(j).setSubTotal(subTotal); 
 					total += sessionCart.get(i).getCartProduct().get(j).getSubTotal();
 					sessionCart.get(i).setTotal(total);
+					sessionCart.get(i).getCartProduct().get(j).setQuantitySelected(tempCart.get(i).getCartProduct().get(j).getQuantitySelected());
 				}
 			}
 		}
