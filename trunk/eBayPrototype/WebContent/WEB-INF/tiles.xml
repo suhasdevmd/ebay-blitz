@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<tiles-definitions>
+	<definition name="HomePageBaseLayout"
+		template="/TileTemplates/tile_homepage_baselayout.jsp">
+		<put-attribute name="title" value="" />
+		<put-attribute name="HomePageHeader"
+			value="/TileTemplates/tile_homepage_header.jsp" />
+		<put-attribute name="HomePageBody" value="" />
+		<put-attribute name="HomePageFooter"
+			value="/TileTemplates/tile_homepage_footer.jsp" />
+
+	</definition>
+
+	<definition name="/register.tiles" extends="HomePageBaseLayout">
+		<put-attribute name="title"
+			value="eBay India - Online Shopping Mall: Free Auctions, Shop/Buy/Sell Mobiles, Cameras, Apparel, Computers, Bollywood Clothes &amp; Indian Products" />
+		<put-attribute name="HomePageBody" value="/Register.jsp" />
+	</definition>
+
+	<definition name="/homepage.tiles" extends="HomePageBaseLayout">
+		<put-attribute name="title"
+			value="eBay India - Online Shopping Mall: Free Auctions, Shop/Buy/Sell Mobiles, Cameras, Apparel, Computers, Bollywood Clothes &amp; Indian Products" />
+		<put-attribute name="HomePageBody" value="/homepage.jsp" />
+	</definition>
+
+	<definition name="/list-products.tiles" extends="HomePageBaseLayout">
+		<put-attribute name="title" value="List Products" />
+		<put-attribute name="HomePageBody" value="/Category.jsp" />
+	</definition>
+
+	<definition name="/SellerInformation.tiles" extends="HomePageBaseLayout">
+		<put-attribute name="title"
+			value="eBay India - Online Shopping Mall: Free Auctions, Shop/Buy/Sell Mobiles, Cameras, Apparel, Computers, Bollywood Clothes &amp; Indian Products" />
+		<put-attribute name="HomePageBody" value="/SellerInformation.jsp" />
+	</definition>
+
+	<definition name="/buy-product.tiles" extends="HomePageBaseLayout">
+		<put-attribute name="title" value="Product Details" />
+		<put-attribute name="HomePageBody" value="/Product.jsp" />
+	</definition>
+
+
+	<definition name="/Adminhome.tiles" extends="HomePageBaseLayout">
+		<put-attribute name="title" value="Admin Home" />
+		<put-attribute name="HomePageBody" value="/admin.jsp" />
+	</definition>
+
+	<definition name="/manage-users.tiles" extends="HomePageBaseLayout">
+		<put-attribute name="title"
+			value="eBay India - Online Shopping Mall: Free Auctions, Shop/Buy/Sell Mobiles, Cameras, Apparel, Computers, Bollywood Clothes &amp; Indian Products" />
+		<put-attribute name="HomePageBody" value="/mnguser.jsp" />
+	</definition>
+
+	<definition name="/viewfeedback.tiles" extends="HomePageBaseLayout">
+		<put-attribute name="title" value="Feedback page" />
+		<put-attribute name="HomePageBody" value="/viewfeedbk.jsp" />
+	</definition>
+
+	<definition name="/displayfeedback.tiles" extends="HomePageBaseLayout">
+		<put-attribute name="title" value="Display feedback page" />
+		<put-attribute name="HomePageBody" value="/displayfeedback.jsp" />
+	</definition>
+
+	<definition name="/cart.tiles" extends="HomePageBaseLayout">
+		<put-attribute name="title" value="Your Cart" />
+		<put-attribute name="HomePageBody" value="/Cart.jsp" />
+	</definition>
+
+	<definition name="/manage-categories.tiles" extends="HomePageBaseLayout">
+		<put-attribute name="title" value="Manage Categories" />
+		<!-- <put-attribute name="HomePageBody" value="/manageCategory.jsp" /> -->
+		<put-attribute name="HomePageBody" value="/mngCategory.jsp" />
+	</definition>
+
+	<definition name="/error.tiles" extends="HomePageBaseLayout">
+		<put-attribute name="title" value="Manage Categories" />
+		<put-attribute name="HomePageBody" value="/error.jsp" />
+	</definition>
+
+
+	<definition name="/view-order-status.tiles" extends="HomePageBaseLayout">
+		<put-attribute name="title" value="View Order Status"></put-attribute>
+		<put-attribute name="HomePageBody" value="/view-order-status.jsp"></put-attribute>
+	</definition>
+	<definition name="/track-info.tiles" extends="HomePageBaseLayout">
+		<put-attribute name="title" value="Tracking Information"></put-attribute>
+		<put-attribute name="HomePageBody" value="/track-info.jsp"></put-attribute>
+	</definition>
+	<definition name="/error.tiles" extends="HomePageBaseLayout">
+		<put-attribute name="title" value="Tracking Information"></put-attribute>
+		<put-attribute name="HomePageBody" value="/error.jsp"></put-attribute>
+	</definition>
+	<definition name="/order-cancelled.tiles" extends="HomePageBaseLayout">
+		<put-attribute name="title" value="Order Cancelled"></put-attribute>
+		<put-attribute name="HomePageBody" value="/order-cancelled.jsp"></put-attribute>
+	</definition>
+	<definition name="/order-cancel-failure.tiles" extends="HomePageBaseLayout">
+		<put-attribute name="title" value="Order Cannot be Cancelled"></put-attribute>
+		<put-attribute name="HomePageBody" value="/order-cancel-failure.jsp"></put-attribute>
+	</definition>
+
+	<definition name="/search-results.tiles" extends="HomePageBaseLayout">
+		<put-attribute name="title" value="Search Results Page"></put-attribute>
+		<put-attribute name="HomePageBody" value="/search-results.jsp"></put-attribute>
+	</definition>
+
+	<definition name="/add-product.tiles" extends="HomePageBaseLayout">
+		<put-attribute name="title" value="Add Products"></put-attribute>
+		<put-attribute name="HomePageBody" value="/add-product.jsp"></put-attribute>
+	</definition>
+
+	<definition name="/edit-product.tiles" extends="HomePageBaseLayout">
+		<put-attribute name="title" value="Edit Products"></put-attribute>
+		<put-attribute name="HomePageBody" value="/edit-product.jsp"></put-attribute>
+	</definition>
+
+	<definition name="/payment-gateway.tiles" extends="HomePageBaseLayout">
+		<put-attribute name="title" value="Payments"></put-attribute>
+		<put-attribute name="HomePageBody" value="/payment.jsp"></put-attribute>
+	</definition>
+
+	<definition name="/myEbay.tiles" extends="HomePageBaseLayout">
+		<put-attribute name="title" value="Wishlist"></put-attribute>
+		<put-attribute name="HomePageBody" value="/myebay.jsp"></put-attribute>
+	</definition>
+
+	<definition name="/advanced-search.tiles" extends="HomePageBaseLayout">
+		<put-attribute name="title" value="Advanced Search Page"></put-attribute>
+		<put-attribute name="HomePageBody" value="/advanced-search.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="/payment-success.tiles" extends="HomePageBaseLayout">
+		<put-attribute name="title" value="Payment Success"></put-attribute>
+		<put-attribute name="HomePageBody" value="/payment-success.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="/payment-failure.tiles" extends="HomePageBaseLayout">
+		<put-attribute name="title" value="Payment Failure"></put-attribute>
+		<put-attribute name="HomePageBody" value="/payment-failure.jsp"></put-attribute>
+	</definition>
+
+	
+	
+	<definition name="/manage-order.tiles" extends="HomePageBaseLayout">
+		<put-attribute name="title" value="Payment Failure"></put-attribute>
+		<put-attribute name="HomePageBody" value="/manageorder.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="/update-order.tiles" extends="HomePageBaseLayout">
+		<put-attribute name="title" value="Payment Failure"></put-attribute>
+		<put-attribute name="HomePageBody" value="/updateorder.jsp"></put-attribute>
+	</definition>
+	
+	
+	<definition name="/Seller.tiles" extends="HomePageBaseLayout">
+		<put-attribute name="title" value="Seller's Page"></put-attribute>
+		<put-attribute name="HomePageBody" value="/Seller.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="/showProducts.tiles" extends="HomePageBaseLayout">
+		<put-attribute name="title" value="Seller's Page"></put-attribute>
+		<put-attribute name="HomePageBody" value="/showProducts.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="/MyEbayFeedback.tiles" extends="HomePageBaseLayout">
+		<put-attribute name="title" value="Feedback Page"></put-attribute>
+		<put-attribute name="HomePageBody" value="/MyEbayFeedback.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="/LeaveFeedback.tiles" extends="HomePageBaseLayout">
+		<put-attribute name="title" value="Feedback Page"></put-attribute>
+		<put-attribute name="HomePageBody" value="/LeaveFeedback.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="/myOrders.tiles" extends="HomePageBaseLayout">
+		<put-attribute name="title" value="Orders Status Page"></put-attribute>
+		<put-attribute name="HomePageBody" value="/myOrders.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="/balance.tiles" extends="HomePageBaseLayout">
+		<put-attribute name="title" value="Balances"></put-attribute>
+		<put-attribute name="HomePageBody" value="/balance.jsp"></put-attribute>
+	</definition>
+	
+
+
+</tiles-definitions>
