@@ -1,0 +1,3816 @@
+body,.standard,h3,.standardtitle {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: x-small;
+	voice-family: "\"}\"";
+	voice-family: inherit;
+	font-size: small;
+}
+
+pre {
+	font-family: "Courier New", Courier, monospace;
+	font-size: x-small;
+	voice-family: "\"}\"";
+	voice-family: inherit;
+	font-size: small;
+}
+
+h1,.pagetitle {
+	font-size: medium;
+	font-weight: bold;
+	voice-family: "\"}\"";
+	voice-family: inherit;
+	font-size: large;
+}
+
+h2,.sectiontitle {
+	font-size: small;
+	font-weight: bold;
+	voice-family: "\"}\"";
+	voice-family: inherit;
+	font-size: medium;
+}
+
+h3,.standardtitle {
+	font-weight: bold;
+}
+
+.emphasized {
+	color: #009900;
+	font-weight: bold;
+}
+
+.error {
+	color: #FF0000;
+}
+
+.help {
+	color: #666666;
+}
+
+.hide {
+	display: none;
+}
+
+.ens {
+	display: inline;
+}
+
+.pipe {
+	color: #9999FF;
+}
+
+.textbox,.button,.navigation {
+	font-family: Verdana;
+	font-size: xx-small;
+	voice-family: "\"}\"";
+	voice-family: inherit;
+	font-size: x-small;
+}
+
+.textboxhelp {
+	color: #666666;
+	font-family: Verdana;
+	font-size: xx-small;
+	voice-family: "\"}\"";
+	voice-family: inherit;
+	font-size: x-small;
+}
+
+.nomargin {
+	margin: 0px;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.fontnormal {
+	font-weight: normal;
+}
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+a:active,a:link,a:visited {
+	
+}
+
+img {
+	border: none;
+}
+
+p,div,span,td,.standard,li {
+	font-size: small;
+}
+
+hr {
+	border-top: 1px solid #cccccc;
+}
+
+form {
+	margin: 0;
+	padding: 0;
+}
+
+span.hide {
+	display: none;
+}
+
+.policylink {
+	margin-bottom: 12px;
+}
+
+.policylink a {
+	margin-left: 10px;
+}
+
+.bcmod {
+	margin-top: 5px;
+	margin-bottom: 0px;
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-bottom: 0px;
+	height: 30px;
+	padding-top: 0px;
+}
+
+.settingsTitle {
+	font: bold large Arial, sans-serif;
+	margin: 10px 6px 0px 6px;
+	color: #666665;
+}
+
+.settingsDesc {
+	font: small Arial, sans-serif;
+	margin: 0px 0px 0px 0px;
+	color: #000000;
+}
+
+.settingsSubTitle {
+	font: bold large Arial, sans-serif;
+	color: #000000;
+	margin-left: 6px;
+}
+
+.secTtl {
+	padding: 5px 0 5px 6px;
+	font-size: small;
+	border-top: solid 1px #cccccc;
+	background: #ffded0;
+}
+
+.secDesc {
+	font: x-small Arial, sans-serif;
+	margin: 0px 0px 0px 6px;
+	color: #000000;
+}
+
+.reportForm {
+	margin-bottom: 40px;
+	margin-left: 12px;
+}
+
+.report {
+	margin-bottom: 12px;
+}
+
+.reportOption {
+	min-width: 440px;
+}
+
+.reportThanks,.deleteSuccess {
+	background:
+		url(http://pics.ebaystatic.com/aw/pics/tbx/iconSuccess_32x32.gif)
+		no-repeat 12px 12px #ffded0;
+	border-bottom: #ff6622 2px solid;
+	border-left: #ff6622 2px solid;
+	border-right: #ff6622 2px solid;
+	margin-top: 1px;
+	margin-left: 12px;
+	margin-right: 12px;
+	margin-bottom: 12px;
+	height: 60px;
+	line-height: 24px;
+}
+
+html>body .reportThanks,html>body .deleteSuccess {
+	margin-top: 0;
+}
+
+#MyWorldBuddyIconChoices td {
+	padding-right: 8px;
+	padding-bottom: 8px;
+}
+
+#backToList {
+	font: small Arial, sans-serif;
+	margin-right: 20px;
+}
+
+.fieldWrapper #DefaultImage {
+	margin-left: 8px;
+}
+
+.fieldWrapper a span {
+	color: black;
+}
+
+.fieldWrapper .Caption {
+	font-weight: normal;
+}
+
+.phsection .action {
+	margin-left: 300px;
+}
+
+.phsection .title {
+	font: bold 14pt/41px Arial;
+	color: #ff6824;
+}
+
+.phsection .description {
+	margin: 5px 0 5px 0;
+}
+
+#select_icon {
+	margin-right: 11px;
+}
+
+.userimg {
+	padding-left: 35px;
+}
+
+img.pfStoreImg {
+	border: 1px solid black;
+}
+
+#eps_message0 {
+	padding: 12px 0 0 0px;
+	color: red;
+	font-weight: bold;
+}
+
+}
+.record .words {
+	color: #666;
+}
+
+.record .action {
+	display: block;
+	float: right;
+}
+
+.record .details,.record .user {
+	display: block;
+	margin-right: 10px;
+}
+
+.viewsection .title {
+	font-weight: bold;
+	font-size: 120%;
+	padding-bottom: 5px;
+}
+
+.viewsection .record {
+	padding: 5px 0 5px 0;
+	border-top: 1px dotted #ccc;
+}
+
+.viewsection .first {
+	border-top: none;
+}
+
+.myneighborhood_bold {
+	font-family: arial;
+	font-weight: bold;
+	font-size: 13px;
+	color: #0000CC;
+}
+
+.myneighborhood_bold,.myneighborhood_outerDiv a:visited,a:active {
+	color: #00c;
+}
+
+.myneighborhood_small {
+	font-family: arial;
+	font-weight: small;
+	font-size: 13px;
+	color: #0000CC;
+}
+
+.myneighborhood_bold_color {
+	font-family: arial;
+	font-weight: bold;
+	font-size: 13px;
+	color: #333333;
+}
+
+.myneighborhood_leftPadding {
+	padding-left: 5px;
+}
+
+.myneighborhood_outerDiv {
+	padding-right: 10px;
+	padding-top: 5px;
+	padding-bottom: 0px;
+}
+
+.myneighborhood_imagespan {
+	position: relative;
+	float: left;
+	border: 0px solid #dedede;
+	display: inline;
+	clear: both;
+	padding-right: 10px;
+	width: 53px;
+}
+
+.myneighborhood_imagespan img {
+	width: 50px;
+}
+
+.myneighborhood_memberspan {
+	position: relative;
+	float: left;
+	padding-left: 0px;
+	padding-right: 0px;
+	display: block;
+}
+
+.myneighborhood_image_bottom {
+	margin-bottom: 10px;
+}
+
+.myneighborhood_clear {
+	clear: both;
+}
+
+* html .myneighborhood_outerDiv {
+	padding-bottom: 0px;
+}
+
+.Content {
+	margin-top: 6px;
+}
+
+.content-2col {
+	margin: 0 0 0 10px;
+}
+
+.t-content-2col {
+	vertical-align: top;
+}
+
+div.outsideFrame {
+	background-color: #E7E3E7;
+	border: #CECFCE 1px solid;
+	width: 100%;
+	margin-top: 10px;
+}
+
+div#insideFrame,div.insideFrame,div.insideFrameAlt {
+	margin: 5px;
+}
+
+div.insideFrameAlt {
+	background-color: #ffded0;
+}
+
+div#insideFrame,div.insideFrame {
+	background: #ffffff;
+	border: #cccccc 1px solid;
+	overflow: visible;
+}
+
+div#frameContent,div.frameContent {
+	padding: 6px;
+	width: auto;
+}
+
+.noFrameContent {
+	margin: 0px 12px 0px 12px;
+}
+
+html>body div#frameContent,div.frameContent {
+	margin: 6px;
+	padding: 0px;
+}
+
+.fieldTitle {
+	font: bold small Arial, sans-serif;
+	margin-top: 15px;
+	margin-left: 6px;
+	margin-bottom: 5px;
+}
+
+div.fieldWrapper {
+	margin: 3px 0 6px 6px;
+}
+
+.fieldTitle span {
+	color: #009900;
+	font-size: 12px;
+	font-weight: normal;
+	vertical-align: top;
+}
+
+.textfield,.textfieldTall {
+	width: 440px;
+	margin-top: 6px;
+	border: solid 1px #cccccc;
+}
+
+.textfieldTall {
+	height: 280px;
+}
+
+.radios {
+	clear: both;
+	padding: 2;
+}
+
+.radioleft {
+	float: left;
+}
+
+.radioright {
+	margin-left: 1px;
+}
+
+.seperator {
+	height: 1px;
+}
+
+div#Error,div#Error2 {
+	background:
+		url(http://pics.ebaystatic.com/aw/pics/icon/iconError_32x32.gif)
+		no-repeat 12px 12px #ffded0;
+	border-bottom: #ff6622 2px solid;
+	border-left: #ff6622 2px solid;
+	border-right: #ff6622 2px solid;
+	margin-top: 1px;
+	margin-left: 12px;
+	margin-right: 12px;
+	margin-bottom: 12px;
+	height: 60px;
+	line-height: 24px;
+}
+
+div#Error2 {
+	margin-top: 0px;
+}
+
+html>body div#Error {
+	margin-top: 0px;
+}
+
+html>body div#Error2 {
+	margin-top: 0;
+}
+
+div.Error {
+	margin-left: 52px;
+	margin-bottom: 8px;
+	padding-top: 3px;
+	vertical-align: middle;
+}
+
+.ErrorRed {
+	font-weight: bold;
+	color: red;
+}
+
+.ErrorRed2 {
+	color: red;
+}
+
+div.ErrorRed tr {
+	font-weight: bold;
+	color: red;
+	height: 50px;
+	vertical-align: top;
+}
+
+div.ErrorRed tr td {
+	width: 140px;
+}
+
+.pageTitle {
+	font: bold large Arial, sans-serif;
+	color: #ff6622;
+	margin-bottom: 25px;
+	width: 100%;
+}
+
+.blogTitle {
+	color: #0000ff;
+	font-weight: bold;
+	padding: 0px;
+	margin: 0px;
+}
+
+.custumhr {
+	border-bottom: 2px solid #ffded0;
+	width: 100%;
+	margin-bottom: 6px;
+}
+
+.dropdown {
+	border: 1px #cccccc solid;
+}
+
+.bc {
+	margin: 0 0 12px;
+}
+
+div.bc ul h2 {
+	display: inline;
+	font-weight: bold;
+}
+
+.OrngTitle {
+	font: bold large Arial, sans-serif;
+	color: #ff6622;
+}
+
+#FooterDiv {
+	border-top: solid 2px #ffded0;
+	width: 100%;
+	margin-top: 15px;
+	clear: both;
+	padding: 0;
+}
+
+#FooterBar {
+	border-top: solid 10px #ff6622;
+	width: 100%;
+	margin-top: -14px;
+}
+
+html>body #FooterBar {
+	margin-top: 2px;
+}
+
+.bottombar {
+	border-top: 2px solid #ffded0;
+	margin-top: 10px;
+}
+
+.altbox1,.altbox3 {
+	background: #ffded0;
+	padding: 3px;
+}
+
+.altbox1 div div,.altbox3 div div {
+	margin-left: 5px;
+}
+
+html>body .altbox1 div div,.altbox3 div div {
+	margin-left: 10px;
+}
+
+div.altbox1 {
+	margin-top: 0px;
+	border-bottom: 2px #ff6622 solid;
+}
+
+.altbox3 {
+	margin-top: 12px;
+	border-top: #ff6622 2px solid;
+	height: 40px;
+	width: 100%;
+}
+
+.altbox2 {
+	background: #ffded0;
+	border-top: 2px #ffba9c solid;
+	height: 60px;
+}
+
+.tagField {
+	height: 25px;
+	border: solid 1px #cccccc;
+}
+
+.tagError {
+	width: 150px;
+}
+
+.helptext {
+	font: 11px Arial, sans-serif;
+	color: #666666;
+	margin-left: 6px;
+	margin-bottom: 15px;
+}
+
+h4.titlehead {
+	margin-top: 0;
+	margin-bottom: 0;
+	text-indent: 10px;
+	line-height: 25px;
+	vertical-align: middle;
+	font-size: small;
+}
+
+#pgTtl,#pgTtl2 {
+	height: 25px;
+	background-color: #ff6622;
+	color: #ffffff;
+	font-size: 18px;
+	border-bottom: 2px solid #d70f4f;
+	line-height: 25px;
+	vertical-align: middle;
+	font-weight: 900;
+	text-indent: 6px;
+	width: 100%;
+	margin-bottom: 10px;
+}
+
+#pgTtl2 {
+	margin-bottom: 0px;
+}
+
+#areaTitle {
+	border-width: 2px;
+	border-style: none solid solid solid;
+	padding: 0;
+	clear: both;
+}
+
+#areaTitle h1,#areaTitle h2 {
+	padding: 0 0 0 10px;
+	line-height: 41px;
+	vertical-align: middle;
+	font-weight: bold;
+	font-size: 14pt;
+	margin: 0;
+	float: left;
+	border-top: 2px solid #F90;
+}
+
+#usrsmry {
+	padding: 10 0 0 5px;
+	line-height: 41px;
+	vertical-align: middle;
+	font-weight: bold;
+	font-size: 14pt;
+	margin: 0;
+	float: left;
+	border-top: 2px solid #F90;
+}
+
+#areaTitle div {
+	height: 41px;
+	background: 0 0;
+}
+
+#areaTitle div div {
+	background:
+		url(http://pics.ebaystatic.com/aw/pics/globalAssets/rtCurve.gif)
+		no-repeat right top;
+	border-top: 2px solid #F90;
+}
+
+#atbg {
+	background-image:
+		url(http://pics.ebaystatic.com/aw/pics/areaTitles/atMyeBay2.gif);
+	overflow: hidden;
+}
+
+.at {
+	background:
+		url(http://pics.ebaystatic.com/aw/pics/globalAssets/ltCurve.gif)
+		no-repeat left top;
+	background-color: #ff6622;
+	border-color: #d70f4f;
+}
+
+.textfield,.textfieldTall {
+	width: 440px;
+	border: solid 1px #cccccc;
+}
+
+.searchInputs input.textfield {
+	width: 220px;
+}
+
+.textfieldTall {
+	height: 280px;
+}
+
+.badgeline,.badgeline2 {
+	margin-bottom: 10px;
+	height: 25px;
+	line-height: 25px;
+	vertical-align: middle;
+}
+
+.badgeline {
+	background: #f1f1f1;
+	text-indent: 12px;
+	width: 100%;
+}
+
+.badgeline img,.badgeline2 img {
+	vertical-align: middle;
+	margin-left: 6px;
+}
+
+.badgeline2 {
+	background-color: #FFFFFF;
+}
+
+.saveButton {
+	margin-bottom: 20px;
+	margin-top: 20px;
+}
+
+.fieldWrapper a,.fieldWrapper a:active,.fieldWrapper a:visited {
+	color: #0000CC;
+	font-size: 12px;
+	text-decoration: none;
+}
+
+.fieldWrapper a:hover {
+	text-decoration: underline;
+}
+
+.bas-olp-clear {
+	CLEAR: both;
+	FONT-SIZE: 0px;
+	LINE-HEIGHT: 0%;
+	HEIGHT: 0px;
+}
+
+.bas-olp-overlay {
+	DISPLAY: block;
+	Z-INDEX: 7;
+	WIDTH: 400px;
+	POSITION: absolute;
+	_WIDTH: 4000px;
+	width: 425px;
+}
+
+.bas-olp-header {
+	
+}
+
+.bas-olp-title {
+	PADDING-RIGHT: 15px;
+	PADDING-LEFT: 15px;
+	FONT-WEIGHT: bold;
+	FONT-SIZE: medium;
+	PADDING-BOTTOM: 0px;
+	COLOR: #333;
+	PADDING-TOP: 5px;
+	FONT-FAMILY: Arial;
+}
+
+.bas-olp-closebutton {
+	PADDING-RIGHT: 6px;
+	DISPLAY: inline;
+	BACKGROUND:
+		url(http://pics.ebaystatic.com/aw/pics/buttons/btnClose_16x16.gif)
+		no-repeat left bottom;
+	FLOAT: right;
+	WIDTH: 16px;
+	CURSOR: pointer;
+	PADDING-TOP: 1px;
+	HEIGHT: 16px;
+	margin-right: 10px;
+}
+
+.bas-olp-overlay .bas-olp-contentbox {
+	Z-INDEX: 10;
+	WIDTH: 100%;
+	POSITION: relative;
+}
+
+.bas-olp-overlay .bas-olp-contentbox .bas-olp-content {
+	BORDER-RIGHT: #666 1px solid;
+	BORDER-TOP: #666 0px solid;
+	BACKGROUND: #fff;
+	BORDER-LEFT: #666 1px solid;
+	BORDER-BOTTOM: #666 0px solid;
+}
+
+.bas-olp-overlay .bas-olp-contentbox .bas-olp-content .bas-olp-contentholder
+	{
+	PADDING-RIGHT: 15px;
+	PADDING-LEFT: 15px;
+	PADDING-BOTTOM: 10px;
+	PADDING-TOP: 10px;
+}
+
+.bas-olp-overlay .bas-olp-shadowbox {
+	Z-INDEX: 8;
+	LEFT: 5px;
+	WIDTH: 100%;
+	POSITION: absolute;
+	TOP: 5px;
+}
+
+.bas-olp-overlay .bas-olp-shadowbox .bas-olp-content {
+	BACKGROUND: #000;
+}
+
+.bas-olp-overlay .bas-olp-contentbox .bas-olp-n {
+	BORDER-TOP: #666 1px solid;
+	BACKGROUND: #fff;
+	MARGIN: 0px 5px;
+	HEIGHT: 4px;
+}
+
+.bas-olp-overlay .bas-olp-contentbox .bas-olp-s {
+	CLEAR: both;
+	BACKGROUND: #fff;
+	MARGIN: 0px 5px;
+	BORDER-BOTTOM: #666 1px solid;
+	HEIGHT: 4px;
+	margin-top: -6px;
+}
+
+.bas-olp-overlay .bas-olp-shadowbox .bas-olp-n {
+	BACKGROUND: #000;
+	MARGIN: 0px 5px;
+	HEIGHT: 5px;
+}
+
+.bas-olp-overlay .bas-olp-shadowbox .bas-olp-s {
+	BACKGROUND: #000;
+	MARGIN: 0px 5px;
+	HEIGHT: 5px;
+}
+
+.bas-olp-cn {
+	DISPLAY: block;
+	FONT-SIZE: 0px;
+	LINE-HEIGHT: 0%;
+	POSITION: relative;
+	HEIGHT: 5px;
+}
+
+.bas-olp-scn {
+	DISPLAY: block;
+	FONT-SIZE: 0px;
+	LINE-HEIGHT: 0%;
+	POSITION: relative;
+	HEIGHT: 5px;
+}
+
+.bas-olp-cn {
+	BACKGROUND:
+		url(http://pics.ebaystatic.com/aw/pics/globalAssets/imgOverlayCorners.gif)
+		no-repeat;
+}
+
+.bas-olp-scn {
+	BACKGROUND:
+		url(http://pics.ebaystatic.com/aw/pics/globalAssets/imgOverlayShade.gif)
+		no-repeat;
+}
+
+.bas-olp-overlay .bas-olp-n .bas-olp-cn .bas-olp-cn {
+	BACKGROUND-POSITION: 0px 0px;
+	MARGIN-LEFT: -5px;
+	WIDTH: 5px;
+}
+
+.bas-olp-overlay .bas-olp-n .bas-olp-scn .bas-olp-scn {
+	BACKGROUND-POSITION: 0px 0px;
+	MARGIN-LEFT: -5px;
+	WIDTH: 5px;
+}
+
+.bas-olp-overlay .bas-olp-n .bas-olp-cn {
+	BACKGROUND-POSITION: 100% -20px;
+	MARGIN-RIGHT: -5px;
+}
+
+.bas-olp-overlay .bas-olp-n .bas-olp-scn {
+	BACKGROUND-POSITION: 100% -20px;
+	MARGIN-RIGHT: -5px;
+}
+
+.bas-olp-overlay .bas-olp-s .bas-olp-cn {
+	BACKGROUND-POSITION: 100% -30px;
+	MARGIN-RIGHT: -5px;
+}
+
+.bas-olp-overlay .bas-olp-s .bas-olp-scn {
+	BACKGROUND-POSITION: 100% -30px;
+	MARGIN-RIGHT: -5px;
+}
+
+.bas-olp-overlay .bas-olp-s .bas-olp-cn .bas-olp-cn {
+	BACKGROUND-POSITION: 0px -10px;
+	MARGIN-LEFT: -5px;
+	WIDTH: 5px;
+}
+
+.bas-olp-overlay .bas-olp-s .bas-olp-scn .bas-olp-scn {
+	BACKGROUND-POSITION: 0px -10px;
+	MARGIN-LEFT: -5px;
+	WIDTH: 5px;
+}
+
+#BreadCrumbs {
+	
+}
+
+.content {
+	margin: 10px;
+}
+
+#MyWorldPageContent {
+	margin-bottom: 50px;
+}
+
+#PortletContent {
+	width: 100%;
+}
+
+#GridContentNoFbk {
+	
+}
+
+* html #GridContent {
+	margin-top: 30px;
+}
+
+html>body #GridContent {
+	padding-top: 30px;
+}
+
+.MyWorldProfilePanel {
+	position: relative;
+	width: 166px;
+	height: 100%;
+	background-image:
+		url(http://pics.ebaystatic.com/aw/pics/community/myWorld/images/orange/imgFeedbackFlex.gif);
+	background-repeat: repeat-y;
+	border-top: 0px;
+	border-right: 0px;
+	border-bottom: 1px solid #fab46b;
+	z-index: 1;
+}
+
+.MyWorldProfilePaneltheme1 {
+	background-image:
+		url(http://pics.ebaystatic.com/aw/pics/community/myWorld/images/violet/imgFeedbackFlex.gif);
+	border-bottom: 1px solid #9f9fdf;
+}
+
+.MyWorldProfilePaneltheme2 {
+	background-image:
+		url(http://pics.ebaystatic.com/aw/pics/community/myWorld/images/brown/imgFeedbackFlex.gif);
+	border-bottom: 1px solid #ceb5b1;
+}
+
+.MyWorldProfilePaneltheme3 {
+	background-image:
+		url(http://pics.ebaystatic.com/aw/pics/community/myWorld/images/green/imgFeedbackFlex.gif);
+	border-bottom: 1px solid #99ddb0;
+}
+
+.MyWorldProfilePaneltheme4 {
+	background-image:
+		url(http://pics.ebaystatic.com/aw/pics/community/myWorld/images/pink/imgFeedbackFlex.gif);
+	border-bottom: 1px solid #CC9999;
+}
+
+.MyWorldProfilePaneltheme5 {
+	background-image:
+		url(http://pics.ebaystatic.com/aw/pics/community/myWorld/images/imgFeedbackFlex.gif);
+	border-bottom: 1px solid #88b4ee;
+}
+
+#header {
+	left: 10px;
+	top: 10px;
+	width: 100%;
+	z-index: 3;
+}
+
+.header form {
+	margin: 0;
+	padding: 0;
+}
+
+#EpsBlock-layered {
+	position: relative;
+	left: -2px;
+	top: 0px;
+	width: 150px;
+	height: 151px;
+	z-index: 140;
+	background-color: #FFFFFF;
+}
+
+.EpsBlockImageLayer {
+	z-index: 142;
+	top: 0px;
+	position: absolute;
+	left: 2px;
+	width: 166px;
+	height: 161px;
+	background-color: transparent;
+	background-image:
+		url(img/seller/imgPhoto166x161_option1.gif);
+	background-repeat: no-repeat;
+}
+
+.EpsBlockImageLayertheme1 {
+	background-image:
+		url(http://pics.ebaystatic.com/aw/pics/community/myWorld/images/violet/imgPhoto166x161_option1.gif);
+}
+
+.EpsBlockImageLayertheme2 {
+	background-image:
+		url(http://pics.ebaystatic.com/aw/pics/community/myWorld/images/brown/imgPhoto166x161_option1.gif);
+}
+
+.EpsBlockImageLayertheme3 {
+	background-image:
+		url(http://pics.ebaystatic.com/aw/pics/community/myWorld/images/green/imgPhoto166x161_option1.gif);
+}
+
+.EpsBlockImageLayertheme4 {
+	background-image:
+		url(http://pics.ebaystatic.com/aw/pics/community/myWorld/images/pink/imgPhoto166x161_option1.gif);
+}
+
+.EpsBlockImageLayertheme5 {
+	background-image:
+		url(http://pics.ebaystatic.com/aw/pics/community/myWorld/images/imgPhoto166x161_option1.gif);
+}
+
+#EpsContent2 {
+	z-index: 143;
+	position: relative;
+	top: 7px;
+	left: 8px;
+	width: 150px;
+	height: 150px;
+	line-height: 145px;
+	background-color: transparent;
+	display: table;
+}
+
+#EpsContent2 .picture {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+}
+
+#MemberInfo {
+	position: relative;
+	left: 0px;
+	width: 154px;
+	z-index: 12;
+	color: #333;
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
+#Links {
+	position: relative;
+	padding: 14px 4px 0px 8px;
+}
+
+div#Links.notopspace {
+	padding-top: 0px;
+}
+
+#separatorsolid {
+	border-bottom: 1px solid #666;
+	margin: 9px 4px 4px 0;
+}
+
+#Links #separatorsolid {
+	margin-top: 15px;
+	margin-bottom: 13px;
+}
+
+.error {
+	color: #FF0000;
+}
+
+#AreaLinkBlock {
+	
+}
+
+.rtLinkBld {
+	font-weight: bold;
+}
+
+.footerContainer {
+	clear: both;
+}
+
+.art div div {
+	background:
+		url(http://pics.ebaystatic.com/aw/pics/globalAssets/rtCurve.gif)
+		no-repeat right top;
+}
+
+.art div {
+	background: 0 0;
+	height: 41px;
+}
+
+.art h1 {
+	padding-top: 0px;
+	padding-right: 40px;
+	padding-bottom: 0px;
+	padding-left: 10px;
+	line-height: 41px;
+	vertical-align: middle;
+	font-family: Arial;
+	font-weight: bold;
+	font-size: 14pt;
+	margin: 0;
+	float: left;
+}
+
+.art {
+	border-width: 4px;
+	border-style: none none solid none;
+	padding: 0;
+	clear: both;
+}
+
+div#MyWorldPageContent .ColumnTwoFloat,div#MyWorldPageContent .ColumnThreeFloat
+	{
+	float: left;
+}
+
+#RightColWrap {
+	float: left;
+}
+
+div#MyWorldPageContent div.modLeftCol {
+	width: 163px;
+}
+
+div#MyWorldPageContent div.modLeftColGuestbook {
+	width: 163px;
+	display: table;
+}
+
+.modLeftColGuestbook .tr1 {
+	display: table-row;
+}
+
+.modLeftColGuestbook .td1 {
+	display: table-cell;
+}
+
+.modFrameBrdr .tr1 {
+	display: block;
+}
+
+.modFrameBrdr .td1 {
+	float: left;
+	margin-right: 10px;
+}
+
+.modFrameBrdr .td2 {
+	display: block;
+}
+
+.modFrameBrdr .td3 {
+	float: left;
+}
+
+div#MyWorldPageContent div.modLeftCol #results,div.modLeftCol div.ModContent
+	{
+	width: 150px;
+}
+
+div#MyWorldPageContent div.mod3Col #results {
+	width: 223px;
+}
+
+div#MyWorldPageContent div.mod2Col #results {
+	width: 430px;
+}
+
+div#MyWorldPageContent div.mod1Col #results {
+	width: 675px;
+}
+
+div#MyWorldPageContent div.mod3Col {
+	width: 212px;
+}
+
+div#MyWorldPageContent div.mod3ColAlt {
+	margin-left: 475px;
+	width: 210px;
+}
+
+div#MyWorldPageContent div.mod2Col {
+	width: 440px;
+	word-spacing: normal;
+}
+
+div#MyWorldPageContent div.mod1Col,div#MyWorldPageContent .modFeedbackRow
+	{
+	width: 689px;
+}
+
+div#MyWorldPageContent div.mod1Col {
+	
+}
+
+div#MyWorldPageContent div.modGuestbook {
+	width: 689px;
+	word-spacing: normal;
+	margin-top: -12px;
+}
+
+html>body div#MyWorldPageContent div.mod1Col,div#MyWorldPageContent .modFeedbackRow
+	{
+	width: 685px;
+}
+
+.modFeedbackRow {
+	margin-left: 0px;
+	margin-top: -28px;
+}
+
+div#MyWorldPageContent div.modFlex {
+	width: 100%;
+	clear: both;
+}
+
+div#MyWorldPageContent div.mod,div#MyWorldPageContent div.modLeft {
+	width: 100%;
+	height: 100%;
+	border: 2px solid #fbe4aa;
+}
+
+div#MyWorldPageContent div.modLeft {
+	border: 0px;
+	background-color: #efefef;
+	margin-bottom: 12px;
+}
+
+div#MyWorldPageContent div.modFrameBrdr,div#MyWorldPageContent div.modFrameBg
+	{
+	width: 100%;
+	height: 100%;
+	margin-top: 12px;
+}
+
+div#MyWorldPageContent div.modFrameBrdr {
+	border: 1px solid #fab46b;
+	border-top: 0px;
+}
+
+div#MyWorldPageContent div.modFrameBrdrtheme1,div#MyWorldPageContent div.modFrameBgtheme1
+	{
+	width: 100%;
+	height: 100%;
+	margin-top: 12px;
+}
+
+div#MyWorldPageContent div.modFrameBrdrtheme1 {
+	border: 1px solid #9f9fdf;
+	border-top: 0px;
+}
+
+div#MyWorldPageContent div.modFrameBrdrtheme2,div#MyWorldPageContent div.modFrameBgtheme2
+	{
+	width: 100%;
+	height: 100%;
+	margin-top: 12px;
+}
+
+div#MyWorldPageContent div.modFrameBrdrtheme2 {
+	border: 1px solid #ceb5b1;
+	border-top: 0px;
+}
+
+div#MyWorldPageContent div.modFrameBrdrtheme3,div#MyWorldPageContent div.modFrameBgtheme3
+	{
+	width: 100%;
+	height: 100%;
+	margin-top: 12px;
+}
+
+div#MyWorldPageContent div.modFrameBrdrtheme3 {
+	border: 1px solid #99ddb0;
+	border-top: 0px;
+}
+
+div#MyWorldPageContent div.modFrameBrdrtheme4,div#MyWorldPageContent div.modFrameBgtheme4
+	{
+	width: 100%;
+	height: 100%;
+	margin-top: 12px;
+}
+
+div#MyWorldPageContent div.modFrameBrdrtheme4 {
+	border: 1px solid #CC9999;
+	border-top: 0px;
+}
+
+div#MyWorldPageContent div.modFrameBrdrtheme5,div#MyWorldPageContent div.modFrameBgtheme5
+	{
+	width: 100%;
+	height: 100%;
+	margin-top: 12px;
+}
+
+div#MyWorldPageContent div.modFrameBrdrtheme5 {
+	border: 1px solid #88b4ee;
+	border-top: 0px;
+}
+
+div#MyWorldPageContent div.modFrameBg {
+	background-color: #fffeee;
+}
+
+div#MyWorldPageContent div.modFrameBgtheme1 {
+	background-color: #e6e6ff;
+}
+
+div#MyWorldPageContent div.modFrameBgtheme2 {
+	background-color: #ece7e3;
+}
+
+div#MyWorldPageContent div.modFrameBgtheme3 {
+	background-color: #e8f1eb;
+}
+
+div#MyWorldPageContent div.modFrameBgtheme4 {
+	background-color: #f6e3ea;
+}
+
+div#MyWorldPageContent div.modFrameBgtheme5 {
+	background-color: #deeafa;
+}
+
+div#MyWorldPageContent div.feedbackMod {
+	width: 100%;
+	background-color: #fff;
+	border: 1px solid #fab46b;
+	border-top: 0px;
+	margin-left: 0px;
+	position: relative;
+}
+
+div#MyWorldPageContent div.feedbackModtheme1 {
+	width: 100%;
+	background-color: #fff;
+	border: 1px solid #9f9fdf;
+	border-top: 0px;
+	margin-left: 0px;
+	position: relative;
+}
+
+div#MyWorldPageContent div.feedbackModtheme2 {
+	width: 100%;
+	background-color: #fff;
+	border: 1px solid #ceb5b1;
+	border-top: 0px;
+	margin-left: 0px;
+	position: relative;
+}
+
+div#MyWorldPageContent div.feedbackModtheme3 {
+	width: 100%;
+	background-color: #fff;
+	border: 1px solid #99ddb0;
+	border-top: 0px;
+	margin-left: 0px;
+	position: relative;
+}
+
+div#MyWorldPageContent div.feedbackModtheme4 {
+	width: 100%;
+	background-color: #fff;
+	border: 1px solid #CC9999;
+	border-top: 0px;
+	margin-left: 0px;
+	position: relative;
+}
+
+div#MyWorldPageContent div.feedbackModtheme5 {
+	width: 100%;
+	background-color: #fff;
+	border: 1px solid #88b4ee;
+	border-top: 0px;
+	margin-left: 0px;
+	position: relative;
+}
+
+div#MyWorldPageContent div.mod td {
+	word-spacing: normal;
+}
+
+div#MyWorldPageContent div.ModTitleBar {
+	background:
+		url(img/seller/imgPanel_background.gif)
+		repeat;
+}
+
+div#MyWorldPageContent div.ModTitleBartheme1 {
+	background:
+		url(http://pics.ebaystatic.com/aw/pics/community/myWorld/images/violet/imgPanel_background.gif)
+		repeat;
+}
+
+div#MyWorldPageContent div.ModTitleBartheme2 {
+	background:
+		url(http://pics.ebaystatic.com/aw/pics/community/myWorld/images/brown/imgPanel_background.gif)
+		repeat;
+}
+
+div#MyWorldPageContent div.ModTitleBartheme3 {
+	background:
+		url(http://pics.ebaystatic.com/aw/pics/community/myWorld/images/green/imgPanel_background.gif)
+		repeat;
+}
+
+div#MyWorldPageContent div.ModTitleBartheme4 {
+	background:
+		url(http://pics.ebaystatic.com/aw/pics/community/myWorld/images/pink/imgPanel_background.gif)
+		repeat;
+}
+
+div#MyWorldPageContent div.ModTitleBartheme5 {
+	background:
+		url(http://pics.ebaystatic.com/aw/pics/community/myWorld/images/imgPanel_background.gif)
+		repeat;
+}
+
+div#MyWorldPageContent div.ModTitleBarClear,div#MyWorldPageContent div.Clear
+	{
+	clear: both;
+}
+
+div#MyWorldPageContent div.ModTitleBarTitle {
+	
+}
+
+.ModTitleBarContent {
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+div#MyWorldPageContent div.ModTitleBarText,div#MyWorldPageContent .PortletTitleLinks
+	{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+	color: #999966;
+	font-weight: bold;
+	margin-left: 2px;
+}
+
+div#MyWorldPageContent div.ModTitleBarText,div#MyWorldPageContent .PortletTitleLinkstheme1
+	{
+	color: #000033;
+}
+
+div#MyWorldPageContent div.ModTitleBarText,div#MyWorldPageContent .PortletTitleLinkstheme2
+	{
+	color: #715643;
+}
+
+div#MyWorldPageContent div.ModTitleBarText,div#MyWorldPageContent .PortletTitleLinkstheme3
+	{
+	color: #3f684d;
+}
+
+div#MyWorldPageContent div.ModTitleBarText,div#MyWorldPageContent .PortletTitleLinkstheme4
+	{
+	color: #703348;
+}
+
+div#MyWorldPageContent div.ModTitleBarText,div#MyWorldPageContent .PortletTitleLinkstheme5
+	{
+	color: #154a91;
+}
+
+div.ModTitleBarText a {
+	display: block;
+}
+
+div#MyWorldPageContent .PortletTitleLinks {
+	text-decoration: none;
+}
+
+div#MyWorldPageContent a.PortletTitleLinks:link {
+	text-decoration: none;
+}
+
+div#MyWorldPageContent a.PortletTitleLinks:visited {
+	text-decoration: none;
+}
+
+div#MyWorldPageContent a.PortletTitleLinks:active {
+	text-decoration: none;
+}
+
+div#MyWorldPageContent a.PortletTitleLinks:hover {
+	text-decoration: underline;
+	color: #999966;
+}
+
+div#MyWorldPageContent a.PortletTitleLinkstheme1:hover {
+	text-decoration: underline;
+	color: #000033;
+}
+
+div#MyWorldPageContent a.PortletTitleLinkstheme2:hover {
+	text-decoration: underline;
+	color: #996633;
+}
+
+div#MyWorldPageContent a.PortletTitleLinkstheme3:hover {
+	text-decoration: underline;
+	color: #e8f1eb;
+}
+
+div#MyWorldPageContent a.PortletTitleLinkstheme4:hover {
+	text-decoration: underline;
+	color: #703348;
+}
+
+div#MyWorldPageContent a.PortletTitleLinkstheme5:hover {
+	text-decoration: underline;
+	color: #154a91;
+}
+
+div#MyWorldPageContent .FeedbackTitle {
+	margin-left: 18px;
+	_margin-left: 8px;
+}
+
+div#MyWorldPageContent div.ModContent {
+	padding: 5px;
+	word-spacing: normal;
+}
+
+div#MyWorldPageContent div.ModContent div {
+	overflow: hidden;
+}
+
+.wordwrap,.wordwrap div {
+	overflow: hidden;
+}
+
+div#MyWorldPageContent div.feedbackMod div.ModContent {
+	padding: 0px;
+}
+
+.feedbackMod .servicemsg {
+	padding: 5px;
+}
+
+div#MyWorldPageContent div.feedbackModtheme1 div.ModContent {
+	padding: 0px;
+}
+
+.feedbackModtheme1 .servicemsg {
+	padding: 5px;
+}
+
+div#MyWorldPageContent div.feedbackModtheme2 div.ModContent {
+	padding: 0px;
+}
+
+.feedbackModtheme2 .servicemsg {
+	padding: 5px;
+}
+
+div#MyWorldPageContent div.feedbackModtheme3 div.ModContent {
+	padding: 0px;
+}
+
+.feedbackModtheme3 .servicemsg {
+	padding: 5px;
+}
+
+div#MyWorldPageContent div.feedbackModtheme4 div.ModContent {
+	padding: 0px;
+}
+
+.feedbackModtheme4 .servicemsg {
+	padding: 5px;
+}
+
+div#MyWorldPageContent div.feedbackModtheme5 div.ModContent {
+	padding: 0px;
+}
+
+.feedbackModtheme5 .servicemsg {
+	padding: 5px;
+}
+
+div#MyWorldPageContent div.ModTitleBarEdit {
+	float: right;
+	background-repeat: no-repeat;
+	background-position: center;
+	margin-right: 0px;
+}
+
+div#MyWorldPageContent div.ModTitleBarEditText a,.mTitleLinks a {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+div#MyWorldPageContent div.ModTitleBarEditText img,.mTitleLinks img {
+	display: inline;
+	vertical-align: baseline;
+	padding-top: 2px;
+}
+
+div#MyWorldPageContent .badgeline span.mTitleLinks {
+	margin-right: 10px;
+}
+
+.mTitleLinks {
+	float: right;
+	padding-right: 0px;
+}
+
+#MyWorldHiddenTable table {
+	display: none;
+}
+
+#MyWorldHiddenTable td {
+	visibility: hidden;
+	width: 200px;
+	height: 100px;
+}
+
+.MyWorldEditLinks {
+	height: 100%;
+	border: 1px #fab46b solid;
+	border-top: 0px;
+	background-color: #fff6dd;
+}
+
+.MyWorldEditLinkstheme1 {
+	border: 1px #9f9fdf solid;
+	background-color: #e6e6ff;
+}
+
+.MyWorldEditLinkstheme2 {
+	border: 1px #ceb5b1 solid;
+	background-color: #ece5e2;
+}
+
+.MyWorldEditLinkstheme3 {
+	border: 1px #99ddb0 solid;
+	background-color: #e5f3ea;
+}
+
+.MyWorldEditLinkstheme4 {
+	border: 1px #CC9999 solid;
+	background-color: #f6e3ea;
+}
+
+.MyWorldEditLinkstheme5 {
+	border: 1px #88b4ee solid;
+	background-color: #dee6f7;
+}
+
+.MyWorldEditLinks-table {
+	height: 100%;
+	text-align: left;
+}
+
+.MyWorldEditLinks-table table {
+	height: 100%;
+	text-align: right;
+}
+
+.MyWorldEditLinks-td-1 {
+	padding-left: 10px;
+	width: 65%;
+	text-align: left;
+}
+
+.MyWorldEditLinks-td-2 {
+	width: 35%;
+	text-align: right;
+}
+
+.myWorldAddC-spbar {
+	height: 50px;
+	width: 1px;
+	border-left: #fab46b 1px solid;
+}
+
+.myWorldAddC-spbartheme1 {
+	border-left: #ac9cdb 1px solid;
+}
+
+.myWorldAddC-spbartheme2 {
+	border-left: #c9b6a8 1px solid;
+}
+
+.myWorldAddC-spbartheme3 {
+	border-left: #a1d6b3 1px solid;
+}
+
+.myWorldAddC-spbartheme4 {
+	border-left: #CC9999 1px solid;
+}
+
+.myWorldAddC-spbartheme5 {
+	border-left: #227cfe 1px solid;
+}
+
+.footer .sep {
+	display: block;
+	font-size: 0;
+	line-height: 0%;
+	border-top: 2px solid #ff6622;
+	width: 100%;
+	height: 0;
+	margin-bottom: 2px;
+}
+
+.footer .thick {
+	border-top-width: 10px;
+}
+
+.modLeftColGuestbook .table2 {
+	display: table;
+}
+
+.modLeftColGuestbook .tr1 {
+	display: table-row;
+}
+
+.modLeftColGuestbook .td1 {
+	display: table-cell;
+}
+
+.modLeftColGuestbook {
+	overflow: hidden;
+}
+
+.modLeftColGuestbook .ModContent {
+	width: 130px;
+}
+
+.modLeftColGuestbook .modFrameBrdr {
+	position: relative;
+	width: 130px;
+}
+
+.gbLayout .table2 {
+	display: block;
+}
+
+.gbLayout .table2 .tr1 {
+	display: block;
+	clear: both;
+}
+
+.gbLayout .table2 .trIsOwner {
+	display: block;
+	clear: both;
+	background-color: #FFFFCC;
+}
+
+.gbLayout .table2 .td1 {
+	float: left;
+	width: 60px;
+}
+
+.gbLayout .table2 .td2 {
+	display: block;
+}
+
+.gbLayout .td3 {
+	width: 25px;
+	float: left;
+}
+
+.gbLayout .hspacer {
+	clear: right;
+}
+
+#paginationHelp {
+	border: 2px solid #cccccc;
+	padding: 6px;
+}
+
+#browseBlogPagination {
+	height: 60px;
+}
+
+div#browseBlogPagination {
+	margin-top: 10px;
+	margin-bottom: 5px;
+	margin-bottom: 20px;
+}
+
+.paginationHelpText {
+	vertical-align: top;
+	font-weight: bold;
+}
+
+#pageStrings {
+	margin: 3px;
+}
+
+.pageappend {
+	
+}
+
+.pagination {
+	margin-top: 20px;
+}
+
+.pagestring1,.pagestring2 {
+	
+}
+
+#BlogPagination,#BlogPagination2 {
+	width: 100%;
+	height: 55px;
+	background-color: #dddddd;
+	margin-top: 12px;
+}
+
+#BlogPagination2 {
+	background-color: #ffffff;
+}
+
+#BlogPagination .paging,#BlogPagination2 .paging {
+	margin-top: 3px;
+	margin-left: 3px;
+	margin-bottom: 3px;
+}
+
+.paging-b {
+	line-height: 25px;
+}
+
+#PgCount {
+	font-weight: bold;
+}
+
+.browsefooter {
+	background-color: #dddddd;
+	margin-top: 0px;
+	margin-bottom: 20px;
+	height: 40px;
+}
+
+.browseFootText {
+	margin-left: 6px;
+	display: block;
+	padding-top: 10px;
+}
+
+.browseFootText a {
+	vertical-align: middle;
+}
+
+#sizer {
+	font-size: small;
+}
+
+.tNav {
+	font-family: Verdana, sans-serif;
+	font-size: x-small;
+}
+
+.paging {
+	padding: 2px;
+}
+
+.paging-q {
+	margin-left: 8px;
+	margin-right: 6px;
+}
+
+.paging-o {
+	margin-left: 6px;
+	margin-right: 8px;
+}
+
+.paging-l {
+	float: left;
+}
+
+.paging-r {
+	float: right;
+	text-align: right;
+	white-space: nowrap;
+	margin-right: 5px;
+}
+
+.paging form {
+	margin: 0 0 0 0;
+}
+
+html .paging {
+	height: 1%;
+}
+
+ul.in {
+	margin: 2px 0 2px 0;
+	padding: 0 0 0 0;
+}
+
+ul.in li,ul.in {
+	display: inline;
+}
+
+ul.in li {
+	list-style: none;
+}
+
+.in li a:link {
+	color: rgb(0, 0, 153);
+}
+
+.in li a:visited {
+	color: rgb(153, 0, 204);
+}
+
+.in li a:hover {
+	color: rgb(255, 102, 0);
+}
+
+.in li a:active {
+	color: rgb(255, 102, 0);
+}
+
+.img {
+	border: 0;
+}
+
+.inheritHt {
+	height: inherit;
+}
+
+.lbgc {
+	background-color: #8AC53C;
+}
+
+.rbgc {
+	background-color: #FE6522;
+}
+
+.w760 {
+	width: 760px;
+}
+
+.w365 {
+	width: 365px;
+}
+
+.w100pct {
+	width: 100%;
+}
+
+.w73 {
+	width: 73px;
+}
+
+.w50pct {
+	width: 50%;
+}
+
+.w49pct {
+	width: 49%;
+}
+
+.h100pct {
+	height: 100%;
+}
+
+.h77 {
+	height: 77px;
+}
+
+.h45 {
+	height: 45px;
+}
+
+.h40 {
+	height: 40px;
+}
+
+.h33 {
+	height: 33px;
+}
+
+.h28 {
+	height: 28px;
+}
+
+.h25 {
+	height: 25px;
+}
+
+.h12 {
+	height: 12px;
+}
+
+.h5 {
+	height: 5px;
+}
+
+.h300 {
+	height: 300px;
+}
+
+.h440 {
+	height: 440px;
+}
+
+.lh25 {
+	line-height: 25px;
+}
+
+.lh12 {
+	line-height: 12px;
+}
+
+.ltgry {
+	color: #666666;
+}
+
+.fl {
+	float: left;
+}
+
+.fr {
+	float: right;
+}
+
+.cb {
+	clear: both;
+}
+
+.mr7p5 {
+	margin-right: 7.5px;
+}
+
+.mr12 {
+	margin-right: 12px;
+}
+
+.mr6 {
+	margin-right: 6px;
+}
+
+.mr5 {
+	margin-right: 5px;
+}
+
+.mr0 {
+	margin-right: 0;
+}
+
+.ml20 {
+	margin-left: 20px;
+}
+
+.ml12 {
+	margin-left: 12px;
+}
+
+.ml10 {
+	margin-left: 10px;
+}
+
+.ml7p5 {
+	margin-left: 7.5px;
+}
+
+.ml6 {
+	margin-left: 6px;
+}
+
+.ml3 {
+	margin-left: 3px;
+}
+
+.ml5 {
+	margin-left: 5px;
+}
+
+.ml5 {
+	margin-left: 5px;
+}
+
+.mb4 {
+	margin-bottom: 4px;
+}
+
+.mb10 {
+	margin-bottom: 10px;
+}
+
+.mb12 {
+	margin-bottom: 12px;
+}
+
+.mb15 {
+	margin-bottom: 15px;
+}
+
+.mb20 {
+	margin-bottom: 20px;
+}
+
+.mb24 {
+	margin-bottom: 24px;
+}
+
+.mb25 {
+	margin-bottom: 25px;
+}
+
+.mt6 {
+	margin-top: 10px;
+}
+
+.mt10 {
+	margin-top: 10px;
+}
+
+.mt12 {
+	margin-top: 12px;
+}
+
+.mt0,div.mt0 {
+	margin-top: 0;
+}
+
+.mt20 {
+	margin-top: 20px;
+}
+
+.pt20 {
+	padding-top: 20px;
+}
+
+.vt {
+	vertical-align: top;
+}
+
+.vm {
+	vertical-align: middle;
+}
+
+.vtb {
+	vertical-align: text-bottom;
+}
+
+.vb {
+	vertical-align: bottom;
+}
+
+.vbase {
+	vertical-align: baseline;
+}
+
+.FFF0E9 {
+	background-color: #fff0E9;
+}
+
+.white {
+	color: #ffffff;
+}
+
+.pos-r {
+	position: relative;
+}
+
+.pos-a {
+	position: absolute;
+}
+
+.t10 {
+	top: 10px;
+}
+
+h1.hat {
+	white-space: nowrap;
+	color: #000000;
+}
+
+.C0000ff {
+	color: #0000ff;
+}
+
+.hidden {
+	overflow: hidden;
+}
+
+.b {
+	font-weight: bold;
+}
+
+.nb {
+	font-weight: normal;
+}
+
+.settingsTitle1 {
+	font: bold medium Arial, sans-serif;
+	margin: 6px 0px 0px 10px;
+	color: #666665;
+}
+
+.settingsTitle2 {
+	font: bold medium Arial, sans-serif;
+	margin: 6px 0px 0px 10px;
+	color: #FF6633;
+}
+
+.settingsTitle2 .helpText {
+	font-weight: normal;
+}
+
+.spacer {
+	padding: 20px 10px 20px 10px;
+}
+
+.spacer1 {
+	padding: 20px 10px 20px 15px;
+}
+
+.yModuleTitle {
+	color: #ff6622;
+	font: bold small Arial;
+}
+
+.helpText {
+	font-size: 11px;
+	color: #666665;
+}
+
+.mModuletitle {
+	color: #666665;
+	font: bold small Arial;
+}
+
+.portlet_container1 {
+	width: 364px;
+	border: 2px solid #FF6633;
+	text-align: left;
+}
+
+.portlet_container1 .n .e,.portlet_container1 .n .w,.portlet_container1 .s .e,.portlet_container1 .s .w
+	{
+	display: block;
+	font-size: 0;
+	line-height: 0%;
+	height: 10px;
+	position: relative;
+	margin: 0;
+}
+
+.portlet_container1 .n .e {
+	background:
+		url(http://pics.ebay.com/aw/pics/community/myWorld/imgCorner2.gif)
+		no-repeat top right;
+	top: -2px;
+	right: -2px;
+	left: 2px;
+}
+
+.portlet_container1 .n .w {
+	background:
+		url(http://pics.ebay.com/aw/pics/community/myWorld/imgCorner1.gif)
+		no-repeat top left;
+	top: 0px;
+	left: -4px;
+	right: -10px;
+}
+
+.portlet_container1 .s .e {
+	background:
+		url(http://pics.ebay.com/aw/pics/community/myWorld/imgCorner4.gif)
+		no-repeat bottom right;
+	top: 2px;
+	right: -6px;
+	left: 2px;
+}
+
+.portlet_container1 .s .w {
+	background:
+		url(http://pics.ebay.com/aw/pics/community/myWorld/imgCorner3.gif)
+		no-repeat bottom left;
+	top: 0px;
+	left: -4px;
+}
+
+.portlet_container2 {
+	width: 364px;
+	border: 2px solid #FFFFFF;
+	text-align: left;
+	background-color: #EAEAEA;
+}
+
+.portlet_container2 .n .e,.portlet_container2 .n .w,.portlet_container2 .s .e,.portlet_container2 .s .w
+	{
+	display: block;
+	font-size: 0;
+	line-height: 0%;
+	height: 10px;
+	position: relative;
+	margin: 0;
+}
+
+.portlet_container2 .n .e {
+	background:
+		url(img/seller/imgCorner6.gif)
+		no-repeat top right;
+	top: 0px;
+	right: -1px;
+}
+
+.portlet_container2 .n .w {
+	background:
+		url(http://pics.ebay.com/aw/pics/community/myWorld/imgCorner5.gif)
+		no-repeat top left;
+	width: 10px;
+	left: -2px;
+}
+
+.portlet_container2 .s .e {
+	background:
+		url(http://pics.ebay.com/aw/pics/community/myWorld/imgCorner8.gif)
+		no-repeat bottom right;
+	bottom: -1px;
+	right: -1px;
+}
+
+.portlet_container2 .s .w {
+	background:
+		url(http://pics.ebay.com/aw/pics/community/myWorld/imgCorner7.gif)
+		no-repeat bottom left;
+	width: 12px;
+	left: -2px;
+}
+
+.shead {
+	color: #663300;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+	text-align: center;
+	font-weight: bold;
+}
+
+.promotitle {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+	color: #7A6E64;
+	font-weight: bold;
+}
+
+.biotitle {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+	font-weight: bold;
+	color: #E89917;
+}
+
+.biosection {
+	background: #ffded0;
+	height: 27px;
+}
+
+div.biosection div.bioedittitle {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+	font-weight: bold;
+	line-height: 25px;
+	margin-left: 5px;
+}
+
+.portletpromo {
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+
+.portletpromo .image {
+	clear: both;
+	float: left;
+	width: 70px;
+	padding-bottom: 2px;
+}
+
+.portletpromo .Camimage {
+	clear: both;
+	float: left;
+	width: 70px;
+	height: 55px;
+}
+
+.portletpromo .storesCamimage {
+	clear: both;
+	float: left;
+	width: 70px;
+	height: 65px;
+}
+
+.portletpromo .itemdetails {
+	text-align: left;
+}
+
+.portletpromo .guestbookimage {
+	clear: both;
+	float: left;
+	width: 55px;
+	padding-bottom: 2px;
+}
+
+.mod2Col .itemdetails {
+	float: left;
+}
+
+#hlpbubText {
+	background-color: #FFFFCC;
+	height: 100%;
+}
+
+.listingsSep {
+	border-bottom: 1px solid #e3e3e3;
+	margin-bottom: 8px;
+	margin-top: 8px;
+	clear: both;
+}
+
+.StoresImage {
+	border-color: #663300;
+	border-style: solid;
+	border-width: 1px;
+}
+
+.HTMLpromo {
+	overflow: hidden;
+	word-wrap: break-word;
+	width: 150px;
+}
+
+.areatitle {
+	padding: 0;
+	margin: 0;
+	border: 4px solid #fab46b;
+	border-width: 0 0 4px 0;
+	background:
+		url(http://pics.ebaystatic.com/aw/pics/community/myWorld/images/orange/imgBlendTall.gif)
+		no-repeat top right;
+}
+
+.areacont {
+	padding: 0;
+	background:
+		url(img/seller/imgFrontTall.gif)
+		no-repeat top left;
+	height: 32px;
+}
+
+.areabackground {
+	background:
+		url(img/seller/imgFrontTall_back.gif)
+		repeat;
+	border-top: 1px solid #FFFFFF;
+}
+
+* html .areacont {
+	padding: 0 0 5px 0;
+}
+
+.areacont h1 {
+	margin: 0 9px 0 9px;
+	font: bold 14pt/41px Arial;
+	border-top: 1px solid #fab46b;
+	vertical-align: middle;
+	line-height: 30px;
+}
+
+html>body .areacont h1 {
+	padding: 0 9px 0 9px;
+}
+
+* html .areacont h1 {
+	padding: 7px 9px 0 9px;
+}
+
+.areacont span,.areacont span img {
+	vertical-align: middle;
+}
+
+.areatitletheme1 {
+	padding: 0;
+	margin: 0;
+	border: 4px solid #9f9fdf;
+	border-width: 0 0 4px 0;
+	background:
+		url(http://pics.ebaystatic.com/aw/pics/community/myWorld/images/violet/imgBlendTall.gif)
+		no-repeat top right;
+}
+
+.areaconttheme1 {
+	padding: 0;
+	background:
+		url(http://pics.ebaystatic.com/aw/pics/community/myWorld/images/violet/imgFrontTall.gif)
+		no-repeat top left;
+	height: 32px;
+}
+
+.areabackgroundtheme1 {
+	background:
+		url(http://pics.ebaystatic.com/aw/pics/community/myWorld/images/violet/imgFrontTall_back.gif)
+		repeat;
+	border-top: 1px solid #FFFFFF;
+}
+
+* html .areaconttheme1 {
+	padding: 0 0 5px 0;
+}
+
+.areaconttheme1 h1 {
+	margin: 0 9px 0 9px;
+	font: bold 14pt/41px Arial;
+	border-top: 1px solid #9f9fdf;
+	vertical-align: middle;
+	line-height: 30px;
+}
+
+html>body .areaconttheme1 h1 {
+	padding: 0 9px 0 9px;
+}
+
+* html .areaconttheme1 h1 {
+	padding: 7px 9px 0 9px;
+}
+
+.areaconttheme1 span,.areaconttheme1 span img {
+	vertical-align: middle;
+}
+
+.areatitletheme2 {
+	padding: 0;
+	margin: 0;
+	border: 4px solid #ceb5b1;
+	border-width: 0 0 4px 0;
+	background:
+		url(http://pics.ebaystatic.com/aw/pics/community/myWorld/images/brown/imgBlendTall.gif)
+		no-repeat top right;
+}
+
+.areaconttheme2 {
+	padding: 0;
+	background:
+		url(http://pics.ebaystatic.com/aw/pics/community/myWorld/images/brown/imgFrontTall.gif)
+		no-repeat top left;
+	height: 32px;
+}
+
+.areabackgroundtheme2 {
+	background:
+		url(http://pics.ebaystatic.com/aw/pics/community/myWorld/images/brown/imgFrontTall_back.gif)
+		repeat;
+	border-top: 1px solid #FFFFFF;
+}
+
+* html .areaconttheme2 {
+	padding: 0 0 5px 0;
+}
+
+.areaconttheme2 h1 {
+	margin: 0 9px 0 9px;
+	font: bold 14pt/41px Arial;
+	border-top: 1px solid #ceb5b1;
+	vertical-align: middle;
+	line-height: 30px;
+}
+
+html>body .areaconttheme2 h1 {
+	padding: 0 9px 0 9px;
+}
+
+* html .areaconttheme2 h1 {
+	padding: 7px 9px 0 9px;
+}
+
+.areaconttheme2 span,.areaconttheme2 span img {
+	vertical-align: middle;
+}
+
+.areatitletheme3 {
+	padding: 0;
+	margin: 0;
+	border: 4px solid #99ddb0;
+	border-width: 0 0 4px 0;
+	background:
+		url(http://pics.ebaystatic.com/aw/pics/community/myWorld/images/green/imgBlendTall.gif)
+		no-repeat top right;
+}
+
+.areaconttheme3 {
+	padding: 0;
+	background:
+		url(http://pics.ebaystatic.com/aw/pics/community/myWorld/images/green/imgFrontTall.gif)
+		no-repeat top left;
+	height: 32px;
+}
+
+.areabackgroundtheme3 {
+	background:
+		url(http://pics.ebaystatic.com/aw/pics/community/myWorld/images/green/imgFrontTall_back.gif)
+		repeat;
+	border-top: 1px solid #FFFFFF;
+}
+
+* html .areaconttheme3 {
+	padding: 0 0 5px 0;
+}
+
+.areaconttheme3 h1 {
+	margin: 0 9px 0 9px;
+	font: bold 14pt/41px Arial;
+	border-top: 1px solid #99ddb0;
+	vertical-align: middle;
+	line-height: 30px;
+}
+
+html>body .areaconttheme3 h1 {
+	padding: 0 9px 0 9px;
+}
+
+* html .areaconttheme3 h1 {
+	padding: 7px 9px 0 9px;
+}
+
+.areaconttheme3 span,.areaconttheme3 span img {
+	vertical-align: middle;
+}
+
+.areatitletheme4 {
+	padding: 0;
+	margin: 0;
+	border: 4px solid #CC9999;
+	border-width: 0 0 4px 0;
+	background:
+		url(http://pics.ebaystatic.com/aw/pics/community/myWorld/images/pink/imgBlendTall.gif)
+		no-repeat top right;
+}
+
+.areaconttheme4 {
+	padding: 0;
+	background:
+		url(http://pics.ebaystatic.com/aw/pics/community/myWorld/images/pink/imgFrontTall.gif)
+		no-repeat top left;
+	height: 32px;
+}
+
+.areabackgroundtheme4 {
+	background:
+		url(http://pics.ebaystatic.com/aw/pics/community/myWorld/images/pink/imgFrontTall_back.gif)
+		repeat;
+	border-top: 1px solid #FFFFFF;
+}
+
+* html .areaconttheme4 {
+	padding: 0 0 5px 0;
+}
+
+.areaconttheme4 h1 {
+	margin: 0 9px 0 9px;
+	font: bold 14pt/41px Arial;
+	border-top: 1px solid #CC9999;
+	vertical-align: middle;
+	line-height: 30px;
+}
+
+html>body .areaconttheme4 h1 {
+	padding: 0 9px 0 9px;
+}
+
+* html .areaconttheme4 h1 {
+	padding: 7px 9px 0 9px;
+}
+
+.areaconttheme4 span,.areaconttheme4 span img {
+	vertical-align: middle;
+}
+
+.areatitletheme5 {
+	padding: 0;
+	margin: 0;
+	border: 4px solid #88b4ee;
+	border-width: 0 0 4px 0;
+	background:
+		url(http://pics.ebaystatic.com/aw/pics/community/myWorld/images/imgBlendTall.gif)
+		no-repeat top right;
+}
+
+.areaconttheme5 {
+	padding: 0;
+	background:
+		url(http://pics.ebaystatic.com/aw/pics/community/myWorld/images/imgFrontTall.gif)
+		no-repeat top left;
+	height: 32px;
+}
+
+.areabackgroundtheme5 {
+	background:
+		url(http://pics.ebaystatic.com/aw/pics/community/myWorld/images/imgFrontTall_back.gif)
+		repeat;
+	border-top: 1px solid #FFFFFF;
+}
+
+* html .areaconttheme5 {
+	padding: 0 0 5px 0;
+}
+
+.areaconttheme5 h1 {
+	margin: 0 9px 0 9px;
+	font: bold 14pt/41px Arial;
+	border-top: 1px solid #88b4ee;
+	vertical-align: middle;
+	line-height: 30px;
+}
+
+html>body .areaconttheme5 h1 {
+	padding: 0 9px 0 9px;
+}
+
+* html .areaconttheme5 h1 {
+	padding: 7px 9px 0 9px;
+}
+
+.areaconttheme5 span,.areaconttheme5 span img {
+	vertical-align: middle;
+}
+
+.inlineContainer div {
+	padding-left: 10px;
+	padding-top: 10px;
+	margin-bottom: 10px;
+}
+
+.inlineContainer div div {
+	padding-top: 0px;
+	padding-bottom: 0px;
+	margin-bottom: 10px;
+}
+
+.inlineContainer .inRight {
+	float: right;
+	padding-right: 10px;
+}
+
+.inlineContainer .inLeft {
+	float: left;
+}
+
+.fbkHead {
+	font-size: medium;
+}
+
+.flabel {
+	font-weight: bold;
+}
+
+.fbkDetailsRow td {
+	border-top: 1px solid #e3e3e3;
+	padding-top: 10px;
+	padding-right: 5px;
+}
+
+.fbkDetails tr.rowspacer {
+	display: none;
+	visibility: hidden;
+	line-height: 0px;
+}
+
+.fbkReply td {
+	border-bottom: 0 none;
+}
+
+.fbkReplyRow td {
+	padding-top: 5px;
+}
+
+.fbkDetailsCell {
+	width: 16px;
+}
+
+.fbkDetails td {
+	background-color: #ffffff;
+}
+
+.fbkComment,.fbkComment div.box {
+	width: 250px;
+}
+
+.fbkReply,.fbkReply div.box {
+	width: 440px;
+}
+
+.fbkUser,.fbkUser div.box {
+	width: 200px;
+}
+
+.fbkDetails .item {
+	width: 90px;
+}
+
+.fbkDetails .date {
+	width: 70px;
+}
+
+.vSep {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+#fbkDetailsTitle td,#fbkDetailsTitle tr {
+	background-color: #e3e3e3;
+	font-weight: 900;
+	font: Verdana;
+	font-size: 85%;
+	padding: 3px 0 3px 0;
+}
+
+.fbkDetails {
+	background-color: #e3e3e3;
+}
+
+.fbkLink {
+	margin-top: 10px;
+	border-top: 1px solid #e3e3e3;
+	padding-top: 10px;
+	margin-left: 10px;
+}
+
+.hspacer {
+	margin-top: 10px;
+}
+
+.ferror {
+	color: #f00;
+	font-weight: bold;
+}
+
+.terr {
+	background: #E7E3E7;
+	border-right: 1px solid #CECFCE;
+	border-bottom: 1px solid #CECFCE;
+	border-left: 1px solid #CECFCE;
+	padding: 10px 10px 0px 10px;
+	margin-bottom: 10px;
+}
+
+.ebody {
+	background:
+		url(http://pics.ebaystatic.com/aw/pics/icon/iconError_32x32.gif)
+		no-repeat top left;
+	padding: 0px 10px 10px 45px;
+}
+
+.ebody .guestbookaddentryconfirm {
+	padding: 0px 10px 10px 45px;
+}
+
+.ebody .edetails {
+	margin-top: 10px;
+}
+
+.ebody .etitle {
+	display: block;
+	color: #f00;
+	font-weight: bold;
+}
+
+.insideFrame {
+	border: 1px solid #ccc;
+}
+
+.outerFrame {
+	border: 1px solid #ccc;
+	background: #ffded0;
+}
+
+.blogView {
+	padding-top: 5px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #c7b4a6;
+}
+
+.blogView .blogContent {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: small;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.blogView .blogDate {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: x-small;
+	color: #666665;
+}
+
+.blogView span {
+	display: block;
+}
+
+.blogFooter {
+	margin-top: 10px;
+}
+
+.blogFooter span {
+	display: block;
+	font-weight: bold;
+}
+
+h2 {
+	font-size: small;
+	font-weight: bold;
+	voice-family: "\"}\"";
+	voice-family: inherit;
+	font-size: medium;
+}
+
+.help {
+	color: #666666;
+}
+
+.hint {
+	padding-top: 2px;
+	font: x-small Verdana;
+}
+
+#reviewsummary .title {
+	font-weight: bold;
+}
+
+#reviewsummary .helpfulness {
+	color: #f2721e;
+	font-weight: bold;
+}
+
+#reviewsummary .description {
+	clear: both;
+	color: #777;
+}
+
+.desc {
+	font-size: 85%;
+	color: #777;
+}
+
+#reviewsummary .details .help {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 95%;
+}
+
+#reviewsummary .rating {
+	padding-top: 3px;
+}
+
+#reviewsummary .rating img {
+	vertical-align: bottom;
+}
+
+#reviewsummary .reviewlink {
+	padding-left: 15px;
+}
+
+.rating {
+	font-size: 85%;
+	color: #666;
+	font-family: verdana;
+}
+
+.revCount {
+	color: #f2721e;
+}
+
+#reviewsSection {
+	margin-bottom: 5px;
+}
+
+#guidesSection {
+	margin-bottom: 5px;
+}
+
+#results {
+	width: 100%;
+}
+
+#results td {
+	padding: 5px;
+}
+
+#resultSummary h2 {
+	display: inline;
+}
+
+#resultSummary .count {
+	font-size: medium;
+}
+
+#guide {
+	padding-bottom: 8px;
+	margin-top: 8px;
+	border-bottom: 1px dashed #e6e6e6;
+}
+
+#guide ul {
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+}
+
+#guide .tags td {
+	padding: 0;
+	margin: 0;
+}
+
+#guide hr {
+	height: 1px;
+	color: #D6D6D6;
+}
+
+.helpful {
+	color: #F60;
+	font-weight: bold;
+}
+
+#seeAll {
+	margin-top: 10px;
+	font-weight: bold;
+}
+
+#seeAll h2 {
+	display: inline;
+}
+
+.clear {
+	clear: both;
+	height: 0px;
+}
+
+.query,.catalog {
+	font-weight: bold;
+}
+
+.count {
+	font-weight: bold;
+}
+
+.sectionSep {
+	border: none;
+	height: 1px;
+	padding: 0;
+	color: #c7b4a6;
+	background-color: #c7b4a6;
+}
+
+.reviewRow {
+	clear: both;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	border-bottom: 1px dashed #e6e6e6;
+	min-height: 70px;
+}
+
+.reviewRow .image {
+	clear: both;
+	float: left;
+	width: 70px;
+	padding-right: 5px;
+	text-align: center;
+}
+
+#resultSummary h2 {
+	font-size: medium;
+	font-weight: bold;
+}
+
+.chbox_containerw {
+	width: 100%;
+	border: 1px solid #fff;
+	text-align: left;
+	background-color: #fff;
+}
+
+.chbox_containerw .n .e,.chbox_containerw .n .w,.chbox_containerw .s .e,.chbox_containerw .s .w
+	{
+	display: block;
+	font-size: 0;
+	line-height: 0%;
+	height: 10px;
+	position: relative;
+	margin: 0;
+}
+
+.chbox_containerw .n .e {
+	background:
+		url(http://pics.ebaystatic.com/aw/pics/community/myWorld/imgWhCorner6.gif)
+		no-repeat top right;
+	top: -1px;
+	right: -1px;
+}
+
+.chbox_containerw .n .w {
+	background:
+		url(http://pics.ebaystatic.com/aw/pics/community/myWorld/imgWhCorner5.gif)
+		no-repeat top left;
+	width: 10px;
+	left: -2px;
+}
+
+.chbox_containerw .s .e {
+	background:
+		url(http://pics.ebaystatic.com/aw/pics/community/myWorld/imgWhCorner8.gif)
+		no-repeat top right;
+	bottom: -1px;
+	right: -1px;
+}
+
+.chbox_containerw .s .w {
+	background:
+		url(http://pics.ebaystatic.com/aw/pics/community/myWorld/imgWhCorner7.gif)
+		no-repeat top left;
+	width: 10px;
+	left: -2px;
+}
+
+.chbox_container {
+	width: 100%;
+	border: 1px solid #E6E6E6;
+	text-align: left;
+	background-color: #E6E6E6;
+}
+
+.chbox_container .n .e,.chbox_container .n .w,.chbox_container .s .e,.chbox_container .s .w
+	{
+	display: block;
+	font-size: 0;
+	line-height: 0%;
+	height: 10px;
+	position: relative;
+	margin: 0;
+}
+
+.chbox_container .n .e {
+	background:
+		url(http://pics.ebaystatic.com/aw/pics/community/myWorld/imgGrCorner2.gif)
+		no-repeat top right;
+	top: -1px;
+	right: -1px;
+}
+
+.chbox_container .n .w {
+	background:
+		url(http://pics.ebaystatic.com/aw/pics/community/myWorld/imgGrCorner1.gif)
+		no-repeat top left;
+	width: 10px;
+	left: -2px;
+}
+
+.chbox_container .s .e {
+	background:
+		url(http://pics.ebaystatic.com/aw/pics/community/myWorld/imgGrCorner4.gif)
+		no-repeat top right;
+	bottom: -1px;
+	right: -1px;
+}
+
+.chbox_container .s .w {
+	background:
+		url(http://pics.ebaystatic.com/aw/pics/community/myWorld/imgGrCorner3.gif)
+		no-repeat top left;
+	width: 10px;
+	left: -2px;
+}
+
+.chbox {
+	padding: 0 10px;
+}
+
+.chbox_container .vbox {
+	color: #8c8c8c;
+}
+
+.vbox {
+	vertical-align: middle;
+	text-align: center;
+	font-weight: bold;
+}
+
+.chbox_outer {
+	padding: 8px;
+	background-color: #cccccc;
+}
+
+.cccccc {
+	background-color: #cccccc;
+}
+
+.col3-0 {
+	height: 100px;
+	width: 180px;
+}
+
+.col3-1 {
+	height: 100px;
+	width: 350px;
+}
+
+.col3-2 {
+	height: 100px;
+	width: 200px;
+}
+
+.col2-0 {
+	height: 100px;
+	width: 180px;
+}
+
+.col2-1 {
+	height: 100px;
+	width: 580px;
+}
+
+.optTitle {
+	padding-left: 30px;
+	padding-right: 40px;
+}
+
+.optBox {
+	float: left;
+}
+
+* html div#insideFrame,* html div.insideFrame {
+	margin: 5px;
+}
+
+* html div .MyWorldProfilePanel #Links {
+	position: relative;
+	padding: 14px 0 0px 8px;
+}
+
+.ModContent * {
+	word-wrap: break-word;
+}
+
+.wordwrap,.wordwrap * {
+	word-wrap: break-word;
+}
+
+.modLeftCol {
+	word-spacing: normal;
+	word-wrap: break-word;
+}
+
+#MyWorldGlobal {
+	width: 870px;
+}
+
+#MyWorldLeftContent {
+	float: left;
+	width: 166px;
+	margin-right: 10px;
+}
+
+.badgeline {
+	position: relative;
+	left: 0px;
+	background:
+		url(img/seller/imgfeedback_background.gif)
+		repeat;
+	border-left: 0px;
+	margin-left: 0px;
+	width: 100%;
+	z-index: 1;
+	top: -2px;
+	padding-top: 0px;
+	height: 20px;
+	padding-bottom: 5px;
+}
+
+.badgelinetheme1 {
+	background:
+		url(http://pics.ebaystatic.com/aw/pics/community/myWorld/images/violet/imgfeedback_background.gif)
+		repeat;
+}
+
+.badgelinetheme2 {
+	background:
+		url(http://pics.ebaystatic.com/aw/pics/community/myWorld/images/brown/imgfeedback_background.gif)
+		repeat;
+}
+
+.badgelinetheme3 {
+	background:
+		url(http://pics.ebaystatic.com/aw/pics/community/myWorld/images/green/imgfeedback_background.gif)
+		repeat;
+}
+
+.badgelinetheme4 {
+	background:
+		url(http://pics.ebaystatic.com/aw/pics/community/myWorld/images/pink/imgfeedback_background.gif)
+		repeat;
+}
+
+.badgelinetheme5 {
+	background:
+		url(http://pics.ebaystatic.com/aw/pics/community/myWorld/images/imgfeedback_background.gif)
+		repeat;
+}
+
+html>body .badgeline {
+	margin-left: -15px;
+	width: 700px;
+}
+
+div#MyWorldPageContent div.mod3Col {
+	width: 235px;
+	margin-left: 10px;
+}
+
+* html div#MyWorldPageContent div.shift {
+	margin-left: 14px;
+}
+
+* html div#MyWorldPageContent div.mod3ColAlt {
+	width: 214px;
+}
+
+* html .ColumnTwoNoFloat {
+	margin-right: 0px;
+}
+
+* html .ColumnTwoFloat {
+	margin-left: 0px;
+}
+
+* html div#MyWorldPageContent .badgeline {
+	margin-top: 0;
+	margin-left: -15px;
+	padding-right: 15px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+* html div#MyWorldPageContent .badgeline span.mTitleLinks {
+	margin-right: 0px;
+}
+
+* html .record .action,* html .record .details {
+	display: inline-block;
+}
+
+.g-txtBx,.g-btn,.g-nav {
+	font: x-small Verdana;
+}
+
+.g-nav li {
+	font-size: xx-small;
+}
+
+.g-nav li a {
+	font-size: xx-small;
+}
+
+.bc,div.bc h2 {
+	font: xx-small Verdana, Arial, sans-serif;
+}
+
+div#MyWorldPageContent div.ModTitleBarEditText,.mTitleLinks {
+	font-size: x-small;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+#MemberInfo {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: x-small;
+}
+
+#themesetting {
+	position: absolute;
+	background-color: #FFFAC6;
+	left: 550px;
+	width: 286px;
+	border: 1px solid #999999;
+	z-index: 150;
+}
+
+#themesetting .content {
+	margin: 10px 0px 0px 10px;
+	padding: 0px;
+	_padding-right: -8px;
+	height: 35px;
+	width: 267px;
+}
+
+#themesetting #closelink {
+	margin-left: 5px;
+	margin-right: 5px;
+	display: block;
+	height: 25px;
+	border-top: 1px solid #999999;
+	text-align: center;
+	font-size: 11px;
+	font-family: Arial;
+	color: #0000FF;
+	vertical-align: middle;
+}
+
+#themesetting #closeLyr {
+	font-size: 11px;
+	font-family: Arial;
+	color: #0000FF;
+}
+
+#closelink div {
+	margin-top: 5px;
+}
+
+#themesetting ol {
+	border: 1px solid transparent;
+	_border: 0;
+	margin: 0px;
+	padding: 0px;
+}
+
+#themes li {
+	display: block;
+	padding: 0px;
+	margin: 0px;
+	margin-left: 9px;
+	float: left;
+	height: 10px;
+}
+
+#themes .txt {
+	font-size: 12px;
+	font-family: Arial;
+	color: #666666;
+	padding-top: 5px;
+	margin-left: 0px;
+}
+
+#themesetting a {
+	text-decoration: none;
+	cursor: pointer;
+	cursor: hand;
+}
+
+.seeAllLatestFeedback {
+	padding-right: 5px;
+	_padding-right: 15px;
+	font-size: 11px;
+}
+
+.seeAllLatestFeedback a:active,.seeAllLatestFeedback a:link,.seeAllLatestFeedback a:visited
+	{
+	text-decoration: none;
+}
+
+.seeAllLatestFeedback a:hover {
+	text-decoration: underline;
+}
+
+.latestFeedbackMain {
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
+.positiveFeedback {
+	font-family: Arial;
+	color: #009900;
+	font-size: small;
+}
+
+.neutralFeedback {
+	font-family: Arial;
+	color: #666666;
+	font-size: small;
+}
+
+.negativeFeedback {
+	font-family: Arial;
+	color: #ff0000;
+	font-size: small;
+}
+
+.lifetimeSummary {
+	font-family: Arial;
+	color: #333333;
+	font-size: small;
+}
+
+.feedbackScore {
+	font-family: Arial;
+	color: #333333;
+	font-size: small;
+	padding-top: 15px;
+}
+
+.curlyBraces {
+	font-family: Arial;
+	color: #999999;
+	font-size: small;
+}
+
+.feedbackLink {
+	font-family: Arial;
+	color: #0000cc;
+	font-size: small;
+}
+
+.feedbackLink a:active,.feedbackLink a:link,.feedbackLink a:visited {
+	text-decoration: none;
+}
+
+.feedbackLink a:hover {
+	text-decoration: underline;
+}
+
+.dsrTitle {
+	font-family: Arial;
+	color: #4c4c4c;
+	font-size: small;
+}
+
+.latestFeedbackTitle {
+	font-family: Arial;
+	color: #666666;
+	font-size: small;
+}
+
+.hlpBubNW {
+	float: left;
+	width: 10px;
+	height: 20px;
+	background-image:
+		url(http://pics.ebaystatic.com/aw/pics/bubbleHelp/hlpBubNW.gif);
+	background-repeat: no-repeat;
+	background-position: bottom center;
+}
+
+.hlpBubN {
+	float: left;
+	background-image:
+		url(http://pics.ebaystatic.com/aw/pics/bubbleHelp/hlpBubN.gif);
+	background-repeat: repeat-x;
+	width: 280px;
+	height: 20px;
+	background-position: bottom center;
+}
+
+.hlpBubNE {
+	width: 10px;
+	height: 20px;
+	background-image:
+		url(http://pics.ebaystatic.com/aw/pics/bubbleHelp/hlpBubNE.gif);
+	background-repeat: no-repeat;
+	background-position: bottom center;
+	float: left;
+}
+
+.hlpBubW {
+	float: left;
+	background-image:
+		url(http://pics.ebaystatic.com/aw/pics/bubbleHelp/hlpBubW.gif);
+	background-repeat: repeat-y;
+	height: 100px;
+	width: 10px;
+	background-position: top center;
+}
+
+.hlpBubMiddle {
+	float: left;
+	background-color: #ffffcc;
+	width: 280px;
+	height: 100px;
+	background-position: top center;
+}
+
+.hlpBubE {
+	background-image:
+		url(http://pics.ebaystatic.com/aw/pics/bubbleHelp/hlpBubE.gif);
+	float: left;
+	background-repeat: repeat-y;
+	height: 100px;
+	width: 10px;
+	background-position: top center;
+}
+
+.hlpBubW_fr {
+	float: left;
+	background-image:
+		url(http://pics.ebaystatic.com/aw/pics/bubbleHelp/hlpBubW.gif);
+	background-repeat: repeat-y;
+	height: 115px;
+	width: 10px;
+	background-position: top center;
+}
+
+.hlpBubMiddle_fr {
+	float: left;
+	background-color: #ffffcc;
+	width: 280px;
+	height: 115px;
+	background-position: top center;
+}
+
+.hlpBubE_fr {
+	background-image:
+		url(http://pics.ebaystatic.com/aw/pics/bubbleHelp/hlpBubE.gif);
+	float: left;
+	background-repeat: repeat-y;
+	height: 115px;
+	width: 10px;
+	background-position: top center;
+}
+
+.hlpBubSW {
+	float: left;
+	width: 10px;
+	height: 20px;
+	background-image:
+		url(http://pics.ebaystatic.com/aw/pics/bubbleHelp/hlpBubSW.gif);
+	background-repeat: no-repeat;
+	background-position: top center;
+}
+
+.hlpBubS {
+	background-image:
+		url(http://pics.ebaystatic.com/aw/pics/bubbleHelp/hlpBubS.gif);
+	background-repeat: repeat-x;
+	width: 280px;
+	height: 20px;
+	float: left;
+	background-position: top center;
+}
+
+.hlpBubSE {
+	width: 10px;
+	background-image:
+		url(http://pics.ebaystatic.com/aw/pics/bubbleHelp/hlpBubSESel.gif);
+	background-repeat: no-repeat;
+	background-position: top center;
+	float: left;
+	height: 20px;
+}
+
+.hlpBub {
+	display: none;
+	visibility: visible;
+	z-index: 200;
+	position: absolute;
+	width: 300px;
+	height: 140px;
+}
+
+.feedbackSummaryMain {
+	padding-left: 10px;
+}
+
+.ratingsMain {
+	padding-right: 12px;
+}
+
+.ratingsHeader {
+	background-color: #EBEBEB;
+}
+
+.ratingsBorder {
+	border-top: 1px solid #ccc;
+}
+
+.spacerBorder {
+	background-color: #cccccc;
+}
+
+.dsrTitleBg {
+	padding-right: 10px;
+	border-bottom: 1px solid #DEDEDE;
+	background-color: #EBEBEB;
+}
+
+.dsrMain {
+	margin-top: -3px;
+	margin-left: 10px;
+}
+
+.latestFeedbackContent {
+	margin-top: -4px;
+	margin-left: 10px;
+}
+
+.dsrSubtitle {
+	background-color: #F5F5F5;
+	padding-left: 10px;
+	padding-right: 10px;
+	border-bottom: 1px solid #DEDEDE;
+}
+
+.dsrClassification {
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.dsrEmpty {
+	height: 110px;
+}
+
+.latestFeedbackSummary {
+	display: none;
+}
+
+.feedbackOuterDiv {
+	position: relative;
+	height: 65px;
+	width: 630px;
+	_width: 634px;
+	overflow: hidden;
+	padding-left: 5px;
+}
+
+.feedbackContentDiv {
+	position: absolute;
+	width: 100%;
+	visibility: hidden;
+}
+
+.feedbackContentNext {
+	position: absolute;
+	width: 100%;
+	visibility: hidden;
+}
+
+.feedbackContent {
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	margin-top: 5px;
+}
+
+.hlpImg {
+	padding-right: 0px;
+	_padding-right: 10px;
+}
+
+.userLink {
+	font-family: Arial;
+	color: #666666;
+	font-size: 12px;
+}
+
+.userLink a:active,.userLink a:link,.userLink a:visited {
+	text-decoration: none;
+}
+
+.userLink a:hover {
+	text-decoration: underline;
+}
+
+.itemLink {
+	font-family: Arial;
+	color: #999999;
+	font-size: 11px;
+	_padding-right: 10px;
+}
+
+.itemLink a:active,.itemLink a:link,.itemLink a:visited {
+	text-decoration: none;
+}
+
+.itemLink a:hover {
+	text-decoration: underline;
+}
+
+.latestFeedbackHelp {
+	color: #666666;
+	font-size: 11px;
+}
+
+.dateText {
+	font-family: Arial;
+	color: #999999;
+	font-size: 11px;
+	white-space: nowrap;
+}
+
+/* b=15854962 */

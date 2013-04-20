@@ -1,0 +1,1012 @@
+img, div, a {
+	behavior: url('iepngfix.htc');
+}
+
+body {
+	background:#FFFFFF;
+}
+
+.marginTopDeals {
+	padding: 10px 15px;
+}
+
+.bgClear {
+	background-color: #fff;
+}
+
+pre{
+	mcontrolsargin-top:-16px;
+	display:block;
+	font:12px "Courier New", Courier, monospace;
+	padding:10px;
+	border:1px solid #bae2f0;
+	background:#e3f4f9;
+	width:674px;
+}
+
+.container {
+	padding-top: 10px;
+}
+
+#container {
+	margin:0 auto;
+	position:relative;
+	text-align:left;
+	width:930px;
+	background:#fff;
+	margin-bottom:2em;
+}
+
+.containerText {
+	background-color: #e8e8e8;
+}
+
+.containerTextHldr {
+	padding-top: 10px;
+}
+
+.containerTextList {
+	margin-top: 10px;
+}
+
+.containerTextCont, .containerTextCont a, .containerTextCont a:hover, .containerTextCont a:visited {
+	font-size: 20px;
+	padding: 2px 0 2px 15px;
+	color: #186dbd;
+	text-decoration: none;
+	background-color: #e8e8e8;
+}
+
+.moreDeals, .moreDeals a, .moreDeals a:hover, .moreDeals a:visited {
+  color: #186DBD;
+  font-family: Trebuchet MS,Arial;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 2px 5px 2px 0px;
+  text-align: right !important;
+  text-decoration: none;
+  float: right;
+}
+
+/*
+ * SLIDER CODE STARTS HERE
+ */
+
+.slider ul, .slider li{
+	margin:auto;
+	padding:0;
+	list-style:none;
+	position:relative;
+}
+
+.slider li {
+	width:811px;
+	overflow:hidden;
+	display:block;
+}
+
+.slider {
+	width:811px;
+	margin-left:63px;
+	margin-right:60px;
+	overflow: scroll;
+}
+
+/*
+ * SLIDER CODE ENDS HERE
+ */
+ 
+.graphic, .prevBtn, .nextBtn {
+	margin:0;
+	padding:0;
+	display:block;
+	overflow:hidden;
+	text-indent:-8000px;
+}
+
+.prevBtn, .nextBtn {
+	display:block;
+	width:28px;
+	height:40px;
+	position:absolute;
+	top:135px;
+	z-index:1000;
+	background:url('img/Deals/left-arrow.png') no-repeat 0 0;
+	cursor:pointer;
+}
+
+.nextBtn {
+	left:880px;
+}
+
+.nextBtn {
+	background:url('img/Deals/right-arrow.png') no-repeat 0 0;
+}	
+
+.controls{
+	display:none;
+}
+
+body {
+	text-align: center;
+	margin: 0px auto;
+	padding: 0;
+	height:1000px;
+}
+
+.vam {
+	vertical-align: middle;
+}
+
+.container1Main	{
+	float: left;
+}
+
+.container1	{
+	width: 930px;
+	text-align: left;
+	margin: 0px auto;
+}
+
+.dealBox {
+	background-color: #E8E8E8;
+	border: 0 none;
+	outline: medium none;
+	padding: 10px;
+	width: 910px !important;
+	margin-bottom: 10px;
+}
+
+.thbfl {
+	float: left;
+	height: 100%;
+	text-align: center;
+	width: 70px;
+}
+
+.thbfl img {
+	padding-top: 7px;
+	padding-left: 5px;
+	vertical-align: top;
+}
+
+.thbofr {
+	float: left;
+	font-weight: bold;
+	color: #333;
+}
+
+.thbpr {
+	float: left;
+	font-weight: bold;
+	color: #999;
+}
+
+.thbfr {
+	float: right;
+	height: 100%;
+	padding: 5px 2px 0px 2px;
+	text-align: left;
+	width: 138px;
+}
+
+.dealcontainer {
+	background-color: #FFFFFF;
+	/*height: auto;*/
+	height: 248px;
+}
+
+.ctrfl {
+	float: left;
+	width: 688px;
+}
+
+.ctrfr {
+	float: right;
+	width: 212px;
+}
+
+.showPane {
+	display: block;
+}
+
+.hidePane {
+	display: none;
+}
+
+.thumbTabs {
+	height: 60px;
+	min-height: 60px;
+	/*padding-top: 2px;*/
+	width: 100%;
+}
+
+.thbtitle {
+	height: 32px;
+	color: #0847ee;
+}
+
+.inactiveT, .activeT {
+	background-color: #fff;
+}
+
+.activeHoverSliderClr {
+	color: #fff !important;
+} 
+
+.activeHoverSlider, .activeT:hover, .activeT:hover .thbofr, .activeT:hover .thbpr, .activeT:hover .thbtitle {
+	background-color: #89b500;
+	color: #fff !important;
+}
+
+.container1 td {
+	font: normal 13px Arial;
+}
+
+.no-container {
+	float: left;
+	text-align: left;
+	margin: 0px auto;
+	height: 100%;
+}
+
+.containerSort {
+	background-color: #F5F5F5;
+	text-align: right;
+}
+
+#sbText {
+	color: #666666;
+	float: left;
+	font-size: x-small;
+	line-height: 20px;
+	margin-top: 3px;
+	padding-left: 15px;
+}
+
+#sbText a, #sbText a:hover, #sbText a:visited {
+	color: #666666;
+}
+
+.sb {
+	color: #666666;
+	float: right;
+	font-size: x-small;
+	font-weight: bold;
+	line-height: 20px;
+	margin-top: 3px;
+	padding-right: 5px;
+}
+
+.sb select {
+	border: 1px solid #AAAAAA;
+	color: #666666;
+	font-size: x-small;
+	margin-left: 5px;
+	padding: 1px;
+}
+
+.hdrLft {
+	float: left;
+	width: 130px;
+	padding-right: 8px;
+}
+
+.hdrRgt {
+	
+}
+
+.lcdstyle {
+	color: #000;
+	font: normal 12px Verdana;
+	padding: 3px 3px;
+	text-align: center;
+	text-decoration: none;
+}
+
+#ctr {
+	left: 240px;
+	margin-right: 250px;
+	position: relative;
+	text-align: right;
+	width: 235px;
+	z-index: 100;
+}
+
+.saleInfo {
+	color: #000;
+	font: bold 15px Trebuchet MS;
+}
+
+.discOff {
+	text-align: right;
+	font-weight: bold;
+	margin-right: 5px;
+	font-size: 18px;
+	margin-top: 10px;
+	color: #f00;
+	position: relative;
+	z-index: 999;
+}
+
+.dealImg {
+	text-align: center;
+	position: relative;
+	height: 150px;
+	/*border: 1px solid red;*/
+}
+
+.dealImg img {
+	position: relative;
+}
+
+.lazy {
+	display: none;
+}
+
+.dealTitle {
+	text-align: center;
+	font-weight: bold;
+	font-size: 15px;
+	height: 15px;
+	min-height: 15px;
+	margin-top: 5px;
+}
+
+.more {
+    color: #999;
+    font: bold 14px helvetica;
+    margin-top: 0px;
+}
+
+.dealTop {
+  height: 135px;
+  min-height: 135px;
+  padding-bottom: 5px;
+}
+
+.dealMore {
+	padding: 10px 0px;
+	height: 51px;
+	min-height: 51px;
+}
+
+.dealPrice {
+	float: left;
+	font-weight: bold;
+	padding-left: 20px;
+}
+
+.bgLeft {
+	/*background-image: url( 'http://pics.ebaystatic.com/aw/in/aboutebay/bg_left.jpg' );*/
+	background-position: center;
+	width: 272px;
+}
+
+.bgRight {
+	/*background-image: url( 'http://pics.ebaystatic.com/aw/in/aboutebay/bg_right.jpg' );*/
+	background-position: center;
+	width: 272px;
+}
+
+.bgHead {
+	background-image: url( 'img/Deals/header.jpg' );
+	height: 154px;
+}
+
+td a.aLink {
+	text-decoration: none;
+	color: #fff;
+}
+
+td a.iLink {
+	text-decoration: none;
+	color: #000;
+}
+
+.noprice {
+	text-decoration: line-through;
+	color: #999;
+}
+
+.price {
+	font-size: 15px;
+	color: #333;
+}
+
+.gh-esb, .gh-emn {
+	float: right;
+	margin-right: 2px;
+}
+
+.gh-rph {
+	clear: right;
+	float: right;
+	margin-right: 10px;
+	padding-top: 12px;
+}
+.frmdow {
+	left: 0;
+	margin-left: 10px;
+	position: relative;
+	text-align: left;
+	top: 125px;
+	z-index: 100;
+}
+
+.blankDiv {
+	position: relative;
+	width:6px;
+	float:left;
+}
+
+.btDiv {
+	position: relative;
+	width:3px;
+	float:left;
+}
+
+.mdt {
+	font: normal 14px Helvetica;
+	color: #333;
+	padding: 10px 2px 2px 2px;
+	height: 45px;
+}
+
+.mdtSubTitle {
+	color: #333333;
+	font: bold 11px Helvetica;
+	height: 45px;
+	padding-top: 10px;
+}
+
+.contDiv {
+	position: relative;
+	width:300px;
+	float:left;
+	border:1px solid #ddd;
+	padding:0px 1px;
+	height: 350px;
+	margin-top: 5px;
+}
+
+td.dealCol {
+	border: 1px solid #ddd;
+}
+
+td.nodealCol {
+}
+
+.noDisc {
+	background: none !important;
+}
+
+.discTop {/*
+	position: relative;
+	top: -46px;*/
+}
+
+.authTop {
+	padding-top: 10px;
+}
+
+.authText {
+	position: relative;
+	padding: 15px 0px;
+	font-weight: bold;
+	border-top: 1px solid #ddd;
+}
+
+.authAccord {
+	position: relative;
+	z-index: 9999;
+}
+
+.discDiv {
+	background: url("img/Deals/disc.png") no-repeat scroll 0 0 transparent;
+	color: #FF0000;
+	font-size: 11px;
+	font-weight: bold;
+	height: 22px;
+	left: 5px;
+	*left: 65px;
+	*margin-left: -65px;
+	padding-top: 5px;
+	position: relative;
+	width: 47px;
+	z-index: 999;
+	display: block;
+}
+
+.discDivList {/*
+	left: -82px;
+	*left: 0px;
+	*margin-left: -164px;*/
+}
+
+.discDiv .noDisc {
+	background: none !important;
+}
+
+.spndsc {
+	font-size: 18px;
+	font-weight: bold;
+	margin-left: -15px;
+	margin-left: 7px\9; /* IE8 & below */
+	*margin-left: -15px; /* IE7 & below */
+	padding-top: 6px;
+	position: absolute;
+}
+
+.spndscpr {
+	font-size: 11px;
+	font-weight: bold;
+	margin-left: 7px;
+	margin-left: 29px\9;
+	*margin-left: 7px;
+	padding-top: 10px;
+	position: absolute;
+}
+
+.spndscoff {
+	margin-left: -8px;
+	margin-left: 14px\9;
+	*margin-left: -8px;
+	padding-top: 25px;
+	position: absolute;
+}
+
+.infoDiv {
+	background: url('img/Deals/quickinfo.png') no-repeat scroll 0 0 transparent;
+	font-weight: bold;
+	height: 24px;
+	margin-left: -55px;
+	opacity: 1;
+	filter:alpha(opacity=100);
+	position: absolute;
+	text-align: center;
+	top: 105px;
+	width: 121px;
+	z-index:999;
+	display:none;
+	cursor:pointer;
+	cursor:hand;
+}
+
+.imgDivContainer {
+	min-height: 140px;
+}
+
+.imgDivContainer img {
+	position: relative;
+}
+
+.imgDiv {
+	height: 210px;
+	text-align: center;
+	cursor:pointer;
+	cursor:hand;
+}
+
+.tabsDiv {
+	position: relative;
+	padding-top: 10px;
+	text-align:center;
+}
+
+.tabsDivFr {
+	position: relative;
+	text-align:center;
+}
+
+.timgDiv {
+	float: left;
+	padding: 0px 10px;
+	width:910px;
+	cursor: pointer;
+	cursor: hand;
+}
+
+.btmLine {
+	height: 1px;
+	z-index: 40;
+	position: relative;
+	top: -9px;
+	*top: -19px;
+	border-top: 1px solid #666;
+}
+
+.imgWrap {
+	height: 37px;
+	min-height: 37px;
+}
+
+.imgWrap img {
+	position: relative;
+}
+
+.imgLink {
+	text-align: center;
+	float: left;
+	padding-top: 5px;
+	margin-top: 5px;
+	cursor: pointer;
+	cursor: hand;
+	color: #000000 !important;
+	font-size: 12px;
+}
+
+.imgText {
+	height: 30px;
+	min-height: 30px;
+	position: relative;
+	display:table-cell;
+	vertical-align:bottom;
+	width:72px;
+	padding: 0px 0px 5px 0px;
+}
+
+a.noFocusTab {
+	background: url("img/Deals/default.jpg") no-repeat scroll 0 0 transparent;
+	width: 72px;
+	height: 72px;
+}
+
+a.focusTab {
+	background: url("img/Deals/default_s.jpg") no-repeat scroll 0 0 transparent;
+	width: 72px;
+	height: 72px;
+}
+
+a.noFocusTab:hover, a.noFocusTab:visited {
+	text-decoration: none;
+	color: #000;
+}
+
+a.focusTab:hover, a.focusTab:visited {
+	text-decoration: none;
+	color: #fff;
+}
+
+.titleDiv {
+	color: #666;
+	font-size:18px;
+	text-align: center;
+	padding: 10px 0px;
+}
+
+.priceDiv {
+	padding: 5px 0px;
+	color: #333;
+	font-size: 17px;
+	font-weight: bold;
+	text-align: center;
+}
+
+.priceinfoDiv {
+	padding: 5px 0px;
+	color: #666;
+	font-size: 13px;
+	text-align: center;
+}
+
+.WebRupee {
+	font-size: 15px;
+}
+
+.WebRupeeInfo {
+	font-size: 14px;
+}
+
+.WebRupeeMain {
+	font-size: 18px;
+}
+
+.dealButton {
+	text-align: center;
+	padding-bottom: 5px;
+}
+
+#mask {
+	position:absolute;
+	left:0;
+	top:0;
+	z-index:9000;
+	background-color:#000;
+	display:none;
+}
+
+#boxes .window {
+	position:absolute;
+	left:0;
+	top:0;
+	width:100%;
+	display:none;
+	z-index:9999;
+}
+
+#boxes .socialShare a.nodisp {
+	display: none;
+}
+
+.descriptionPane {
+	padding-top: 10px;
+}
+
+.overlayTitle {
+	padding-top: 5px;
+	color: #333;
+	font-size: 20px;
+	text-align: left;
+}
+
+.overlaySubTitle {
+	padding-top: 5px;
+	color: #666;
+	font-size: 13px;
+	text-align: left;
+	font-weight: bold;
+}
+
+.overlayImgHolder {
+	float: left;
+	padding-right: 10px;
+	padding-top: 10px;
+	width: 240px;
+}
+
+.overlayMainImg {
+	height: 210px;
+	text-align: center;
+}
+
+.overlayImgThumb {
+	padding-top: 5px;
+}
+
+.overlayTextHolder {
+	float: right;
+	width: 550px;
+	text-align: left;
+	padding-top: 10px;
+}
+
+.ovrlyTxtBold {
+	color: #333;
+	font-weight: bold;
+}
+
+.ovrCol {
+	color: #666;
+}
+
+.ovrlyTxt {
+	color: #666;
+	width: 50%;
+}
+
+.ovrlyTxtB {
+	font-weight: bold;
+}
+
+.descOvrlyDiv {
+	background-color: #DDDDDD;
+	clear: both;
+	margin: 0px 15px 15px 0px;
+	padding: 10px;
+	min-height: 130px;
+}
+
+.oplt {
+	float: left;
+	width:50%;
+}
+
+.oprt {
+	float: right;
+	width:50%;
+}
+
+.ispanel {
+	font-weight: bold;
+}
+
+.ispanelBtn {
+	float: right;
+}
+
+table.ovrlyTbl {
+	text-align:left;
+	padding-left:5px;
+	border-collapse:collapse;
+}
+
+table.ovrlyTbl th {
+	text-align: center;
+}
+
+table.ovrlyTbl td.dlbtn {
+	text-align: right;
+	padding: 5px;
+}
+
+table.ovrlyTbl td {
+	padding-left: 10px;
+}
+
+table.ovtbrt {
+	padding-bottom: 10px;
+	width: 515px;
+}
+
+.resultHldr {
+	z-index: 500;
+	position: relative;
+}
+
+.searchBox {
+	background-color: #F2F2F2;
+	margin-top: 10px;
+	z-index: 999;
+	position: relative;
+	margin-bottom: 10px;
+}
+
+.searchTitleBox {
+	padding: 5px;
+}
+
+.searchTitle {
+	color: #FF0000;
+	font-size: 16px;
+	font-weight: bold;
+	float: left;
+}
+
+.clearBox {
+	color: #0000ff;
+	font-size: 12px;
+	font-weight: normal;
+	float: right;
+	text-decoration: underline;
+	cursor:pointer;
+	cursor:hand;
+}
+
+.tlct {
+	color: #ff8000;
+	font-size: small;
+	font-weight: bold;
+}
+
+.searchParams {
+	padding: 10px 4px;
+}
+
+div.kbBox {
+	width: 219px;
+	padding-left: 4px;
+	margin-left: 4px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	background-color:#ffffff !important;
+	/*behavior: url(border-radius.htc);*/
+	float: left;
+	height: 115px;
+	border: 1px solid #999  !important;
+}
+
+div.kbBox div.kbBoxnoCT {
+	width: 219px;
+	padding-left: 4px;
+	margin-left: 4px;
+	float: left;
+	height: 100px;
+}
+
+.kwTitle {
+	font-weight: bold;
+	font-size: 13px;
+	color: #0A7DD0;
+	padding: 5px 0px;
+}
+
+div.kbBox select {
+    border: 1px solid #999;
+    width: 75%;
+}
+
+div.kbBox select option {
+      color: #555;
+    font-family: Arial;
+    font-size: 11px;
+    padding-top: 2px;
+}
+
+#overlay {
+	position: relative;
+	height: 200px;
+}
+
+#overlay .overlayImg {
+	position: absolute;
+	padding-left: 40%;
+	padding-top: 10%;
+}
+
+.prsrbox {
+	padding: 10px 0px;
+}
+
+.prsramt {
+	border:0;
+	color:#f6931f;
+	font-weight:bold;
+	width:130px;
+	font-size:10px;
+}
+
+a.sp-tp {
+	background-attachment: scroll;
+	background-color: transparent;
+	background-image: url("img/Deals/top.png");
+	background-position: 0 -13px;
+	background-repeat: no-repeat;
+	cursor: pointer;
+	display: block;
+	float: right;
+	height: 46px;
+	outline-style: none;
+	position: fixed;
+	right: 10px;
+	width: 68px;
+	z-index: 3;
+}
+
+
+a.sp-tp:hover {
+	background-position: 0 -73px;
+}
+
+#accordion h3 a {
+	font-weight: bold;
+}
+
+#accordion h3 a {
+	font-family: Trebuchet MS;
+	font-size: 13px;
+}
+
+body{margin:0;padding:0;}
+/* CATNAV STARTS */
+.containerCatH {margin-bottom:5px;}
+/*#containerCat {width: 930px; margin: 0 auto; padding: 0;display:block;height:auto;font-family:seriff;}*/
+#containerCat {width: 930px; margin: 0 auto; padding: 0;display:block;height:auto;font-family:Trebuchet MS;}
+#containerCat ul {width: 930px;list-style: none;margin: 0 auto;padding:0px 2px 0px 3px;}
+#containerCat ul li {padding:0px;}
+#containerCat ul li {display: block;width:65px;max-width:65px;float:left;border:1px solid #ddd;}
+#containerCat ul li.nobdr {border-right:none;}
+#containerCat ul li a {display: block;background-image: url(img/Deals/catnav_new_1.png);background-color: #fff;text-decoration:none;width: 100%;height: 50px;background-repeat: no-repeat;}
+.Accessories{ background-position: 0 -1054px;}
+.Cameras{ background-position: 0 -79px;}
+.ConsumerElectronics{ background-position: 0 -413px;}
+.ITPeripherals{ background-position: 0 -347px;}
+.LCD{ background-position: 0 -212px;}
+.Laptops{ background-position: 0 -139px;}
+.Memory{ background-position: 0 -282px;}
+.homeElectronics{ background-position: 0 -542px;}
+.Perfumes{ background-position: 0 -613px;}
+.Tablets{ background-position: 0 -478px;}
+.Toys{ background-position: 0 -745px;}
+.dailyDeals{ background-position: 0 -930px;}
+.Wakeup{ background-position: 0 -1000px;}
+.Watches{ background-position: 0 -678px;}
+.mobile{ background-position: 0px -15px;}
+.homeKitchen{ background-position: 0 -810px;}
+#containerCat ul li a span {text-align: center;background-color: #89B500;color: #fff;display: none;text-decoration:none;}
+#containerCat ul li a:hover {background-position: 0px -1400px;}
+#containerCat ul li a:hover span {display:block;position:relative;width:65px;height:35px;font-weight: bold;font-size: 12px;vertical-align: bottom;cursor:pointer;cursor:hand;padding-top:15px;}
+#containerCat .currentSelection {background-position: 0px -1400px;}
+#containerCat .currentSelection span {display:block;position:relative;width:65px;height:35px;font-weight: bold;font-size: 12px;vertical-align: bottom;cursor:pointer;cursor:hand;padding-top:15px;}
+/* CATNAV ENDS */

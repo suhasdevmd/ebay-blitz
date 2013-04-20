@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<constant name="struts.enable.DynamicMethodInvocation" value="true" />
+	<constant name="struts.devMode" value="false" />
+	<constant name="struts.custom.i18n.resources" value="ApplicationResources" />
+
+	<package name="default" extends="tiles-default" namespace="/">
+		<result-types>
+			<result-type name="tiles"
+				class="org.apache.struts2.views.tiles.TilesResult" />
+		</result-types>
+
+		<action name="homepage" method="execute"
+			class="iiitb.ebay.action.HomepageAction">
+			<result name="success">welcome.jsp</result>
+			<result name="error" type="tiles">/error.tiles</result>
+		</action>
+
+
+		<!--<action name="login" method="execute" class="iiitb.ebay.action.LoginAction"> 
+			<result name="input">/login.jsp</result> <result name="success" type="tiles">/homepage.tiles</result> 
+			<result name="error" type="tiles">/error.tiles</result> </action> -->
+
+		<action name="registration" method="execute"
+			class="iiitb.ebay.users.action.LoginFirst">
+			<result name="success" type="tiles">/register.tiles</result>
+			
+		</action>
+
+		<action name="register" method="execute"
+			class="iiitb.ebay.action.RegisterAction">
+			<result name="success" type="tiles">/homepage.tiles</result>
+			<result name="duplicate" type="tiles">/error.tiles</result>
+			<result name="error" type="tiles">/error.tiles</result>
+		</action>
+
+		<action name="products" method="execute"
+			class="iiitb.ebay.users.action.ProductAction">
+			<result name="buy-it-now" type="tiles">/buy-product.tiles</result>
+			<result name="add-to-cart" type="tiles">/cart.tiles</result>
+			<result name="no-login">/login.jsp</result>
+			<result name="error" type="tiles">/error.tiles</result>
+		</action>
+
+		<action name="categories" method="execute"
+			class="iiitb.ebay.users.action.CategoryAction">
+			<result name="show-list" type="tiles">/list-products.tiles</result>
+			<result name="error" type="tiles">/error.tiles</result>
+		</action>
+
+		<action name="cart" method="execute" class="iiitb.ebay.users.action.CartAction">
+			<result name="createorder" type="redirectAction">createorder</result>
+			<result name="no-login">login.jsp</result>
+			<result name="success" type="tiles">/cart.tiles</result>
+			<result name="error" type="tiles">/error.tiles</result>
+		</action>
+		
+		<action name="buynow" method="buyNow" class="iiitb.ebay.users.action.CartAction">
+			<result name="createorder" type="redirectAction">buynowPage</result>
+			<result name="no-login">login.jsp</result>
+			<result name="success" type="tiles">/cart.tiles</result>
+			<result name="error" type="tiles">/error.tiles</result>
+		</action>
+		
+		<action name="buynowPage" method="buyNowOrder" class="iiitb.ebay.users.action.CreateOrderAction">
+			<result name="no-login">login.jsp</result>
+			<result name="success">/createorder.jsp</result>
+			<result name="error" type="tiles">/error.tiles</result>
+		</action>
+		
+		<action name="updateCart" method="updateTotal" class="iiitb.ebay.users.action.CartAction">
+			<result name="success" type="tiles">/cart.tiles</result>
+			<result name="error" type="tiles">/error.tiles</result>
+		</action>
+
+		<action name="paymentgateway" method="execute"
+			class="iiitb.ebay.users.action.PaymentAction">
+			<result name="success" type="tiles">/payment-gateway.tiles</result>
+			<result name="no-login">/login.jsp</result>
+			<result name="failure">/payment-failure.jsp</result>
+			<result name="error" type="tiles">/error.tiles</result>
+		</action>
+
+		<action name="payment" method="execute"
+			class="iiitb.ebay.users.action.PaymentAction">
+			<result name="success" type="tiles">/payment-success.tiles</result>
+			<result name="failure" type="tiles">/payment-failure.tiles</result>
+			<result name="error" type="tiles">/error.tiles</result>
+		</action>
+		<!-- <action name="trackItem" method="execute" class="iiitb.ebay.users.action.TrackItemAction"> 
+			<result name="success" type="tiles">/track-item.tiles</result> <result name="error" 
+			type="tiles">/error.tiles</result> </action> <action name="cancelOrder" method="execute" 
+			class="iiitb.ebay.users.action.CancelOrderAction"> <result name="success" 
+			type="tiles">/order-cancelled.tiles</result> <result name="failure" type="tiles">/order-cancel-failure.tiles 
+			</result> <result name="error" type="tiles">/error.tiles</result> </action> 
+			<action name="search" method="execute" class="iiitb.ebay.users.action.SearchAction"> 
+			<result name="success" type="tiles">/search-page.tiles</result> <result name="error" 
+			type="tiles">/error.tiles</result> </action> -->
+		<action name="view-order-status" method="execute"
+			class="iiitb.ebay.users.action.ViewOrderStatusAction"> <!--on clicking viewOrderStatus -->
+			<result name="success" type="tiles">/view-order-status.tiles</result>
+			<result name="error" type="tiles">/error.tiles</result>
+		</action>
+
+		<action name="tracking-info" method="execute"
+			class="iiitb.ebay.users.action.GetTrackingDetailsAction">
+			<result name="success" type="tiles">/track-info.tiles</result>
+			<result name="error" type="tiles">/error.tiles</result>
+		</action>
+
+		<action name="cancel-order" method="execute"
+			class="iiitb.ebay.users.action.CancelOrderAction">
+			<result name="success" type="tiles">/order-cancelled.tiles</result>
+			<!-- BELOW TILE IS DISPLAYED WHEN ORDER CANNOT BE CANCELLED -->
+			<result name="failure" type="tiles">/order-cancel-failure.tiles
+			</result>
+			<result name="error" type="tiles">/error.tiles</result>
+		</action>
+
+
+		<action name="getsearch" method="execute"
+			class="iiitb.ebay.users.action.SearchAction">
+			<result name="success" type="tiles">/search-results.tiles</result>
+			<result name="error" type="tiles">/error.tiles</result>
+			<result name="advanced-search" type="tiles">/advanced-search.tiles
+			</result>
+		</action>
+
+		<action name="advanced-search" method="execute"
+			class="iiitb.ebay.users.action.AdvancedSearchAction">
+			<result name="success" type="tiles">/search-results.tiles</result>
+
+		</action>
+
+
+
+		<!-- MANAGE CATEGORIES START <action name="manageCategories" method="execute" 
+			class="iiitb.ebay.admin.action.ManageCategoryAction"> <result name="success" 
+			type="tiles">/manage-categories.tiles</result> <result name="error" type="tiles">/manage-categories.tiles</result> 
+			</action> <action name="addCategory" method="addCategory" class="iiitb.ebay.admin.action.ManageCategoryAction"> 
+			<result name="success" type="tiles">/manage-categories.tiles</result> <result 
+			name="error" type="tiles">/manage-categories.tiles</result> </action> <action 
+			name="editCategory" method="editCategory" class="iiitb.ebay.admin.action.ManageCategoryAction"> 
+			<result name="success" type="tiles">/manage-categories.tiles</result> <result 
+			name="error" type="tiles">/manage-categories.tiles</result> </action> <action 
+			name="deleteCategory" method="deleteCategory" class="iiitb.ebay.admin.action.ManageCategoryAction"> 
+			<result name="success" type="tiles">/manage-categories.tiles</result> <result 
+			name="error" type="tiles">/manage-categories.tiles</result> </action> MANAGE 
+			CATEGORIES END -->
+
+		<!-- MANAGE USERS START -->
+		<action name="manageUsers" method="execute"
+			class="iiitb.ebay.admin.action.ManageUserAction">
+			<result name="success" type="tiles">/manage-users.tiles</result>
+			<result name="error" type="tiles">/error.tiles</result>
+		</action>
+
+		<action name="addUsers" method="addUsers"
+			class="iiitb.ebay.admin.action.ManageUserAction">
+			<result name="success" type="tiles">/manage-users.tiles</result>
+			<result name="error" type="tiles">/error.tiles</result>
+		</action>
+
+		<action name="editUsers" method="editUsers"
+			class="iiitb.ebay.admin.action.ManageUserAction">
+			<result name="success" type="tiles">/manage-users.tiles</result>
+			<result name="error" type="tiles">/error.tiles</result>
+		</action>
+
+		<action name="deleteUsers" method="deleteUsers"
+			class="iiitb.ebay.admin.action.ManageUserAction">
+			<result name="success" type="tiles">/manage-users.tiles</result>
+			<result name="error" type="tiles">/error.tiles</result>
+		</action>
+
+		<action name="ManageUserPostAction" method="execute"
+			class="iiitb.ebay.admin.action.ManageUserPostAction">
+			<result name="SUCCESS">/welcome.jsp</result>
+			<result name="error" type="tiles">/error.tiles</result>
+		</action>
+
+
+		<action name="viewfeedback" method="execute"
+			class="iiitb.ebay.admin.action.ViewFeedbackAction">
+			<result name="success" type="tiles">/viewfeedback.tiles</result>
+			<result name="display" type="tiles">/displayfeedback.tiles</result>
+			<result name="error" type="tiles">/error.tiles</result>
+		</action>
+
+
+
+		<!-- MANAGE USERS END -->
+
+		<action name="sellerInformation" method="execute"
+			class="iiitb.ebay.users.action.SellerInformationAction">
+			<result name="success" type="tiles">/SellerInformation.tiles</result>
+			<result name="error" type="tiles">/error.tiles</result>
+		</action>
+
+		<action name="loginfirst" class="iiitb.ebay.users.action.LoginFirst">
+			<result name="success">login.jsp</result>
+		</action>
+
+		<action name="login" class="iiitb.ebay.users.action.LoginAction">
+			<result name="success">welcome.jsp</result>
+			<result name="error">login.jsp</result>
+		</action>
+
+		<action name="addProduct" class="iiitb.ebay.admin.action.AddProductAction"
+			method="execute">
+			<result name="success" type="tiles">/add-product.tiles</result>
+			<result name="login">/login.jsp</result>
+			<result name="error" type="tiles">/error.tiles</result>
+		</action>
+
+		<action name="editProduct" class="iiitb.ebay.admin.action.EditProductAction"
+			method="execute">
+			<result name="success" type="tiles">/edit-product.tiles</result>
+			<result name="login">/login.jsp</result>
+			<result name="error" type="tiles">/error.tiles</result>
+		</action>
+
+		<action name="addProductToDB" method="addProductToDB"
+			class="iiitb.ebay.admin.action.AddProductAction">
+			<result name="success" type="tiles">/add-product.tiles</result>
+			<result name="error" type="tiles">/error.tiles</result>
+		</action>
+
+		<action name="editProductInDB" method="editProductInDB"
+			class="iiitb.ebay.admin.action.EditProductAction">
+			<result name="success" type="tiles">/Seller.tiles</result>
+			<result name="error" type="tiles">/error.tiles</result>
+		</action>
+
+		<action name="adminhome" method="execute"
+			class="iiitb.ebay.admin.action.AdminAction">
+			<result name="success" type="tiles">/Adminhome.tiles</result>
+			<result name="adminhome" type="tiles">/Adminhome.tiles</result>
+			<result name="managecat" type="tiles">/manage-categories.tiles
+			</result>
+			<result name="error" type="tiles">/error.tiles</result>
+		</action>
+		<action name="addCategory" method="addCategory"
+			class="iiitb.ebay.admin.action.ManageCategoryAction">
+			<result name="success" type="tiles">/manage-categories.tiles</result>
+			<result name="error" type="tiles">/manage-categories.tiles</result>
+		</action>
+
+
+
+		<action name="addSubCategory" method="addSubCategory"
+			class="iiitb.ebay.admin.action.ManageCategoryAction">
+			<result name="success" type="tiles">/manage-categories.tiles</result>
+			<result name="error" type="tiles">/manage-categories.tiles</result>
+		</action>
+
+		<action name="deleteCategory" method="deleteCategory"
+			class="iiitb.ebay.admin.action.ManageCategoryAction">
+			<result name="success" type="tiles">/manage-categories.tiles</result>
+			<result name="error" type="tiles">/manage-categories.tiles</result>
+		</action>
+
+
+		<action name="signoutaction" method="execute"
+			class="iiitb.ebay.users.action.SignOutAction">
+			<result name="success">welcome.jsp</result>
+		</action>
+
+		<action name="myEbay" method="execute"
+			class="iiitb.ebay.users.action.MyEbayWishlistAction">
+			<result name="products-from-wishlist" type="tiles">/myEbay.tiles
+			</result>
+			<result name="error">/login.jsp</result>
+		</action>
+
+		<action name="addToWishlist" method="execute"
+			class="iiitb.ebay.users.action.AddToWishlistAction">
+			<result name="success">/welcome.jsp</result>
+			<result name="duplicate">/welcome.jsp</result>
+			<result name="error">/login.jsp</result>
+		</action>
+
+		<action name="deletewishlist" method="execute"
+			class="iiitb.ebay.users.action.DeleteFromWishlistAction">
+			<result name="delete-from-wishlist" type="tiles">/myEbay.tiles
+			</result>
+			<result name="error">/myEbay.tiles</result>
+		</action>
+
+		<action name="deals" method="execute"
+			class="iiitb.ebay.users.action.DealsAction">
+			<result name="success">/deals.jsp</result>
+			<result name="error">/login.jsp</result>
+		</action>
+
+		<action name="sandbox" method="execute"
+			class="iiitb.ebay.users.action.DealsAction">
+			<result name="success">/homepage.jsp</result>
+		</action>
+		
+		<action name="seller" class="iiitb.ebay.users.action.SellerAction" method="passOn">
+			<result name="success" type="tiles">/Seller.tiles</result>
+		</action>
+		
+		<action name="showProducts" class="iiitb.ebay.users.action.SellerAction" method="showProducts">
+			<result name="success" type="tiles">/showProducts.tiles</result>
+			<result name="no-login">/login.jsp</result>
+		</action>
+
+		<!-- suhas - from FB -->
+
+		<action name="createorder" method="execute"
+			class="iiitb.ebay.users.action.CreateOrderAction">
+			<result name="success">/createorder.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+	
+
+		<!-- <action name="changeshippingaddress" method="execute"
+			class="iiitb.ebay.users.action.ChangeShippingAddress">
+			<result name="success">/changeshipaddress.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action> -->
+
+
+		<!-- <action name="addshippingaddress" method="addaddress"
+			class="iiitb.ebay.users.action.ChangeShippingAddress">
+			<result name="success">/changeshipaddress.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+
+
+		<action name="editshippingaddress" method="editaddress"
+			class="iiitb.ebay.users.action.ChangeShippingAddress">
+			<result name="success">/changeshipaddress.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action> -->
+
+		<!-- End -->
+		
+		
+		<action name="manageorder" method="execute"
+			class="iiitb.ebay.admin.action.ManageOrderAction">
+			<result name="success" type="tiles">/manage-order.tiles</result>
+
+		</action>
+		
+		<action name="updateorder" method="updateOrder"
+			class="iiitb.ebay.admin.action.ManageOrderAction">
+			<result name="success" type="tiles">/update-order.tiles</result>
+			<result name="error">/error.jsp</result>
+		</action>
+				
+		<action name="updateorderstatus" method="updateOrderStatus"
+			class="iiitb.ebay.admin.action.ManageOrderAction">
+			<result name="success" type="tiles">/manage-order.tiles</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		
+	
+		<action name="createorder" method="execute"
+			class="iiitb.ebay.users.action.CreateOrderAction">
+			<result name="success">/createorder.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+	
+
+		<action name="changeshippingaddress" method="execute"
+			class="iiitb.ebay.users.action.ChangeShippingAddress">
+			<result name="success">/changeshipaddress.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+
+
+		<action name="addshippingaddress" method="addaddress"
+			class="iiitb.ebay.users.action.ChangeShippingAddress">
+			<result name="success">/changeshipaddress.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+
+
+		<action name="editshippingaddress" method="editaddress"
+			class="iiitb.ebay.users.action.ChangeShippingAddress">
+			<result name="success">/changeshipaddress.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		
+		<action name="myEbayFeedback" method="execute" class="iiitb.ebay.users.action.MyEbayFeedbackAction">
+			<result name="products-bought" type="tiles">/MyEbayFeedback.tiles</result>
+			<result name="error">/login.jsp</result>
+		</action>
+		
+		<action name="GiveFeedback" method="execute" class="iiitb.ebay.users.action.GiveFeedbackAction">
+			<result name="success" type="tiles">/LeaveFeedback.tiles</result>
+			<result name="error">/login.jsp</result>
+		</action>
+		
+		<action name="LeaveFeedback" method="execute" class="iiitb.ebay.users.action.LeaveFeedbackAction">
+			<result name="success">/welcome.jsp</result>
+			<result name="error">/login.jsp</result>
+		</action>
+		
+		<action name="ViewOrdersList" method="execute" class="iiitb.ebay.action.ViewOrdersListAction">
+			<result name="success" type="tiles">/myOrders.tiles</result>
+			<result name="error">/login.jsp</result>
+		</action>
+
+
+		<action name="balance" method="execute" class="iiitb.ebay.action.BalanceAction">
+			<result name="success" type="tiles">/balance.tiles</result>
+			<result name="error">/login.jsp</result>
+		</action>
+		
+
+
+	</package>
+</struts>
