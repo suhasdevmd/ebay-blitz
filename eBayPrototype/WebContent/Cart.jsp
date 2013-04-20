@@ -94,7 +94,7 @@
 																</table>
 																<div></div>
 																form start here
-																<s:iterator value="sessionCart">
+																<s:iterator value="sessionCart" var="sC" status="stat1">
 																	<s:form name="cartform" action="updateCart" method="post">
 																		<div>
 																			<div
@@ -125,9 +125,15 @@
 																			</div>
 																			<div>
 																				<div>
-																					<s:iterator value="cartProduct">
+																				<s:set var="sid" value="%{'0'}" />
+																					<s:iterator value="cartProduct" status="stat" var="crtPdt">
 																					<!-- Hidden variables -->
-																					<s:hidden name="sellerID" />
+																					<s:hidden value="%{#crtPdt.sellerID}" name="sessionCart[%{#stat1.count-1}].cartProduct[%{#stat.count-1}].sellerID" />
+																					<s:hidden value="%{#crtPdt.productID}" name="sessionCart[%{#stat1.count-1}].cartProduct[%{#stat.count-1}].productID" />
+																					<s:hidden value="%{#crtPdt.price}" name="sessionCart[%{#stat1.count-1}].cartProduct[%{#stat.count-1}].price" />
+																					<s:hidden value="%{#crtPdt.image1}" name="sessionCart[%{#stat1.count-1}].cartProduct[%{#stat.count-1}].image1" />
+																					<s:hidden value="%{#crtPdt.sellerName}" name="sessionCart[%{#stat1.count-1}].cartProduct[%{#stat.count-1}].sellerName" />
+																					<s:set var="sid" value="#crtPdt.sellerID" />
 																					<div>
 																						<div>
 																							<div style="display: inline-block; width: 100%;">
@@ -163,7 +169,8 @@
 																											size="5" maxlength="5"
 																											class="item-quantityValue" value="1">
 																											-->
-																											<s:textfield name="quantitySelected" size="1"/>
+																											<!--<s:textfield name="quantitySelected" size="1"/>-->
+																											<s:textfield value="%{#crtPdt.quantitySelected}" name="sessionCart[%{#stat1.count-1}].cartProduct[%{#stat.count-1}].quantitySelected" size="1"/>
 																									</div>
 																									<div class="item-summ-body-subtotal-ssm">
 																										<div style="float: left; padding-left: 0px;">Rs.</div>
@@ -178,6 +185,7 @@
 																						</div>
 																					</div>
 																					</s:iterator>
+																					<s:hidden value="%{#sid}" name="sessionCart[%{#stat1.count-1}].sellerID" />
 																					<div style="margin-top: 0px;">
 																						<table width="100%"
 																							style="background-repeat: repeat;">
