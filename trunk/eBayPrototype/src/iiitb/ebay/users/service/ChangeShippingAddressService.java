@@ -27,10 +27,11 @@ public class ChangeShippingAddressService {
 			
 			
 			String insertSQL = "insert into useraddress "
-				+ "(userID,contactName,address,city,state,pincode,country,isPrimary) " + 
+				+ "(userID,contactName,address,city,state,pincode,country,isPrimary,telephone) " + 
 				"values('"+shipaddress.getUserID()+"','" + shipaddress.getContactName()
 				+ "', '" + shipaddress.getAddress()  + "', '" + shipaddress.getCity()  + "', '" + shipaddress.getState()  
-				+ "', '" + shipaddress.getPincode()  + "', '" + shipaddress.getCountry()  + "', '" + shipaddress.getIsPrimary()  + "');";
+				+ "', '" + shipaddress.getPincode()  + "', '" + shipaddress.getCountry()  + "', '" + shipaddress.getIsPrimary()
+				+ "', '" + shipaddress.getTelephone()+ "');";
 			
 			
 			
@@ -63,7 +64,7 @@ public class ChangeShippingAddressService {
 	
 	
 	
-	public ShippingAddress getPrimaryAddress(String userID){
+	public ShippingAddress getPrimaryAddress(int userID){
 		
 		ShippingAddress sa=new ShippingAddress();
 		
@@ -88,7 +89,7 @@ public class ChangeShippingAddressService {
 				sa.setUserID(String.valueOf(rs1.getInt("userID")));
 				sa.setContactName(rs1.getString("contactName"));
 				sa.setCountry(rs1.getString("country"));
-				//sa.setTelephone(rs.getInt("telephone"));
+				sa.setTelephone(Long.parseLong(rs1.getString("telephone")));
 				sa.setAddress(rs1.getString("address"));
 				sa.setPincode(rs1.getInt("pincode"));
 				sa.setCity(rs1.getString("city"));
@@ -115,6 +116,44 @@ public class ChangeShippingAddressService {
 	
 	
 	
+	
+	public String getTelephoneNumber(int userID){
+		String number="";
+		
+		
+		Connection con;
+		ResultSet rs1;
+		String query;
+
+
+		try {
+			con=DB.getConnection();
+			query="select telephone from userdetails where userID='"+userID+"'";
+			rs1=DB.readFromDB(query, con);
+			
+			System.out.println("--------> "+query);
+			
+
+			while(rs1 !=null && rs1.next()) {
+				
+			number=String.valueOf(rs1.getString("telephone"));
+
+			}
+
+			con.close();
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+
+		
+		
+		
+		
+		return number;
+	}
 	
 	
 
