@@ -1,10 +1,13 @@
 package iiitb.ebay.users.action;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 import iiitb.ebay.users.model.ShippingAddress;
+import iiitb.ebay.users.model.UserDetails;
 import iiitb.ebay.users.service.ChangeShippingAddressService;
 
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class ChangeShippingAddress extends ActionSupport{
@@ -21,7 +24,7 @@ public class ChangeShippingAddress extends ActionSupport{
 	ChangeShippingAddressService cs=new ChangeShippingAddressService();
 	ArrayList<String> stateList=new ArrayList<String>();
 	ArrayList<String> countryList=new ArrayList<String>();
-
+	Map<String,Object> session;
 
 
 
@@ -128,7 +131,10 @@ public class ChangeShippingAddress extends ActionSupport{
 	public String execute(){
 
 
-		String userID="1";
+		int userID;
+		session=ActionContext.getContext().getSession();
+		
+		userID=((UserDetails)session.get("userdetails")).getUserID();
 		ShippingAddress saddress=new ShippingAddress();
 		saddress=cs.getPrimaryAddress(userID);
 
