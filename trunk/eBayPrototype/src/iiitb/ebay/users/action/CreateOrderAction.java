@@ -27,8 +27,17 @@ public class CreateOrderAction extends ActionSupport{
 	private String state;
 	private int pincode;
 	private String country;
+	private String telephone;
 
 
+
+	public String getTelephone() {
+		return telephone;
+	}
+
+	public void setTelephone(String telephone) {
+		this.telephone = telephone;
+	}
 
 	public String getSellerID() {
 		return sellerID;
@@ -87,6 +96,12 @@ public class CreateOrderAction extends ActionSupport{
 		this.setCountry(sa.getCountry());
 		this.setPincode(sa.getPincode());
 		this.setContactName(sa.getContactName());
+		this.setTelephone(String.valueOf(sa.getTelephone()));
+		
+		
+		
+		
+		System.out.println(" The phone number (execute): "+telephone);
 
 		return SUCCESS;
 	}
@@ -130,7 +145,13 @@ public class CreateOrderAction extends ActionSupport{
 		this.setCountry(sa.getCountry());
 		this.setPincode(sa.getPincode());
 		this.setContactName(sa.getContactName());
+		this.setTelephone(String.valueOf(sa.getTelephone()));
 
+		
+		
+		System.out.println(" The phone number (buy now): "+telephone);
+		
+		
 		return SUCCESS;
 	}
 
