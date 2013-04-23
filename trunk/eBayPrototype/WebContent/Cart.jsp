@@ -194,17 +194,17 @@
 																									<td style="text-align: left"><div
 																											class="tbl1totalco50">
 																											<div style="padding-top: 5px;">
-																												<span><b id="btn_v4-3"
-																													class="bn-w bn-m bn-pad psb-S"><i>Proceed
-																															To Pay</i><span id="spn_btn_v4-3"
-																														class="bn-b psb-b psb-S"> <!-- SUBMIT BUTTON HERER -->
-																															<input id="but_btn_v4-3" name="continue"
-																															value="Proceed To Pay" title=""
-																															type="submit"><b
-																															id="txt_btn_v4-3">Proceed To Pay</b> </span> </b> </span><span
-																													style="padding-left: 5px">The next
-																													step is to select shipping method.</span>
-																											</div>
+																							<span><b id="btn_v4-3"
+																								class="bn-w bn-m bn-pad psb-S"><i>Proceed</i><span
+																									id="spn_btn_v4-3" class="bn-b psb-b psb-S">
+																										<!-- <input id="but_btn_v4-3" name="continue"
+																										value="Proceed" title="" type="submit"> -->
+																										<a id="but_btn_v4-3" name="continue" 
+																										href="createorder.action?sellerID=<s:property value="sellerID"/>">Proceed</a> <b
+																										id="txt_btn_v4-3">Proceed</b> </span> </b> </span><span
+																								style="padding-left: 5px">The next step
+																								is to select shipping method.</span>
+																						</div>
 																										</div></td>
 																									<td style="text-align: right; width: 206px"><div>
 																											<div class="totalDivMain">
