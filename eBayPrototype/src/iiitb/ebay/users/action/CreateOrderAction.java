@@ -79,7 +79,7 @@ public class CreateOrderAction extends ActionSupport{
 
 
 		ChangeShippingAddressService csas = new ChangeShippingAddressService();
-		ShippingAddress sa = csas.getPrimaryAddress(userIDstring);
+		ShippingAddress sa = csas.getPrimaryAddress(userID);
 
 		this.setAddress(sa.getAddress());
 		this.setCity(sa.getCity());
@@ -122,7 +122,7 @@ public class CreateOrderAction extends ActionSupport{
 
 */
 		ChangeShippingAddressService csas = new ChangeShippingAddressService();
-		ShippingAddress sa = csas.getPrimaryAddress(userIDstring);
+		ShippingAddress sa = csas.getPrimaryAddress(userID);
 
 		this.setAddress(sa.getAddress());
 		this.setCity(sa.getCity());
