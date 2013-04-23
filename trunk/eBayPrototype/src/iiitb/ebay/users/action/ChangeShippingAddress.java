@@ -19,7 +19,7 @@ public class ChangeShippingAddress extends ActionSupport{
 	private String state;
 	private int pincode;
 	private String country;
-	private int telephone;
+	private long telephone;
 	private String isPrimary;
 	ChangeShippingAddressService cs=new ChangeShippingAddressService();
 	ArrayList<String> stateList=new ArrayList<String>();
@@ -108,12 +108,12 @@ public class ChangeShippingAddress extends ActionSupport{
 	}
 
 
-	public int getTelephone() {
+	public long getTelephone() {
 		return telephone;
 	}
 
 
-	public void setTelephone(int telephone) {
+	public void setTelephone(long telephone) {
 		this.telephone = telephone;
 	}
 
@@ -145,10 +145,12 @@ public class ChangeShippingAddress extends ActionSupport{
 		state=saddress.getState();
 		pincode=saddress.getPincode();
 		country=saddress.getCountry();
-		//telephone=saddress.getTelephone();
+		telephone=saddress.getTelephone();
 		isPrimary=saddress.getIsPrimary();
 
 
+		
+		System.out.println("The tele in change ship address : "+telephone);
 
 
 		populateStateList();
