@@ -445,7 +445,7 @@ div.btnMsgBar input.btnMsgBar-bTxt {
 								<table id="gh-t">
 									<tbody>
 										<tr>
-											<td id="gh-l"><a href="http://www.ebay.in"
+											<td id="gh-l"><a href="homepage.action"
 												_sp="m570.l2586" id="gh-la">eBay<img alt="" src=""
 													id="gh-logo" border="0"> </a>
 											</td>
@@ -811,34 +811,34 @@ div.btnMsgBar input.btnMsgBar-bTxt {
 									<tr>
 										<td class="g-pipe"><ul role="directory" id="gf-l">
 												<li><a role="link"
-													href="http://pages.ebay.in/aboutebay.html">About eBay</a>
+													href="homepage.action">About eBay</a>
 												</li>
 												<li><a role="link"
-													href="http://www2.ebay.com/aw/marketing-in.shtml">Announcements</a>
+													href="deals.action">Announcements</a>
 												</li>
 												<li><a _sp="m571.l2894" role="link"
-													href="http://hub.shop.ebay.in">Buy Hub</a>
+													href="homepage.action">Buy Hub</a>
 												</li>
 												<li><a role="link"
-													href="https://scgi.ebay.in/ws/eBayISAPI.dll?RegisterEnterInfo">Register</a>
+													href="registration.action">Register</a>
 												</li>
 												<li><a role="link"
-													href="http://pages.ebay.in/securitycentre/index.html">Security
+													href="">Security
 														&amp; Resolution Centre</a>
 												</li>
 												<li><a role="link"
-													href="http://pages.ebay.in/services/forum/feedback.html">Feedback
+													href="">Feedback
 														Forum</a>
 												</li>
 												<li><a _sp="m571.l1625" role="link"
-													href="http://pages.ebay.in/sitemap.html">Site Map</a>
+													href="homepage.actionl">Site Map</a>
 												</li>
 												<li><a role="link"
-													href="http://ocs.ebay.in/ws/eBayISAPI.dll?CustomerSupportRedirect&amp;target=help">Customer
+													href="homepage.action">Customer
 														Support</a>
 												</li>
 												<li><a role="link"
-													href="http://pages.ebay.in/advertising/">Advertise with
+													href="deals.action">Advertise with
 														us</a>
 												</li>
 											</ul>
