@@ -10,7 +10,7 @@ public class ShippingAddress {
 	private String state;
 	private int pincode;
 	private String country;
-	private int telephone;
+	private long telephone;
 	private String isPrimary;
 	
 	
@@ -57,10 +57,10 @@ public class ShippingAddress {
 	public void setCountry(String country) {
 		this.country = country;
 	}
-	public int getTelephone() {
+	public long getTelephone() {
 		return telephone;
 	}
-	public void setTelephone(int telephone) {
+	public void setTelephone(long telephone) {
 		this.telephone = telephone;
 	}
 	public String getIsPrimary() {
