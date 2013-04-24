@@ -7,6 +7,7 @@ public class Orders {
 	private String shippingStatus;
 	private int userID;
 	private String trackingDetails;
+	private int sellerID;
 	
 	
 	public int getOrderID() {
@@ -38,6 +39,12 @@ public class Orders {
 	}
 	public void setTrackingDetails(String trackingDetails) {
 		this.trackingDetails = trackingDetails;
+	}
+	public int getSellerID() {
+		return sellerID;
+	}
+	public void setSellerID(int sellerID) {
+		this.sellerID = sellerID;
 	}
 	
 }

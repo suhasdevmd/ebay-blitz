@@ -4,6 +4,7 @@ import iiitb.ebay.model.Balance;
 import iiitb.ebay.model.OrderItemwithProductName;
 import iiitb.ebay.model.Transactions;
 import iiitb.ebay.service.OrderService;
+import iiitb.ebay.service.PaymentInfoService;
 import iiitb.ebay.service.ShippingDetailsService;
 import iiitb.ebay.service.TransactionService;
 import iiitb.ebay.users.model.CardDetails;
@@ -36,12 +37,13 @@ public class PaymentAction extends ActionSupport {
 	private String state;
 	private int pincode;
 	private String country;
-	private String productName=new String();
+	private String productName = new String();
 	private String errorMsg;
 	double balance;
-	public ArrayList<Transactions> transactionList=new ArrayList<Transactions>();
-	public ArrayList<Balance> balanceList=new ArrayList<Balance>();
-	public ArrayList<OrderItemwithProductName> orderItemwithProductName=new ArrayList<OrderItemwithProductName>();
+	public ArrayList<Transactions> transactionList = new ArrayList<Transactions>();
+	public ArrayList<Balance> balanceList = new ArrayList<Balance>();
+	public ArrayList<OrderItemwithProductName> orderItemwithProductName = new ArrayList<OrderItemwithProductName>();
+
 	public ArrayList<Transactions> getTransactionList() {
 		return transactionList;
 	}
@@ -75,54 +77,32 @@ public class PaymentAction extends ActionSupport {
 	private static final int credit = 2;
 	private static final int debit = 3;
 	private static final int paisaPay = 4;
+	private static final int eBayID = 14;
 
 	@SuppressWarnings("unchecked")
 	public String execute() {
 		UserDetails ud;
+		int transactionID = 0;
+		int shippingID = 0 ;
+		int orderID = 0;
+		
+		
 		ArrayList<Cart> sessionCart = null;
 		session = ActionContext.getContext().getSession();
 
-
-		System.out.println("PAYMENT ACTION----"+this.getAmount());
+		System.out.println("PAYMENT ACTION----" + this.getAmount());
 
 		System.out.println("--in payment action--");
-		/*	System.out.println("--" + sellerID + "--" + address + "--" + city
-				+ "--" + state + "--" + pincode + "--" + country + "--"
-				+ pageFlag + "--" + contactName);
+		/*
+		 * System.out.println("--" + sellerID + "--" + address + "--" + city +
+		 * "--" + state + "--" + pincode + "--" + country + "--" + pageFlag +
+		 * "--" + contactName);
 		 */
 		if (null == session.get("login"))
 			return "no-login";
 		ud = (UserDetails) session.get("userdetails");
 
-
-
-		/*	
-		System.out.println("orderID "+orderID);
-		balanceList=PaymentService.fetchBalance(ud.getUserID());
-		transactionList=PaymentService.fetchTransactions(ud.getUserID());
-
-
-
-
-		System.out.println("Balance Table");
-		for(int j=0;j<balanceList.size();j++){
-			System.out.println(balanceList.get(j).getMode()+"  "+balanceList.get(j).getAmount());
-		}
-
-		System.out.println("Transaction Table");
-		for(int j=0;j<transactionList.size();j++){
-			System.out.println(transactionList.get(j).getDate()+"  "+transactionList.get(j).getSenderID()+"  "+transactionList.get(j).getTransactionID()
-					+"  "+transactionList.get(j).getReceiverID()+transactionList.get(j).getDetails());
-		}
-
-
-		System.out.println("Order Table"+orderItemwithProductName.size());
-		for(int j=0;j<orderItemwithProductName.size();j++){
-			System.out.println(orderItemwithProductName.get(j).getAmount()+"  "+orderItemwithProductName.get(j).getOrderID()+"  "+orderItemwithProductName.get(j).getQuantity()
-					+"  "+orderItemwithProductName.get(j).getProductID()+"  "+orderItemwithProductName.get(j).getProductName());
-		}
-
-		 */		
+		
 		if (pageFlag.equalsIgnoreCase("Buy")) {
 			System.out.println("Buy");
 			this.setAddress(this.address + "," + this.city + "," + this.state
@@ -138,20 +118,22 @@ public class PaymentAction extends ActionSupport {
 
 			return "success";
 		} else {
-			//			ud = (UserDetails) session.get("userdetails");
+			// ud = (UserDetails) session.get("userdetails");
 			if (paymentMethod == cash) {
 				balance = PaymentService.checkBalance(cash, ud.getUserID());
 				if (amount > balance) {
 					errorMsg = "Insufficient balance in user account";
-					balanceList=PaymentService.fetchBalance(ud.getUserID());
-					transactionList=PaymentService.fetchTransactions(ud.getUserID());
+					balanceList = PaymentService.fetchBalance(ud.getUserID());
+					transactionList = PaymentService.fetchTransactions(ud
+							.getUserID());
 					return "failure";
 				}
 				if (!PaymentService.updateAmount(cash, balance - amount,
 						ud.getUserID())) {
 					errorMsg = "Error. Transaction could not be completed successfully";
-					balanceList=PaymentService.fetchBalance(ud.getUserID());
-					transactionList=PaymentService.fetchTransactions(ud.getUserID());
+					balanceList = PaymentService.fetchBalance(ud.getUserID());
+					transactionList = PaymentService.fetchTransactions(ud
+							.getUserID());
 					return "failure";
 				}
 			} else if (paymentMethod == paisaPay) {
@@ -159,15 +141,17 @@ public class PaymentAction extends ActionSupport {
 				balance = PaymentService.checkBalance(paisaPay, ud.getUserID());
 				if (amount > balance) {
 					errorMsg = "Insufficient balance in paisaPay account";
-					balanceList=PaymentService.fetchBalance(ud.getUserID());
-					transactionList=PaymentService.fetchTransactions(ud.getUserID());
+					balanceList = PaymentService.fetchBalance(ud.getUserID());
+					transactionList = PaymentService.fetchTransactions(ud
+							.getUserID());
 					return "failure";
 				}
 				if (!PaymentService.updateAmount(paisaPay, balance - amount,
 						ud.getUserID())) {
 					errorMsg = "Error. Transaction could not be completed successfully";
-					balanceList=PaymentService.fetchBalance(ud.getUserID());
-					transactionList=PaymentService.fetchTransactions(ud.getUserID());
+					balanceList = PaymentService.fetchBalance(ud.getUserID());
+					transactionList = PaymentService.fetchTransactions(ud
+							.getUserID());
 					return "failure";
 				}
 			} else if (paymentMethod == credit) {
@@ -181,25 +165,29 @@ public class PaymentAction extends ActionSupport {
 				cd.setCvv(cvv);
 				cd.setExpiryDate(expiryDate);
 
-				if (!PaymentService.checkCardDetails(credit, cd, ud.getUserID())) {
+				if (!PaymentService
+						.checkCardDetails(credit, cd, ud.getUserID())) {
 					errorMsg = "Credit card details do not match";
-					balanceList=PaymentService.fetchBalance(ud.getUserID());
-					transactionList=PaymentService.fetchTransactions(ud.getUserID());
+					balanceList = PaymentService.fetchBalance(ud.getUserID());
+					transactionList = PaymentService.fetchTransactions(ud
+							.getUserID());
 					return "failure";
 				}
 				balance = PaymentService.checkBalance(credit, ud.getUserID());
-				System.out.println("Credit Card "+balance+" "+amount);
+				System.out.println("Credit Card " + balance + " " + amount);
 				if (amount > balance) {
 					errorMsg = "Insufficient balance in credit card";
-					balanceList=PaymentService.fetchBalance(ud.getUserID());
-					transactionList=PaymentService.fetchTransactions(ud.getUserID());
+					balanceList = PaymentService.fetchBalance(ud.getUserID());
+					transactionList = PaymentService.fetchTransactions(ud
+							.getUserID());
 					return "failure";
 				}
 				if (!PaymentService.updateAmount(credit, balance - amount,
 						ud.getUserID())) {
 					errorMsg = "Error. Transaction could not be completed successfully";
-					balanceList=PaymentService.fetchBalance(ud.getUserID());
-					transactionList=PaymentService.fetchTransactions(ud.getUserID());
+					balanceList = PaymentService.fetchBalance(ud.getUserID());
+					transactionList = PaymentService.fetchTransactions(ud
+							.getUserID());
 					return "failure";
 				}
 			} else if (paymentMethod == debit) {
@@ -215,61 +203,80 @@ public class PaymentAction extends ActionSupport {
 
 				if (!PaymentService.checkCardDetails(debit, cd, ud.getUserID())) {
 					errorMsg = "Debit card details do not match";
-					balanceList=PaymentService.fetchBalance(ud.getUserID());
-					transactionList=PaymentService.fetchTransactions(ud.getUserID());
+					balanceList = PaymentService.fetchBalance(ud.getUserID());
+					transactionList = PaymentService.fetchTransactions(ud
+							.getUserID());
 					return "failure";
 				}
 				balance = PaymentService.checkBalance(debit, ud.getUserID());
 				if (amount > balance) {
 					errorMsg = "Insufficient balance in debit card";
-					balanceList=PaymentService.fetchBalance(ud.getUserID());
-					transactionList=PaymentService.fetchTransactions(ud.getUserID());
+					balanceList = PaymentService.fetchBalance(ud.getUserID());
+					transactionList = PaymentService.fetchTransactions(ud
+							.getUserID());
 					return "failure";
 				}
 				if (!PaymentService.updateAmount(debit, balance - amount,
 						ud.getUserID())) {
 					errorMsg = "Error. Transaction could not be completed successfully";
-					balanceList=PaymentService.fetchBalance(ud.getUserID());
-					transactionList=PaymentService.fetchTransactions(ud.getUserID());
+					balanceList = PaymentService.fetchBalance(ud.getUserID());
+					transactionList = PaymentService.fetchTransactions(ud
+							.getUserID());
 					return "failure";
 				}
 			}
 		}
-		/* add 5% commission to ebay account */
-		balance = PaymentService.checkBalance(ebay, 1);
-		System.out.println("ebay balance "+balance);
-		PaymentService.updateAmount(ebay, balance + (amount * 0.05), 1);
 
-		/* deduct ebay share of 5% and pass on money to seller */
-		balance = PaymentService.checkBalance(cash, sellerID);
-		PaymentService.updateAmount(cash, balance + (amount - (amount * 0.05)),
-				this.getSellerID());
+		if (paymentMethod != paisaPay) {
+			/* add 5% commission to ebay account */
+			balance = PaymentService.checkBalance(ebay, 1);
+			System.out.println("ebay balance " + balance);
+			PaymentService.updateAmount(ebay, balance + (amount * 0.05), 1);
 
-		/* add transaction from buyer to ebay */
-		TransactionService.makeTransaction(
-				"5% Commision transfer Buyer to eBay: Total Amount="
-				+ this.getAmount() * 0.05,
-				TransactionService.getDateNow(), ud.getUserID(), 14);
-		TransactionService.makeTransaction(
-				"Transfer eBay to Seller: Total Amount="
-				+ (this.getAmount() - this.getAmount() * 0.05),
-				TransactionService.getDateNow(), 14, this.getSellerID());
+			/* deduct ebay share of 5% and pass on money to seller */
+			balance = PaymentService.checkBalance(cash, sellerID);
+			PaymentService.updateAmount(cash, balance
+					+ (amount - (amount * 0.05)), this.getSellerID());
 
+			/* add transaction from buyer to ebay */
+			transactionID = TransactionService.makeTransaction(
+					"5% Commision transfer Buyer to eBay: Total Amount="
+							+ this.getAmount() * 0.05,
+					TransactionService.getDateNow(), ud.getUserID(), eBayID);
+			
+			/*  add transaction from eBay to Seller */
+			TransactionService.makeTransaction(
+					"Transfer eBay to Seller: Total Amount= Rs."
+							+ (this.getAmount() - this.getAmount() * 0.05),
+					TransactionService.getDateNow(), eBayID, this.getSellerID());
+		}
+		else{
+			/* Transfer all money to eBay */
+			balance = PaymentService.checkBalance(ebay, paisaPay);
+			System.out.println("ebay balance " + balance);
+			PaymentService.updateAmount(ebay, balance + amount, paisaPay);
 
-		int orderID = OrderService.createOrder(this.getAmount(),
+			/* add transaction from buyer to ebay */
+			transactionID = TransactionService.makeTransaction(
+					"Amount Secured With eBay: Total Amount= Rs."
+							+ this.getAmount(),
+					TransactionService.getDateNow(), ud.getUserID(), eBayID);
+			
+		}
+
+		 orderID = OrderService.createOrder(this.getAmount(),
 				OrderService.INITIATE, ud.getUserID(),
-		"Your transaction is being processed");
-
+				"Your transaction is being processed",sellerID);
 
 		sessionCart = (ArrayList<Cart>) session.get("SessionCart");
-		System.out.println("Session Cart"+sessionCart.size());
+		System.out.println("Session Cart" + sessionCart.size());
 		for (int i = 0; i < sessionCart.size(); i++) {
 			if (sessionCart.get(i).getSellerID()
 					.equalsIgnoreCase(String.valueOf(sellerID))) {
 				int productListSize = sessionCart.get(i).getCartProduct()
-				.size();
+						.size();
 				ArrayList<Category> tempProdList = sessionCart.get(i)
-				.getCartProduct();
+						.getCartProduct();
 				for (int j = 0; j < productListSize; j++) {
 					OrderService.insertOrderItems(Integer.parseInt(tempProdList
 							.get(j).getProductID()), orderID,
@@ -277,33 +284,26 @@ public class PaymentAction extends ActionSupport {
 									.getQuantitySelected()), tempProdList
 									.get(j).getSubTotal());
 
-
-
 				}
 
 			}
 		}
 
-
-		orderItemwithProductName=PaymentService.fetchOredrItem(orderID);
+		orderItemwithProductName = PaymentService.fetchOredrItem(orderID);
 
 		/* add shipping details */
-		ShippingDetailsService.addShippingDetails(this.getContactName(),
+		shippingID = ShippingDetailsService.addShippingDetails(this.getContactName(),
 				this.getAmount(), this.getAddress(),
 				ShippingDetailsService.getDateNow(), orderID, sellerID, "DHL",
-		"852741963");
+				"852741963");
 
 		/* transaction details for display */
-		balanceList=PaymentService.fetchBalance(ud.getUserID());
-		transactionList=PaymentService.fetchTransactions(ud.getUserID());
-
+		balanceList = PaymentService.fetchBalance(ud.getUserID());
+		transactionList = PaymentService.fetchTransactions(ud.getUserID());
 
 		/* deduct quantity and remove from cart */
 
-
-
-		SignOutService.updateCartTable(sessionCart,ud.getUserID());
-
+		SignOutService.updateCartTable(sessionCart, ud.getUserID());
 
 		CartService.UpdateQuantities(String.valueOf(sellerID));
 
@@ -317,141 +317,152 @@ public class PaymentAction extends ActionSupport {
 			}
 		}
 
+		for (int i = 0; i < sessionCart.size(); i++) {
+			if (sessionCart.get(i).getSellerID().equals(sellerID)) {
+				/*
+				 * CartService.removeFromCart(sessionCart.get(i).getCartProduct()
+				 * .get(j).getProductID(),
+				 * sessionCart.get(i).getCartProduct().get
+				 * (j).getSellerID(),userID);
+				 */
 
-		for(int i=0;i<sessionCart.size();i++){				
-			if(sessionCart.get(i).getSellerID().equals(sellerID)){
-				/*CartService.removeFromCart(sessionCart.get(i).getCartProduct().get(j).getProductID(),
-							sessionCart.get(i).getCartProduct().get(j).getSellerID(),userID);*/
-				
 				System.out.println("  wooooorking      -------------- ");
-				
+
 				sessionCart.remove(i);
-				session.put("SessionCart" , sessionCart);
+				session.put("SessionCart", sessionCart);
 			}
 
-
-			if(sessionCart.get(i).getCartProduct().size() == 0){
+			if (sessionCart.get(i).getCartProduct().size() == 0) {
 				sessionCart.remove(i);
 			}
+			
+			
+			/* Payment Information */
+			String mode="invalid";
+			if(paymentMethod == cash)
+				mode = "cash";
+			else if(paymentMethod == credit)
+				mode = "credit";
+			else if(paymentMethod == debit)
+				mode = "debit";
+			else if(paymentMethod == paisaPay)
+				mode = "paisaPay";
+			PaymentInfoService.addPaymentInfo(mode, transactionID, PaymentInfoService.getDateNow(), orderID, shippingID,amount);
+			
 		}
 
-
-
-
-
-
-			return "success";
-		}
-
-		public double getAmount() {
-			return amount;
-		}
-
-		public void setAmount(double amount) {
-			this.amount = amount;
-		}
-
-		public int getPaymentMethod() {
-			return paymentMethod;
-		}
-
-		public void setPaymentMethod(int paymentMethod) {
-			this.paymentMethod = paymentMethod;
-		}
-
-		public String getCardNumber() {
-			return cardNumber;
-		}
-
-		public void setCardNumber(String cardNumber) {
-			this.cardNumber = cardNumber;
-		}
-
-		public String getExpiryDate() {
-			return expiryDate;
-		}
-
-		public void setExpiryDate(String expiryDate) {
-			this.expiryDate = expiryDate;
-		}
-
-		public String getCvv() {
-			return cvv;
-		}
-
-		public void setCvv(String cvv) {
-			this.cvv = cvv;
-		}
-
-		public String getErrorMsg() {
-			return errorMsg;
-		}
-
-		public void setErrorMsg(String errorMsg) {
-			this.errorMsg = errorMsg;
-		}
-
-		public String getPageFlag() {
-			return pageFlag;
-		}
-
-		public void setPageFlag(String pageFlag) {
-			this.pageFlag = pageFlag;
-		}
-
-		public int getSellerID() {
-			return sellerID;
-		}
-
-		public void setSellerID(int sellerID) {
-			this.sellerID = sellerID;
-		}
-
-		public String getContactName() {
-			return contactName;
-		}
-
-		public void setContactName(String contactName) {
-			this.contactName = contactName;
-		}
-
-		public String getAddress() {
-			return address;
-		}
-
-		public void setAddress(String address) {
-			this.address = address;
-		}
-
-		public String getCity() {
-			return city;
-		}
-
-		public void setCity(String city) {
-			this.city = city;
-		}
-
-		public String getState() {
-			return state;
-		}
-
-		public void setState(String state) {
-			this.state = state;
-		}
-
-		public int getPincode() {
-			return pincode;
-		}
-
-		public void setPincode(int pincode) {
-			this.pincode = pincode;
-		}
-
-		public String getCountry() {
-			return country;
-		}
-
-		public void setCountry(String country) {
-			this.country = country;
-		}
+		return "success";
 	}
+
+	public double getAmount() {
+		return amount;
+	}
+
+	public void setAmount(double amount) {
+		this.amount = amount;
+	}
+
+	public int getPaymentMethod() {
+		return paymentMethod;
+	}
+
+	public void setPaymentMethod(int paymentMethod) {
+		this.paymentMethod = paymentMethod;
+	}
+
+	public String getCardNumber() {
+		return cardNumber;
+	}
+
+	public void setCardNumber(String cardNumber) {
+		this.cardNumber = cardNumber;
+	}
+
+	public String getExpiryDate() {
+		return expiryDate;
+	}
+
+	public void setExpiryDate(String expiryDate) {
+		this.expiryDate = expiryDate;
+	}
+
+	public String getCvv() {
+		return cvv;
+	}
+
+	public void setCvv(String cvv) {
+		this.cvv = cvv;
+	}
+
+	public String getErrorMsg() {
+		return errorMsg;
+	}
+
+	public void setErrorMsg(String errorMsg) {
+		this.errorMsg = errorMsg;
+	}
+
+	public String getPageFlag() {
+		return pageFlag;
+	}
+
+	public void setPageFlag(String pageFlag) {
+		this.pageFlag = pageFlag;
+	}
+
+	public int getSellerID() {
+		return sellerID;
+	}
+
+	public void setSellerID(int sellerID) {
+		this.sellerID = sellerID;
+	}
+
+	public String getContactName() {
+		return contactName;
+	}
+
+	public void setContactName(String contactName) {
+		this.contactName = contactName;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+	public String getState() {
+		return state;
+	}
+
+	public void setState(String state) {
+		this.state = state;
+	}
+
+	public int getPincode() {
+		return pincode;
+	}
+
+	public void setPincode(int pincode) {
+		this.pincode = pincode;
+	}
+
+	public String getCountry() {
+		return country;
+	}
+
+	public void setCountry(String country) {
+		this.country = country;
+	}
+}

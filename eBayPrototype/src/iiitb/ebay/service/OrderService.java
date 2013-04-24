@@ -24,18 +24,18 @@ public class OrderService {
 	public static final String DELIVERED = "DELIVERED";
 
 	public static int createOrder(double amount, String shippingStatus,
-			int userID, String trackingDetails) {
+			int userID, String trackingDetails, int sellerID) {
 		try {
 			con = DB.getConnection();
 			stmt = con.createStatement();
-			query = "INSERT INTO `orders` (`totalAmt` ,`shippingStatus` ,`userID` ,`trackingDetails`) VALUES ("
+			query = "INSERT INTO `orders` (`totalAmt` ,`shippingStatus` ,`userID` ,`trackingDetails`, `sellerID`) VALUES ("
 					+ amount
 					+ ",'"
 					+ shippingStatus
 					+ "',"
 					+ userID
 					+ ",'"
-					+ trackingDetails + "')";
+					+ trackingDetails + "',"+sellerID +")";
 			System.out.println("orders Query " + query);
 			stmt.executeUpdate(query, Statement.RETURN_GENERATED_KEYS);
 
@@ -110,7 +110,7 @@ public class OrderService {
 				order.setTotalAmt(rs.getDouble("totalAmt"));
 				order.setTrackingDetails(rs.getString("trackingDetails"));
 				order.setUserID(rs.getInt("userID"));
-				
+				order.setSellerID(rs.getInt("sellerID"));
 				orderList.add(order);
 			}
 			con.close();
@@ -121,6 +121,29 @@ public class OrderService {
 
 		return orderList;
 
+	}
+	
+	
+	public static String getParam(String paramName,String tableName, String whereClause) {
+		Connection con;
+		ResultSet rs;
+		String query;
+		String value = null;
+		try {
+			con = DB.getConnection();
+			query = "SELECT " + paramName + " FROM "+tableName+" "+ whereClause;
+
+			rs = DB.readFromDB(query, con);
+			while (rs.next()) {
+				value = rs.getString(paramName);
+			}
+			con.close();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return value;
 	}
 
 }

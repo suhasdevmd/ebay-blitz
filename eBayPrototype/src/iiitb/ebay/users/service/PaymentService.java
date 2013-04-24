@@ -109,7 +109,7 @@ public class PaymentService {
 		con = DB.getConnection();
 		
 		
-			String query = "select details,receiverID,senderID,transactionID,date from transactions where senderID="+Id+";";
+			String query = "select details,receiverID,senderID,transactionID,date from transactions where senderID="+Id+" or receiverID="+Id+";";
 			System.out.println(query);
 			rs = DB.readFromDB(query, con);
 			try {
@@ -259,11 +259,14 @@ public class PaymentService {
 		}
 		else if (method == ebay) {
 			// Hard coded for Ebay
-			query = "select balance from accountdetails where accID=1";
+			if( userID != paisaPay)
+				query = "select balance from accountdetails where accID=1";
+			else
+				query = "select paisaPayBalance from accountdetails where accID=1";
 			rs = DB.readFromDB(query, con);
 			try {
 				if (rs.next())
-					balance = rs.getDouble("balance");
+					balance = rs.getDouble("paisaPayBalance");
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
@@ -354,8 +357,10 @@ public class PaymentService {
 			status = DB.update(con,query);
 		}
 		else if(method == ebay) {
-			// Hard coded userID=1
-			query = "UPDATE accountdetails SET balance=" + amount + " where accID=1";
+			if(userID != paisaPay)
+				query = "UPDATE accountdetails SET balance=" + amount + " where accID=1";
+			else
+				query = "UPDATE accountdetails SET paisaPayBalance=" + amount + " where accID=1";
 			status = DB.update(con,query);
 		}
 		

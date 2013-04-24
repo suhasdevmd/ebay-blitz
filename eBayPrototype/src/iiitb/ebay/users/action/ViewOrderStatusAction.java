@@ -2,6 +2,8 @@ package iiitb.ebay.users.action;
 
 import java.util.ArrayList;
 import java.util.Map;
+
+import iiitb.ebay.users.model.UserDetails;
 import iiitb.ebay.users.model.ViewOrderStatusModel;
 import iiitb.ebay.users.service.ViewOrderStatusService;
 import com.opensymphony.xwork2.ActionContext;
@@ -79,11 +81,12 @@ public class ViewOrderStatusAction extends ActionSupport {
 		int userID=0;
 		
 		
-/* 
+ 
 		Map<String,Object> session  =  ActionContext.getContext().getSession();
-		userID = (Integer) session.get(userID); */
-		userID = 1; // hardcoding for now
-		this.setOrderID(2); //hardcoding for now ;it has to come from jsp
+		UserDetails ud = (UserDetails) session.get("userdetails"); 
+		userID = ud.getUserID();
+		//userID = 1; // hardcoding for now
+		this.setOrderID(this.getOrderID()); //hardcoding for now ;it has to come from jsp
 		ViewOrderStatusService itemService = new ViewOrderStatusService();
 		//itemList = itemService.GetItemDetails(userID);
 		itemList = itemService.GetOrderItems(this.orderID);
@@ -95,14 +98,14 @@ public class ViewOrderStatusAction extends ActionSupport {
 			this.setShippingStatus(itemList.get(0).getShippingStatus());
 			this.setTrackingDetails(itemList.get(0).getTrackingDetails());
 			
-		/*test 
+		 
 			for(int i=0;i<(itemList.size());i++){
 				
 				//	System.out.println("itemList.ProductID  " + itemList.get(i).getProductID() );
 				System.out.println("itemList.Quantity  " + itemList.get(i).getQuantity() );
 				System.out.println("itemList.ItemImage  " + itemList.get(i).getItemImage() );
 			}
-			*/
+			
 			return "success";
 		}
 		else
