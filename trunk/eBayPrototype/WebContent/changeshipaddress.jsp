@@ -11,6 +11,24 @@
 <link rel="stylesheet" type="text/css" href="css/all.min.css">
 </head>
 <body bgcolor="#ffffff">
+
+
+
+
+
+
+
+
+<s:iterator value="addr"> check <s:property value="address"/> </s:iterator>
+
+
+
+
+
+
+
+
+
 	<a name="top"></a>
 	<div class="pagewidth">
 		<div class="pageminwidth">
@@ -195,12 +213,15 @@
 																						for purchases</span><br>
 																				</td>
 																				<td width="25%">
+																				
+																				
+																		
 																					<table cellpadding="0" cellspacing="2" width="100%">
 																						<tbody>
 																						
 																						
 																						
-																		<s:form action="shiptoaddress" method="POST">				
+																		<%-- <s:form action="shiptoaddress" method="POST">				
 																						
 																			<!-- Enter the shippping address values  -->			
 																						
@@ -247,7 +268,80 @@
 																				</td>
 																				
 																				
-																		</s:form>		
+																		</s:form>		 --%>
+																		
+																		
+																		
+																			<tr>
+																		<s:iterator value="addr">	
+																		<s:form action="shiptoaddress" method="POST">				
+																			
+																			
+																					
+																			<!-- Enter the shippping address values  -->			
+																						
+																			
+																						
+																				<s:hidden value="contactName"></s:hidden>
+																				<s:hidden name="contactName"></s:hidden>		
+																				<s:hidden name="address"></s:hidden>
+																				<s:hidden name="city"></s:hidden>
+																				<s:hidden name="state"></s:hidden>
+																				<s:hidden name="pincode"></s:hidden>
+																				<s:hidden name="country"></s:hidden>
+																				<s:hidden name="telephone"></s:hidden>
+																						
+																						
+																						
+																						
+																						
+																								<td><s:property value="contactName"/><br><s:property value="address"/><br><s:property value="city"/>,
+																									<s:property value="state"/> <s:property value="pincode"/><br><s:property value="country"/><br><s:property value="telephone"/><br>
+																			
+																							</tr>
+																							
+																							
+																							
+																							
+																							
+																						</tbody>
+																					</table>
+																			
+																			
+																					
+																					
+																					
+																					<img
+																					src="https://securepics.ebaystatic.com/aw/pics/s.gif"
+																					vspace="2" alt=" "><br>
+																				</td>
+																				<td valign="top" width="30%">
+																				
+																				
+																			<!-- 	<input
+																					type="submit" value="Ship to This Address"> -->
+																				
+																				
+																				
+																				<s:submit value="Ship to This Address"></s:submit>
+																				
+																				
+																				
+																				</td>
+																			
+																				
+																		</s:form>
+																		
+																		</s:iterator>
+																		
+																		
+																		
+																		
+																		
+																		
+																		
+																		
+																		
 																			<!-- Sending the values when the edit button is clicked -->	
 																				
 																				<td nowrap="true" valign="top" align="right">
