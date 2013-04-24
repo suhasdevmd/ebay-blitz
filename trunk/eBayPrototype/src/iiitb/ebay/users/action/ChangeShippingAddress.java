@@ -18,16 +18,54 @@ public class ChangeShippingAddress extends ActionSupport{
 	private String address;
 	private String city;
 	private String state;
-	private int pincode;
+	private String pincode;
 	private String country;
-	private long telephone;
+	private String telephone;
 	private String isPrimary;
 	ChangeShippingAddressService cs=new ChangeShippingAddressService();
 	ArrayList<String> stateList=new ArrayList<String>();
 	ArrayList<String> countryList=new ArrayList<String>();
 	Map<String,Object> session;
 	ArrayList<Cart> sessionCart;
+	
+	ArrayList<ShippingAddress> addr=new ArrayList<ShippingAddress>();
+	
+	public ArrayList<ShippingAddress> getAddr() {
+		return addr;
+	}
 
+
+	public void setAddr(ArrayList<ShippingAddress> addr) {
+		this.addr = addr;
+	}
+
+
+
+	private int sellerID;
+	private String pageFlag;
+	
+	
+
+
+
+	public int getSellerID() {
+		return sellerID;
+	}
+
+
+	public void setSellerID(int sellerID) {
+		this.sellerID = sellerID;
+	}
+
+
+	public String getPageFlag() {
+		return pageFlag;
+	}
+
+
+	public void setPageFlag(String pageFlag) {
+		this.pageFlag = pageFlag;
+	}
 
 
 	public ArrayList<String> getCountryList() {
@@ -90,12 +128,12 @@ public class ChangeShippingAddress extends ActionSupport{
 	}
 
 
-	public int getPincode() {
+	public String getPincode() {
 		return pincode;
 	}
 
 
-	public void setPincode(int pincode) {
+	public void setPincode(String pincode) {
 		this.pincode = pincode;
 	}
 
@@ -110,12 +148,12 @@ public class ChangeShippingAddress extends ActionSupport{
 	}
 
 
-	public long getTelephone() {
+	public String getTelephone() {
 		return telephone;
 	}
 
 
-	public void setTelephone(long telephone) {
+	public void setTelephone(String telephone) {
 		this.telephone = telephone;
 	}
 
@@ -141,6 +179,8 @@ public class ChangeShippingAddress extends ActionSupport{
 
 	
 	
+
+
 	@SuppressWarnings("unchecked")
 	public String execute(){
 
@@ -153,16 +193,26 @@ public class ChangeShippingAddress extends ActionSupport{
 		saddress=cs.getPrimaryAddress(userID);
 
 
-		contactName=saddress.getContactName();
-		address=saddress.getAddress();
-		city=saddress.getCity();
-		state=saddress.getState();
-		pincode=saddress.getPincode();
-		country=saddress.getCountry();
-		telephone=saddress.getTelephone();
-		isPrimary=saddress.getIsPrimary();
+		//contactName=saddress.getContactName();
+		//address=saddress.getAddress();
+		//city=saddress.getCity();
+		//state=saddress.getState();
+		//pincode=saddress.getPincode();
+		//country=saddress.getCountry();
+		//telephone=saddress.getTelephone();
+		//isPrimary=saddress.getIsPrimary();
 
 
+		
+		contactName="";
+		address="";
+		city="";
+		state="";
+		pincode="";
+		country="";
+		telephone="";
+		isPrimary="";
+		
 		
 		System.out.println("The tele in change ship address : "+telephone);
 
@@ -171,7 +221,7 @@ public class ChangeShippingAddress extends ActionSupport{
 		populateCountryList();
 
 
-		
+		addr=cs.getAddressList(userID);
 		
 		sessionCart=(ArrayList<Cart>) session.get("SessionCart");
 		
@@ -179,7 +229,14 @@ public class ChangeShippingAddress extends ActionSupport{
 		
 		System.out.println(" from session  sssssssss : "+sessionCart.get(0).getCartProduct().get(0).getName());
 
-		System.out.println(" display dat ---> "+contactName);
+		System.out.println(" display arraylist size  ---> "+addr.size());
+		
+		
+		for(int i=0;i<addr.size();i++){
+			
+			System.out.println(" check check ::: "+addr.get(i).getAddress());
+			
+		}
 
 
 		return SUCCESS;
@@ -206,10 +263,12 @@ public class ChangeShippingAddress extends ActionSupport{
 		shipaddress.setContactName(contactName);
 		shipaddress.setAddress(address);
 		shipaddress.setCity(city);
-		shipaddress.setPincode(pincode);
+		shipaddress.setPincode(Integer.parseInt(pincode));
 		shipaddress.setState(state);
 		shipaddress.setCountry(country);
-		shipaddress.setTelephone(telephone);
+		
+		if(!telephone.equals("") || !telephone.equalsIgnoreCase(null)){
+		shipaddress.setTelephone(Long.parseLong(telephone));}
 
 		// if the checkbox is selected - set it to Y else N
 
@@ -237,9 +296,9 @@ public class ChangeShippingAddress extends ActionSupport{
 		address=saddress.getAddress();
 		city=saddress.getCity();
 		state=saddress.getState();
-		pincode=saddress.getPincode();
+		pincode=String.valueOf(saddress.getPincode());
 		country=saddress.getCountry();
-		telephone=saddress.getTelephone();
+		telephone=String.valueOf(saddress.getTelephone());
 		isPrimary=saddress.getIsPrimary();
 		
 		
@@ -255,7 +314,7 @@ public class ChangeShippingAddress extends ActionSupport{
 		
 		sessionCart=(ArrayList<Cart>) session.get("SessionCart");
 		
-		
+		addr=cs.getAddressList(userID);
 
 		return SUCCESS;
 	}
@@ -277,12 +336,16 @@ public class ChangeShippingAddress extends ActionSupport{
 	public String shiptoaddress(){
 
 
+		
+		session=ActionContext.getContext().getSession();
+		int userID=((UserDetails)session.get("userdetails")).getUserID();
+		
 		session=ActionContext.getContext().getSession();
 		System.out.println(" ship to address name: "+contactName);
 		
 		sessionCart=(ArrayList<Cart>) session.get("SessionCart");
 		
-		
+		addr=cs.getAddressList(userID);
 		
 		//System.out.println(" from session  sssssssss : "+sessionCart.get(0).getCartProduct().get(0).getName());
 
