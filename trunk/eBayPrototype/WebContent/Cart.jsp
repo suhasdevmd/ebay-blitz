@@ -93,7 +93,8 @@
 																	</tbody>
 																</table>
 																<div></div>
-																form start here
+													
+																<s:actionerror/>
 																<s:iterator value="sessionCart" var="sC" status="stat1">
 																	<s:form name="cartform" action="updateCart" method="post">
 																		<div>
@@ -236,7 +237,7 @@
 																		</div>
 																	</s:form>
 																</s:iterator>
-																form ends here
+																
 															</div>
 
 														</div>
