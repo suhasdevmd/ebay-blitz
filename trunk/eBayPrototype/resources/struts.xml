@@ -423,6 +423,12 @@
 			<result name="error">/login.jsp</result>
 		</action>
 		
+		<action name="delivered-order" method="delivered"
+			class="iiitb.ebay.users.action.CancelOrderAction">
+			<result name="success" type="redirectAction">ViewOrdersList</result>
+			<result name="error" type="tiles">/error.tiles</result>
+		</action>
+		
 
 
 	</package>

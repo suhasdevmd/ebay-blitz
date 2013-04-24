@@ -115,22 +115,21 @@
 						</div>
 						<div id="bodyContent">
 							<div class="leftClass" id="LeftNav">
-								<table cellpadding="0" cellspacing="0" border="0" width="165"
+							<table cellpadding="0" cellspacing="0" border="0" width="165"
 									class="mt12" style="min-height: 500px;">
 									<tr class="nbg">
 										<td width="1" class="nlb" height="20"><img
 											src="http://pics.ebaystatic.com/aw/pics/s.gif" width="1"
-											height="1" alt="">
-										</td>
+											height="1" alt=""></td>
 										<td class="mev" height="20" valign="middle" align="left"
 											width="140">
 											<h2 style="font-size: 13px;">
 												<span> My eBay Home </span>
-											</h2></td>
+											</h2>
+										</td>
 										<td class="roundtop" width="19" height="20" bgcolor="#d6dcfe"><img
 											src="http://pics.ebaystatic.com/aw/pics/s.gif" width="19"
-											height="20" alt="">
-										</td>
+											height="20" alt=""></td>
 									</tr>
 									<tr>
 										<td class="nb" width="100%" colspan="3">
@@ -142,18 +141,27 @@
 											<div class="sep"></div>
 											<dl id="c">
 												<dt class="notgreylabel">
-													<a href="myEbayFeedback.action" id="my_MyeBayAllBuying">Feedback</a>
+													<a href="myEbayFeedback.action"
+														id="my_MyeBayAllBuying">Feedback</a>
 												</dt>
 
 											</dl>
 											<div class="sep"></div>
 											<dl id="c">
 												<dt class="notgreylabel">
-													<a href="#" id="my_MyeBayShoppingCart">Some other link
-													</a>
+													<a href="ViewOrdersList.action" id="my_MyeBayShoppingCart">View Orders </a>
 												</dt>
 											</dl>
-											<div class="sep"></div></td>
+											<div class="sep"></div>
+											
+											
+											<dl id="c">
+												<dt class="notgreylabel">
+													<a href="balance.action" id="my_MyeBayShoppingCart">View Balances </a>
+												</dt>
+											</dl>
+											
+										</td>
 									</tr>
 								</table>
 								<div class="s"></div>

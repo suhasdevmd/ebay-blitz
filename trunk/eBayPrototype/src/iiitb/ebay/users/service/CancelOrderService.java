@@ -32,12 +32,12 @@ public class CancelOrderService {
 		return shippingStatus;
 	}
 
-	public void updateDB(int orderID,String message) {
+	public void updateDB(int orderID,String message,String status) {
 		ArrayList<Integer> productIDList = new ArrayList<Integer>();
 		ArrayList<Integer> QtyList = new ArrayList<Integer>();
 		
 		//this deletes all records where orderID is a FK also..
-		String query = "Update orders set shippingstatus='CANCELED', trackingDetails='"+message+"' where orderID='"+orderID+"'";
+		String query = "Update orders set shippingstatus='"+status+"', trackingDetails='"+message+"' where orderID='"+orderID+"'";
 		System.out.println("CancelOrderService::updateDB query " + query);
 		
 		DB.update(query);
@@ -48,10 +48,10 @@ public class CancelOrderService {
 		//Select quantity,ProductID from orderitems where orderID='orderID' //2,1 is expected
 				
 			//	update 
-		
-		
-		
-		
+
 		}
+	
+	
+	
 
 }
