@@ -557,6 +557,7 @@ div.btnMsgBar input.btnMsgBar-bTxt {
 																									</tbody>
 																								</table>
 																							</div>
+																							<s:hidden name="cartProduct"></s:hidden>
 																							<s:iterator value="cartProduct">
 																								<div>
 																									<div
