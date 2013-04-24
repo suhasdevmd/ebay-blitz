@@ -389,6 +389,14 @@
 			<result name="error">/error.jsp</result>
 		</action>
 		
+		
+		<action name="shiptoaddress" method="shiptoaddress"
+			class="iiitb.ebay.users.action.ChangeShippingAddress">
+			<result name="success">/createorder.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		
+		
 		<action name="myEbayFeedback" method="execute" class="iiitb.ebay.users.action.MyEbayFeedbackAction">
 			<result name="products-bought" type="tiles">/MyEbayFeedback.tiles</result>
 			<result name="error">/login.jsp</result>
