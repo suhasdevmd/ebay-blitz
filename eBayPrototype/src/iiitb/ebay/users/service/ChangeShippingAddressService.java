@@ -10,39 +10,69 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class ChangeShippingAddressService {
-	
-	
+
+
 	public int addAddress(ShippingAddress shipaddress){
-		
-		
+
+
 		Connection con;
 		Statement stmt;
 		ResultSet rs;
-		
 
-	
+
+
 		try {
 			con=DB.getConnection();
 			stmt=con.createStatement();
-			
-			
+
+
 			String insertSQL = "insert into useraddress "
 				+ "(userID,contactName,address,city,state,pincode,country,isPrimary,telephone) " + 
 				"values('"+shipaddress.getUserID()+"','" + shipaddress.getContactName()
 				+ "', '" + shipaddress.getAddress()  + "', '" + shipaddress.getCity()  + "', '" + shipaddress.getState()  
 				+ "', '" + shipaddress.getPincode()  + "', '" + shipaddress.getCountry()  + "', '" + shipaddress.getIsPrimary()
 				+ "', '" + shipaddress.getTelephone()+ "');";
-			
-			
-			
-			
-			
-			
+
+
+
+
+
+
+			// if the new address to be inserted is primary , make others not primary
+
+
+			if(shipaddress.getIsPrimary().equalsIgnoreCase("Y")){
+				
+				
+				
+				
+				System.out.println(" userrrrrrrrrrrrrrrrrrrrr id "+shipaddress.getUserID());
+
+				String qry="update useraddress set isPrimary='N' where userID='"+shipaddress.getUserID()+"'";
+
+				int ret=DB.update(qry);
+
+				if(ret <=0 ){
+
+					return 0;
+
+				}
+
+
+
+			}
+
+
+
+
+
+
+
 			System.out.println(" >>>>>> "+insertSQL);
 
 			int ret = stmt.executeUpdate(insertSQL, Statement.RETURN_GENERATED_KEYS);
-				//int ret=DB.update(insertSQL);
-			
+			//int ret=DB.update(insertSQL);
+
 
 			if (stmt != null) 
 				DB.close(stmt);
@@ -54,20 +84,20 @@ public class ChangeShippingAddressService {
 			e.printStackTrace();
 		}
 
-		
-		
-		
+
+
+
 		return 0;
-		
+
 	}
-	
-	
-	
-	
+
+
+
+
 	public ShippingAddress getPrimaryAddress(int userID){
-		
+
 		ShippingAddress sa=new ShippingAddress();
-		
+
 		Connection con;
 		ResultSet rs1;
 		String query;
@@ -77,13 +107,13 @@ public class ChangeShippingAddressService {
 			con=DB.getConnection();
 			query="select * from useraddress where userID='"+userID+"' and isPrimary='Y'";
 			rs1=DB.readFromDB(query, con);
-			
+
 			System.out.println("--------> "+query);
-			
+
 
 			while(rs1 !=null && rs1.next()) {
-				
-				
+
+
 				System.out.println("insieeeeeeeeeeeeeeeeeeeeeeeeeeee");
 
 				sa.setUserID(String.valueOf(rs1.getInt("userID")));
@@ -106,21 +136,21 @@ public class ChangeShippingAddressService {
 		}
 
 
-		
+
 		System.out.println(" in side service "+sa.getAddress());
-		
-		
+
+
 		return sa;
-		
+
 	}
-	
-	
-	
-	
+
+
+
+
 	public String getTelephoneNumber(int userID){
 		String number="";
-		
-		
+
+
 		Connection con;
 		ResultSet rs1;
 		String query;
@@ -130,13 +160,13 @@ public class ChangeShippingAddressService {
 			con=DB.getConnection();
 			query="select telephone from userdetails where userID='"+userID+"'";
 			rs1=DB.readFromDB(query, con);
-			
+
 			System.out.println("--------> "+query);
-			
+
 
 			while(rs1 !=null && rs1.next()) {
-				
-			number=String.valueOf(rs1.getString("telephone"));
+
+				number=String.valueOf(rs1.getString("telephone"));
 
 			}
 
@@ -148,13 +178,13 @@ public class ChangeShippingAddressService {
 		}
 
 
-		
-		
-		
-		
+
+
+
+
 		return number;
 	}
-	
-	
+
+
 
 }
