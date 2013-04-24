@@ -21,6 +21,7 @@ public class CartAction extends ActionSupport {
 	private String price;
 	private String name;
 	private String quantity;
+	private String quantityAvailable;
 	private String sellerID;
 	private ArrayList<Cart> sessionCart;
 	private ArrayList<Cart> sessionBuyNow;
@@ -126,6 +127,29 @@ public class CartAction extends ActionSupport {
 	public void setPrice(String price) {
 		this.price = price;
 	}
+	public String getButtonName() {
+		return buttonName;
+	}
+
+	public void setButtonName(String buttonName) {
+		this.buttonName = buttonName;
+	}
+
+	public ArrayList<Cart> getSessionBuyNow() {
+		return sessionBuyNow;
+	}
+
+	public void setSessionButNow(ArrayList<Cart> sessionBuyNow) {
+		this.sessionBuyNow = sessionBuyNow;
+	}
+	public String getQuantityAvailable() {
+		return quantityAvailable;
+	}
+
+	public void setQuantityAvailable(String quantityAvailable) {
+		this.quantityAvailable = quantityAvailable;
+	}
+	
 	
 	public String buyNow(){
 		session = ActionContext.getContext().getSession();
@@ -282,6 +306,8 @@ public class CartAction extends ActionSupport {
 							productDetails.setPrice(price);
 							productDetails.setSellerID(sellerID);
 							productDetails.setIsNew("new");
+							System.out.println("-0-0-0-0-0-0-0-0- > quantity available = "+quantityAvailable);
+							productDetails.setQuantityAvailable(quantityAvailable);
 							productDetails.setQuantitySelected(quantity);
 							productDetails.setImage1(ProductService.getProductImage(productID));
 							image1=ProductService.getProductImage(productID);
@@ -291,15 +317,15 @@ public class CartAction extends ActionSupport {
 							/*Double qty = Double.parseDouble(sessionCart.get(i).getCartProduct().get(j).getQuantitySelected());*/
 							Double subTotal = Double.parseDouble(price) * Double.parseDouble(productDetails.getQuantitySelected()) ;
 							productDetails.setSubTotal(subTotal); 
-							total += productDetails.getSubTotal();
-							sessionCart.get(i).setTotal(total);
-							
-							
-							
-
+							//total += productDetails.getSubTotal();
+							//sessionCart.get(i).setTotal(total);
 							sessionCart.get(i).getCartProduct().add(productDetails);
 							
-							
+							total=0.0;
+							for(int k=0;k<sessionCart.get(i).getCartProduct().size();k++){
+								total += sessionCart.get(i).getCartProduct().get(k).getSubTotal();
+							}
+							sessionCart.get(i).setTotal(total);
 							
 							break;
 
@@ -322,6 +348,8 @@ public class CartAction extends ActionSupport {
 						productDetails.setPrice(price);
 						productDetails.setSellerID(sellerID);
 						productDetails.setIsNew("new");
+						System.out.println("-0-0-0-0-0-0-0-0- > quantity available = "+quantityAvailable);
+						productDetails.setQuantityAvailable(quantityAvailable);
 						productDetails.setQuantitySelected(quantity);
 						productDetails.setImage1(ProductService.getProductImage(productID));
 						image1=ProductService.getProductImage(productID);
@@ -331,9 +359,8 @@ public class CartAction extends ActionSupport {
 						/*Double qty = Double.parseDouble(sessionCart.get(i).getCartProduct().get(j).getQuantitySelected());*/
 						Double subTotal = Double.parseDouble(price) * Double.parseDouble(productDetails.getQuantitySelected()) ;
 						productDetails.setSubTotal(subTotal); 
-						total += productDetails.getSubTotal();
-						sessionCart.get(i).setTotal(total);
-						
+						total = subTotal;
+						cartItem.setTotal(total);						
 
 						cartItem.setSellerID(sellerID);
 						userCreds =  UserService.getUserCredentials(Integer.parseInt(sellerID));
@@ -363,6 +390,8 @@ public class CartAction extends ActionSupport {
 					productDetails.setPrice(price);
 					productDetails.setSellerID(sellerID);
 					productDetails.setIsNew("new");
+					System.out.println("-0-0-0-0-0-0-0-0- > quantity available = "+quantityAvailable);
+					productDetails.setQuantityAvailable(quantityAvailable);
 					productDetails.setQuantitySelected(quantity);
 					productDetails.setImage1(ProductService.getProductImage(productID));
 					image1=ProductService.getProductImage(productID);
@@ -425,10 +454,20 @@ public class CartAction extends ActionSupport {
 		
 		for (int i = 0; i < sessionCart.size(); i++) {
 			for (int j = 0; j < sessionCart.get(i).getCartProduct().size(); j++){
+				
 				if(sessionCart.get(i).getSellerID().equalsIgnoreCase(tempCart.get(i).getSellerID())){
 					Double price = Double.parseDouble(sessionCart.get(i).getCartProduct().get(j).getPrice());
 					/*Double qty = Double.parseDouble(sessionCart.get(i).getCartProduct().get(j).getQuantitySelected());*/
 					Double qty = Double.parseDouble(tempCart.get(i).getCartProduct().get(j).getQuantitySelected());
+					System.out.println("---------------0-0-0-0-0-0- > qty = "+qty);
+					Double qtyAvail = Double.parseDouble(sessionCart.get(i).getCartProduct().get(j).getQuantityAvailable());
+					System.out.println("---------------0-0-0-0-0-0- > qty = "+qtyAvail);
+					if(qty > qtyAvail){
+						addActionError("invalid quantity");
+						tempCart.get(i).getCartProduct().get(j).setQuantitySelected("1");
+						sessionCart.get(i).getCartProduct().get(j).setQuantitySelected("1");
+					}
+					qty = Double.parseDouble(tempCart.get(i).getCartProduct().get(j).getQuantitySelected());
 					Double subTotal = price * qty ;
 					sessionCart.get(i).getCartProduct().get(j).setSubTotal(subTotal); 
 					total += sessionCart.get(i).getCartProduct().get(j).getSubTotal();
@@ -441,19 +480,5 @@ public class CartAction extends ActionSupport {
 	}
 
 
-	public String getButtonName() {
-		return buttonName;
-	}
-
-	public void setButtonName(String buttonName) {
-		this.buttonName = buttonName;
-	}
-
-	public ArrayList<Cart> getSessionBuyNow() {
-		return sessionBuyNow;
-	}
-
-	public void setSessionButNow(ArrayList<Cart> sessionBuyNow) {
-		this.sessionBuyNow = sessionBuyNow;
-	}
+	
 }

@@ -290,10 +290,7 @@
 																	id="v4-37qtyId" class="vi-is1-mqtyTb" theme="simple" />
 																<span class="vi-is1-mqtyDiv"> <s:property
 																		value="quantityAvailable" /> Available</span>
-																<s:textfield id="quantityTF" size="4"
-																	name="quantityAvailable" />
-
-
+																
 															</div>
 														</div>
 
@@ -380,7 +377,7 @@
 																	</s:iterator>
 																</s:iterator> <s:hidden name="price" value="%{#chk}" /> <s:hidden
 																	name="name" /> <s:hidden name="sellerID" /> <s:hidden
-																	name="fromProductjsp" value="1" /> <b id="txt_v4-23">Add
+																	name="fromProductjsp" value="1" /> <s:hidden name="quantityAvailable"></s:hidden> <b id="txt_v4-23">Add
 																	to Cart</b> </span> </b>
 													</div>
 												</td>
