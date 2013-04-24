@@ -309,8 +309,8 @@ body {
 							<table id=gh-t>
 								<tr>
 									<td id=gh-l><a href="" id=gh-la>eBay<img alt=""
-											src="img/padding.gif" id="gh-logo" border="0">
-									</a></td>
+											src="img/padding.gif" id="gh-logo" border="0"> </a>
+									</td>
 
 
 									<%-- <s:if test="%{#session.login == true}"></s:if> --%>
@@ -321,8 +321,7 @@ body {
 											<span id="gh-ug">Hi, <b><s:property
 														value="%{#session.userdetails.firstName}" /> </b>! (<a
 												class="gh-a" href="signoutaction" rel="nofollow">Sign
-													out</a>)
-											</span>
+													out</a>) </span>
 											<!--bucks-->
 											<span id="gh-um"> </span>
 
@@ -330,25 +329,28 @@ body {
 											<span id="gh-ug">Welcome! <a class="gh-a"
 												href="loginfirst.action" rel="nofollow">Sign in</a> or <a
 												class="gh-a" href="registration.action" id="registerLink"
-												rel="nofollow">register</a>.
-											</span>
+												rel="nofollow">register</a>. </span>
 
 
-										</s:else></td>
+										</s:else>
+									</td>
 
 								</tr>
 							</table>
 
 							<ul id=gh-eb class=gh-clearfix>
 								<li class=gh-eb-li id=gh-eb-My><a class="gh-eb-li-a"
-									href="myEbay.action">My eBay</a></li>
+									href="myEbay.action">My eBay</a>
+								</li>
 								<li class=gh-eb-li id=gh-eb-Sell><a class="gh-eb-li-a"
-									href="seller.action">Sell</a></li>
+									href="seller.action">Sell</a>
+								</li>
 
 								<s:if test="%{#session.userdetails.role == 'admin'}">
 
 									<li class="gh-eb-li" id="gh-eb-Cust"><a class="gh-eb-li-a"
-										href="adminhome.action?value=admin">Administration</a></li>
+										href="adminhome.action?value=admin">Administration</a>
+									</li>
 
 								</s:if>
 
@@ -357,7 +359,8 @@ body {
 									href="loginfirst.action">Sign In</a></li> -->
 
 								<li class=gh-eb-li id=gh-cart><a class="gh-eb-li-a"
-									href="cart.action">Cart</a></li>
+									href="cart.action">Cart</a>
+								</li>
 							</ul>
 							<div class="gh-sbox gh-clearfix" id=_nkw>
 								<!-- THE MAIN SEARCH BAR -->
@@ -389,8 +392,7 @@ body {
 							</div>
 
 							<ul class="gh-nav gh-clearfix">
-								<li class="gh-nav-li"><p
-							class="gh-nav-li-a">CATEGORIES</p>
+								<li class="gh-nav-li"><p class="gh-nav-li-a">CATEGORIES</p>
 								</li>
 
 								<!-- ####################DYNAMIC DROPDOWN CODE STARTS HERE##################### -->
@@ -409,24 +411,62 @@ body {
 													<s:iterator value="%{#session.homepageMenu}" var="mainMenu"
 														status="stat">
 														<li data-submenu-id="menu"><s:property
-																value="baseCategory" /></li>
+																value="baseCategory" />
+														</li>
+														<ul>
+															<div id="divSubMenu">
+																<s:iterator value="#mainMenu.childCategory"
+																	var="subMenu" status="stat">
 
-														<div id="divSubMenu">
-															<s:iterator value="#mainMenu.Subcategory" var="subMenu"
-																status="stat">
-																<s:iterator>
-																	<li data-submenu-id="submenu"><a
-																		href="categories.action?CategoryID=<s:property value="#subMenu.key" />">
-																			<s:property value="#subMenu.value" />
-																	</a></li>
+																	<s:iterator>
+
+																		<li data-submenu-id="submenu"><a
+																			href="categories.action?CategoryID=<s:property value="#subMenu.key" />">
+																				<s:property value="#subMenu.value.baseCategory" />
+																		</a>
+																		</li>
+
+																		<!-- Level2 Starts-->
+																		<div id="divSubSubMenu">
+																			<s:iterator value="#subMenu.value.childCategory"
+																				var="subSubMenu" status="stat">
+																				<s:iterator>
+																					<li data-submenu-id="subsubmenu"><a
+																						href="categories.action?CategoryID=<s:property value="#subSubMenu.key" />">
+																							<s:property
+																								value="#subSubMenu.value.baseCategory" /> </a>
+																					</li>
+
+																					<!-- Level3 Starts-->
+																					<div id="divSubSubMenu">
+																						<s:iterator value="#subSubMenu.value.childCategory"
+																							var="level3Menu" status="stat">
+																							<s:iterator>
+																								<li data-submenu-id="level3Menu"><a
+																									href="categories.action?CategoryID=<s:property value="#level3Menu.key" />">
+																										<s:property
+																											value="#level3Menu.value.baseCategory" /> </a>
+																								</li>
+																							</s:iterator>
+																						</s:iterator>
+																					</div>
+																					<!-- Level3 Ends-->
+
+																				</s:iterator>
+																			</s:iterator>
+																		</div>
+																		<!-- Level2 Ends-->
+
+																	</s:iterator>
+
 																</s:iterator>
-
-															</s:iterator>
-														</div>
+															</div>
+														</ul>
 													</s:iterator>
 												</div>
 
-											</ul></li>
+											</ul>
+										</li>
 									</ul>
 								</div>
 
@@ -441,7 +481,8 @@ body {
 								<li class="gh-nav-li"><a target="_blank"
 									class="gh-nav-li-a" href="">INSURANCE</a></li>  -->
 								<li class="gh-nav-li"><a target="_blank"
-									class="gh-nav-li-a" href="deals.action">DEALS</a></li>
+									class="gh-nav-li-a" href="deals.action">DEALS</a>
+								</li>
 
 							</ul>
 						</div>
@@ -451,12 +492,12 @@ body {
 
 
 
-		<div><a href="deals.action">
-		<img alt="" src="img/DOW_1104113.jpg">
-		</a>
-		</div>
+			<div>
+				<a href="deals.action"> <img alt="" src="img/DOW_1104113.jpg">
+				</a>
+			</div>
 
-		<br/>
+			<br />
 			<div></div>
 			<div>
 				<div class="pcontent">
@@ -602,14 +643,20 @@ body {
 																				Else</a>
 																		</h3> <br></td> -->
 																	<td valign="top" class="catContent"><h3>
-																			<a title="Mobiles" href="categories.action?CategoryID=1">Mobiles</a>
-																		</h3></td>
+																			<a title="Mobiles"
+																				href="categories.action?CategoryID=1">Mobiles</a>
+																		</h3>
+																	</td>
 																	<td valign="top" class="catContent"><h3>
-																			<a title="Movies" href="categories.action?CategoryID=3">Movies</a>
-																		</h3></td>
+																			<a title="Movies"
+																				href="categories.action?CategoryID=3">Movies</a>
+																		</h3>
+																	</td>
 																	<td valign="top" class="catContent"><h3>
-																			<a title="Books" href="categories.action?CategoryID=2">Books</a>
-																		</h3></td>
+																			<a title="Books"
+																				href="categories.action?CategoryID=2">Books</a>
+																		</h3>
+																	</td>
 																</tr>
 															</table>
 														</div>
@@ -631,7 +678,7 @@ body {
 		</div>
 
 
-		
+
 
 
 
@@ -659,17 +706,22 @@ body {
 														<div>
 															<table>
 																<tr>
-																	<s:iterator value="#session.productData" var="productData">
+																	<s:iterator value="#session.productData"
+																		var="productData">
 																		<td><div class="imgViewItem">
 																				<!-- PUT THE IMAGES FOR THE PRODUCTS IN A DIV LIKE THIS -->
-																				<img src="productimages/<s:property value="image1"/>" alt="Product Image" border="0" height="80px" width="80px">
+																				<img
+																					src="productimages/<s:property value="image1"/>"
+																					alt="Product Image" border="0" height="80px"
+																					width="80px">
 																				<div class="imgViewItemTitle">
 																					<!-- PUT THE LINK FOR THE PRODUCT MENTIONED ABOVE -->
 																					<a
 																						href="products.action?productID=<s:property value="#productData.id"/>"><s:property
-																							value="#productData.name" /></a>
+																							value="#productData.name" /> </a>
 																				</div>
-																			</div></td>
+																			</div>
+																		</td>
 																	</s:iterator>
 																</tr>
 															</table>
@@ -736,7 +788,8 @@ body {
 												<a title="VeRO" href="">VeRO</a>
 											</div>
 										</div>
-									</div></td>
+									</div>
+								</td>
 								<td class="fsep_g"></td>
 								<td class="fcont_b"><div class="fnode">
 										<div class="fnode_n">
@@ -835,7 +888,8 @@ body {
 												<a title="">Vietnam</a>
 											</div>
 										</div>
-									</div></td>
+									</div>
+								</td>
 								<td class="fsep_g"></td>
 								<td class="fcont_b"><div class="fnode">
 										<div class="fnode_n">
@@ -859,7 +913,8 @@ body {
 												<a title="eBay Shops" href="">eBay Shops</a>
 											</div>
 										</div>
-									</div></td>
+									</div>
+								</td>
 							</tr>
 							<tr style="height: 25px"></tr>
 						</table>
