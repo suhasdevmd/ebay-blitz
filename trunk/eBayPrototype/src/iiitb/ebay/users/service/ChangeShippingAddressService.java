@@ -8,6 +8,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 public class ChangeShippingAddressService {
 
@@ -186,5 +187,64 @@ public class ChangeShippingAddressService {
 	}
 
 
+	
+	public ArrayList<ShippingAddress> getAddressList(int userID){
+
+		ArrayList<ShippingAddress> aList=new ArrayList<ShippingAddress>();
+		ShippingAddress sa=null;
+
+		Connection con;
+		ResultSet rs1;
+		String query;
+
+
+		try {
+			con=DB.getConnection();
+			query="select * from useraddress where userID='"+userID+"' and isPrimary='N'";
+			rs1=DB.readFromDB(query, con);
+
+			System.out.println("--------> "+query);
+
+			
+			aList.add(getPrimaryAddress(userID));
+
+			while(rs1 !=null && rs1.next()) {
+
+
+				sa=new ShippingAddress();
+			
+
+				sa.setUserID(String.valueOf(rs1.getInt("userID")));
+				sa.setContactName(rs1.getString("contactName"));
+				sa.setCountry(rs1.getString("country"));
+				sa.setTelephone(Long.parseLong(rs1.getString("telephone")));
+				sa.setAddress(rs1.getString("address"));
+				sa.setPincode(rs1.getInt("pincode"));
+				sa.setCity(rs1.getString("city"));
+				sa.setState(rs1.getString("state"));
+				sa.setIsPrimary(rs1.getString("isPrimary"));
+
+				
+				aList.add(sa);
+				
+			}
+
+			con.close();
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+
+
+		//System.out.println(" in side service "+sa.getAddress());
+
+
+		return aList;
+
+	}
+
+	
 
 }
