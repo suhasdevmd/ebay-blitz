@@ -174,7 +174,9 @@ public class ChangeShippingAddress extends ActionSupport{
 		ShippingAddress shipaddress=new ShippingAddress();
 
 
-		int userID=1;
+		int userID;
+		session=ActionContext.getContext().getSession();
+		userID=((UserDetails)session.get("userdetails")).getUserID();
 
 
 		shipaddress.setUserID(String.valueOf(userID));
@@ -220,6 +222,17 @@ public class ChangeShippingAddress extends ActionSupport{
 	}
 
 
+
+	public String shiptoaddress(){
+
+
+
+		System.out.println(" ship to address name: "+contactName);
+		
+		
+
+		return SUCCESS;
+	}
 
 
 
