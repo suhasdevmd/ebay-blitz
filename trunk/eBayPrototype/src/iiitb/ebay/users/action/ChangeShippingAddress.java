@@ -3,6 +3,7 @@ package iiitb.ebay.users.action;
 import java.util.ArrayList;
 import java.util.Map;
 
+import iiitb.ebay.users.model.Cart;
 import iiitb.ebay.users.model.ShippingAddress;
 import iiitb.ebay.users.model.UserDetails;
 import iiitb.ebay.users.service.ChangeShippingAddressService;
@@ -25,6 +26,7 @@ public class ChangeShippingAddress extends ActionSupport{
 	ArrayList<String> stateList=new ArrayList<String>();
 	ArrayList<String> countryList=new ArrayList<String>();
 	Map<String,Object> session;
+	ArrayList<Cart> sessionCart;
 
 
 
@@ -128,6 +130,18 @@ public class ChangeShippingAddress extends ActionSupport{
 	}
 
 
+	public ArrayList<Cart> getSessionCart() {
+		return sessionCart;
+	}
+
+
+	public void setSessionCart(ArrayList<Cart> sessionCart) {
+		this.sessionCart = sessionCart;
+	}
+
+	
+	
+	@SuppressWarnings("unchecked")
 	public String execute(){
 
 
@@ -157,12 +171,21 @@ public class ChangeShippingAddress extends ActionSupport{
 		populateCountryList();
 
 
+		
+		
+		sessionCart=(ArrayList<Cart>) session.get("SessionCart");
+		
+		
+		
+		System.out.println(" from session  sssssssss : "+sessionCart.get(0).getCartProduct().get(0).getName());
 
 		System.out.println(" display dat ---> "+contactName);
 
 
 		return SUCCESS;
 	}
+
+
 
 
 	public String addaddress(){
@@ -201,10 +224,38 @@ public class ChangeShippingAddress extends ActionSupport{
 
 		cs.addAddress(shipaddress);
 
+		
+		
+		
+		
+		
+		ShippingAddress saddress=new ShippingAddress();
+		saddress=cs.getPrimaryAddress(userID);
+
+
+		contactName=saddress.getContactName();
+		address=saddress.getAddress();
+		city=saddress.getCity();
+		state=saddress.getState();
+		pincode=saddress.getPincode();
+		country=saddress.getCountry();
+		telephone=saddress.getTelephone();
+		isPrimary=saddress.getIsPrimary();
+		
+		
+		
+		
+		
 
 		populateStateList();
 		populateCountryList();
 
+		
+		
+		
+		sessionCart=(ArrayList<Cart>) session.get("SessionCart");
+		
+		
 
 		return SUCCESS;
 	}
@@ -226,10 +277,14 @@ public class ChangeShippingAddress extends ActionSupport{
 	public String shiptoaddress(){
 
 
-
+		session=ActionContext.getContext().getSession();
 		System.out.println(" ship to address name: "+contactName);
 		
+		sessionCart=(ArrayList<Cart>) session.get("SessionCart");
 		
+		
+		
+		//System.out.println(" from session  sssssssss : "+sessionCart.get(0).getCartProduct().get(0).getName());
 
 		return SUCCESS;
 	}
