@@ -26,8 +26,8 @@ public class DealsAction extends ActionSupport{
 			categoryID2 = "2";
 			categoryID3 = "3";
 			productTypeList1 =  CategoryService.fetchDealsProduct("1");
-			productTypeList2 =  CategoryService.fetchDealsProduct("2");
-			productTypeList3 =  CategoryService.fetchDealsProduct("3");
+			productTypeList2 =  CategoryService.fetchDealsProduct("3");
+			productTypeList3 =  CategoryService.fetchDealsProduct("2");
 			return "success";
 		}
 		/*else{
