@@ -71,37 +71,34 @@ public class SearchAction extends ActionSupport {
 		
 	public String execute(){
 		System.out.println("*********In execute of SearchAction***********");
-		System.out.println("mysearch " + mysearch);
-		System.out.println("category " + category);
-		System.out.println("mychoice " + mychoice);
-
+		
 		
 		if(mychoice.equals("advancedSearch")){
-			System.out.println("Inside advancedSearch");
+			//System.out.println("Inside advancedSearch");
 			return "advanced-search";
 		}
 		
 		SearchService searchService = new SearchService();
 		//search by name only
 		if(category.equals("-1") && !(mysearch.isEmpty())){
-			System.out.println("******Search by Name only**********");
+			//System.out.println("******Search by Name only**********");
 			setProductList(searchService.getItemsByName(mysearch,selectionModifier));
 			return "success";
 			
 		}
 		else if(category.equals("-1") && mysearch.isEmpty()){
-			System.out.println("******Search by All categories***********");
+			//System.out.println("******Search by All categories***********");
 			setProductList(searchService.getAllItems());
 			addActionMessage("Displaying All Categories.");
 			return "success"; 
 		}//search by category only
 		else if(!category.equals("-1") && !category.equals(" ") && mysearch.isEmpty()){
-			System.out.println("******Search by Category***********");
+			//System.out.println("******Search by Category***********");
 			setProductList(searchService.getItemsByCategory(category,selectionModifier));	
 			return "success";
 		}
 		else 
-			System.out.println("******Search by Both Category and Name ***********");
+			//System.out.println("******Search by Both Category and Name ***********");
 			setProductList(searchService.getItemsByNamenCategory(mysearch,category,selectionModifier));	
 			return "success";
 		}
