@@ -47,8 +47,8 @@ public class EditProductService {
 
 	public static String modifyEav(int productID, String categoryId,
 			String productName, String productPrice, String productQty,
-			String productBrand, String productDiscount, String condition,
-			String[] av, boolean additional) {
+			String productBrand, String productDiscount, String startDate,
+			String endDate, String condition, String[] av, boolean additional) {
 
 		con = DB.getConnection();
 
@@ -104,6 +104,15 @@ public class EditProductService {
 					query = "UPDATE producteav set val = " + save
 							+ " where attr = 'save' and entity = " + productID;
 					DB.update(con, query);
+					query = "UPDATE producteav set val = '" + startDate
+							+ "' where attr = 'startdate' and entity = "
+							+ productID;
+					DB.update(con, query);
+					query = "UPDATE producteav set val = '" + endDate
+							+ "' where attr = 'enddate' and entity = "
+							+ productID;
+					DB.update(con, query);
+
 				}
 
 				else {
@@ -115,6 +124,12 @@ public class EditProductService {
 					DB.update(con, query);
 					query = "INSERT into producteav values(" + productID
 							+ ", 'save', '" + save + "')";
+					DB.update(con, query);
+					query = "INSERT into producteav values(" + productID
+							+ ", 'startdate', '" + startDate + "')";
+					DB.update(con, query);
+					query = "INSERT into producteav values(" + productID
+							+ ", 'enddate', '" + endDate + "')";
 					DB.update(con, query);
 				}
 			}
@@ -132,10 +147,12 @@ public class EditProductService {
 		if (additional) {
 			for (int i = 0; i < av.length; i++) {
 				String[] temp = av[i].split(":");
-				query = "UPDATE producteav set val = '" + temp[1]
-						+ "' where attr = '" + temp[0].toLowerCase()
-						+ "' and entity = " + productID;
-				DB.update(con, query);
+				if (temp != null && temp.length == 2) {
+					query = "UPDATE producteav set val = '" + temp[1]
+							+ "' where attr = '" + temp[0].toLowerCase()
+							+ "' and entity = " + productID;
+					DB.update(con, query);
+				}
 			}
 		}
 
