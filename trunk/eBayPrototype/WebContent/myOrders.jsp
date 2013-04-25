@@ -229,7 +229,7 @@
 												height="1" alt=" " title="">
 											</td>
 											<td align="left" width="100%">
-												<h2 class="A4B">Wish List</h2></td>
+												<h2 class="A4B">My orders</h2></td>
 											<td align="right" bgcolor="#E2E7FE">
 												<table cellpadding="0" cellspacing="0" border="0"
 													height="100%">
@@ -286,7 +286,7 @@
 																			src="http://pics.ebaystatic.com/aw/pics/s.gif"
 																			width="5" height="1" alt="">
 																		</td>
-																		<td width="100%" class="A2B">Your Wishlist</td>
+																		<td width="100%" class="A2B">Order Details</td>
 																	</tr>
 																</table></td>
 														</tr>
