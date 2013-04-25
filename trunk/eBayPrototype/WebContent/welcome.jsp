@@ -40,6 +40,8 @@
 <script>
 	$(document).ready(function() {
 
+		$('#dialog-message').hide();
+		
 		$('#product').click(function() {
 			$('#dialog-message').slideToggle('slow');
 		});
@@ -267,13 +269,13 @@ body {
 
 
 
-
+<div style="margin-left: 30px;margin-top: 5px;color: black; box-shadow: 0 10px 6px -6px #777;background: #DBE1E1;width: 300px;">
 	<s:if test="pd.size() > 0">
 
 
-		<div id="product">Product Out of Stock</div>
+		<div id="product" style="margin-left: 30px;font-size: 15px;">Product Out of Stock</div>
 
-		<div id="dialog-message" title="Product Out of stock">
+		<div id="dialog-message" title="Product Out of stock" style="margin-left: 30px;">
 			<p>
 				<span class="ui-icon ui-icon-circle-check"
 					style="float: left; margin: 0 7px 50px 0;"></span> The following
@@ -299,7 +301,7 @@ body {
 
 	</s:if>
 
-
+</div>
 
 
 
