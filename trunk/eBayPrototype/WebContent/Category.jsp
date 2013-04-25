@@ -17,9 +17,15 @@
 
 
 	<div style="min-height: 800px; height: 100%;">
+	
+	
+	
+	
+	
+	
 
-		<div id="Body" class="CLASSIC CHROME CHROME_25 CHROME_25_0">
-			<%-- <div id="Top">
+		<div id="Body" class="CLASSIC CHROME CHROME_25 CHROME_25_0" style="margin-top: 100px;">
+			<%-- <div id="Top">   
 				<div id="TopPanel">
 					<div id="TopPanelDF">
 						<a class="gh-hdn" href="#mainContent">Skip to main content</a>
@@ -173,6 +179,41 @@
 
 			<div id="LeftCenterBottomPanelDF"
 				style="min-height: 800px; height: 100%;">
+				
+				<table>
+					<tr>
+						<th width="200px"> Image </th>
+						<th width="280px"> Name </th>
+						<th width="70px"> Price </th>
+					</tr>
+				</table>
+				<br>
+				<br>
+				<display:table id="products" name="productDetails"
+				requestURI="categories.action" pagesize="1">
+				
+				<display:column>
+					<a href="products?productID=${products.productID}"
+						class="img"> <img src="productimages/${products.image1}" class="img"
+						height="200px" width="200px" alt="" /> </a>
+				</display:column>
+				<display:column>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</display:column>
+				<display:column>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</display:column>
+				<display:column>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</display:column>
+				
+				<display:column property="name" />
+				<display:column>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</display:column>
+				<display:column>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</display:column>
+				<display:column>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</display:column>
+				
+				<display:column value="Rs."/> <display:column>&nbsp;&nbsp;&nbsp;</display:column> <display:column property="price"/>
+
+				<display:setProperty name="paging.banner.placement" value="bottom" />
+				<display:setProperty name="paging.banner.item_name" value="Product" />
+				<display:setProperty name="paging.banner.items_name"
+					value="Products" />
+				<display:setProperty name="basic.show.header" value="false" />
+			</display:table>
 
 				<!-- ####################DISPLAY THE RESULTS HERE########################################### -->
 				<%-- <table style="border: 1px solid black;">
@@ -223,19 +264,20 @@
 				<!-- new UI  updated by suhas      ----------///////////////////// -->
 
 
-				<table>
+				<%-- 				<table>
 					<s:iterator value="productDetails" var="mainArrayList">
 						<tbody>
 
 							<tr>
 								<td><a
 									href="products?productID=<s:property value="productID"/>"
-									class="img"> <img itemprop="image" 
+									class="img"> <img itemprop="image"
 										src="productimages/<s:property value="image1"/>" class="img"
-										height="200px" width="200px" alt="" /> </a></td>
+										height="200px" width="200px" alt="" /> </a>
+								</td>
 								<br />
 
-								<%-- <td><s:iterator value="#mainArrayList.description"
+								<td><s:iterator value="#mainArrayList.description"
 										var="map">
 										<s:iterator>
 											<tr>
@@ -247,20 +289,17 @@
 															value="#map.value" /> </font>
 											
 										</s:iterator>
-									</s:iterator></td> --%>
+									</s:iterator></td>
 								<td><a
 									href="products?productID=<s:property value="productID"/>"
-									class="img"> <s:property value="name" />
-								</a>
-								</td>
+									class="img"> <s:property value="name" /> </a></td>
 								<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-								<td>Rs. <s:property value="price" />
-								</td>
+								<td>Rs. <s:property value="price" /></td>
 								<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 								<td>Free Shipping</td>
 							</tr>
 
-							<%-- <tr>
+							<tr>
 								<td><s:property value="name" />
 								</td><td width="50px"></td>
 							</tr>
@@ -273,10 +312,10 @@
 									<span class="ship"> <span> <span class='tfsp'>Free
 												shipping</span> </span> </span></td>
 
-							</tr> --%>
+							</tr>
 					</s:iterator>
 					</tbody>
-				</table>
+				</table> --%>
 
 
 
@@ -631,10 +670,39 @@
 
 				<!-- ####################DISPLAY THE RESULTS HERE########################################### -->
 
+<%-- Dispalay the results using the display tag  --%>
 
-			</div> --%>
+			<%-- <display:table id="products" name="productDetails"
+				requestURI="categories.action" pagesize="1">
+				
+				<display:column>
+					<a href="products?productID=${products.productID}"
+						class="img"> <img src="productimages/${products.image1}" class="img"
+						height="200px" width="200px" alt="" /> </a>
+				</display:column>
+				<display:column>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</display:column>
+				<display:column>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</display:column>
+				<display:column>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</display:column>
+				
+				<display:column property="name" />
+				<display:column>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</display:column>
+				<display:column>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</display:column>
+				<display:column>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</display:column>
+				
+				<display:column property="price"/>
+
+				<display:setProperty name="paging.banner.placement" value="bottom" />
+				<display:setProperty name="paging.banner.item_name" value="Product" />
+				<display:setProperty name="paging.banner.items_name"
+					value="Products" />
+				<display:setProperty name="basic.show.header" value="false" />
+			</display:table> --%>
+
+			<!-- end -->
 
 		</div>
+
+	</div>
 
 
 
