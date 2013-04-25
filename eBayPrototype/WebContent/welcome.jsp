@@ -268,9 +268,9 @@ body {
 
 
 
-
-<div style="margin-left: 30px;margin-top: 5px;color: black; box-shadow: 0 10px 6px -6px #777;background: #DBE1E1;width: 300px;">
-	<s:if test="pd.size() > 0">
+<s:if test="pd.size() > 0">
+<div style="margin-left: 30px;margin-top: 5px;color: black; box-shadow: 0 10px 6px -6px #777;background: #DBE1E1;width: 300px;border-radius: 10px;min-height: 30px;">
+	
 
 
 		<div id="product" style="margin-left: 30px;font-size: 15px;">Product Out of Stock</div>
@@ -299,10 +299,10 @@ body {
 			</p>
 		</div>
 
-	</s:if>
+	
 
 </div>
-
+</s:if>
 
 
 
