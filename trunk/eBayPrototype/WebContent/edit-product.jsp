@@ -17,8 +17,8 @@
 		<table>
 			<tr>
 				<td>Enter product name* :</td>
-				<td> <s:hidden name="productID"/> <s:textfield id="productName" name="productName"
-						value="%{productName}" /></td>
+				<td><s:hidden name="productID" /> <s:textfield id="productName"
+						name="productName" value="%{productName}" /></td>
 			</tr>
 			<tr>
 				<td>Enter product price* :</td>
@@ -40,12 +40,22 @@
 				<td><s:textfield id="productDiscount" name="productDiscount"
 						value="%{productDiscount}" /></td>
 			</tr>
+			<tr>
+				<td>Enter start date :</td>
+				<td><s:textfield id="startDate" name="startDate"
+						value="%{startDate}" /></td>
+			</tr>
+			<tr>
+				<td>Enter end date :</td>
+				<td><s:textfield id="endDate" name="endDate"
+						value="%{endDate}" /></td>
+			</tr>
 		</table>
 		<p>Select category</p>
 		<!-- <s:select name="category" headerValue="Select Category"
 			list="%{productNames}" value="1" />
 		<br /> -->
-		
+
 		<p>Select condition</p>
 		<s:radio name="conditionID" label="Select condition"
 			list="#{'1':'New','2':'Used'}" value="%{productCondition}" />
@@ -85,6 +95,17 @@
 						alert("All required fields not filled.");
 						return false;
 					}
+					
+					var discount = $("#productDiscount").val();
+					var startDate = $("#startDate").val();
+					var endDate = $("#endDate").val();
+					
+					if (jQuery.trim(discount).length > 0) {
+						if (jQuery.trim(startDate).length == 0 || jQuery.trim(endDate).length == 0) {
+							alert("Start/End dates are empty");
+							return false;
+						} 
+					}
 
 					var msg = '';
 					var count = 1;
@@ -105,6 +126,7 @@
 						}
 					});
 					$('#av').val(msg);
+					// alert(msg);
 					return true;
 				});
 	</script>

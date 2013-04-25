@@ -23,6 +23,7 @@ public class EditProductAction extends ActionSupport {
 
 	private String productName, productBrand, productQty, productPrice, productDiscount;
 	private int productCondition, extraFields;
+	private String startDate, endDate;
 
 	private String[] attrs, vals;
 	private String av = "";
@@ -50,6 +51,9 @@ public class EditProductAction extends ActionSupport {
 		productBrand = attrVals.get("brand");
 		productQty = attrVals.get("quantity");
 		productDiscount = attrVals.get("discount");
+		startDate = attrVals.get("startdate");
+		endDate = attrVals.get("enddate");
+		
 
 		if (attrVals.get("condition").equals("New"))
 			productCondition = 1;
@@ -64,6 +68,8 @@ public class EditProductAction extends ActionSupport {
 		attrVals.remove("sellerid");
 		attrVals.remove("categoryid");
 		attrVals.remove("discount");
+		attrVals.remove("startdate");
+		attrVals.remove("enddate");
 
 		HttpServletRequest request = ServletActionContext.getRequest();
 		request.setAttribute("attrVals", attrVals);
@@ -88,11 +94,14 @@ public class EditProductAction extends ActionSupport {
 			additional = true;
 
 		String[] additionalAttributes = av.split("\n");
+		if(additionalAttributes[0].trim().equals(":")) {
+			additional = false;
+		}
 
 		// productID is again hard coded here
 		System.out.println("EditProductAction productID "+this.getProductID());
 		EditProductService.modifyEav(this.getProductID(), categoryId, productName,
-				productPrice, productQty, productBrand, productDiscount,
+				productPrice, productQty, productBrand, productDiscount, startDate, endDate,
 				(productCondition == 1) ? "New" : "Used", additionalAttributes,
 				additional);
 		return "success";
@@ -224,6 +233,22 @@ public class EditProductAction extends ActionSupport {
 
 	public void setCategoryId(String categoryId) {
 		this.categoryId = categoryId;
+	}
+
+	public String getStartDate() {
+		return startDate;
+	}
+
+	public void setStartDate(String startDate) {
+		this.startDate = startDate;
+	}
+
+	public String getEndDate() {
+		return endDate;
+	}
+
+	public void setEndDate(String endDate) {
+		this.endDate = endDate;
 	}
 
 }

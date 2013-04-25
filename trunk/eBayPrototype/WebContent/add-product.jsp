@@ -86,11 +86,10 @@
 				
 				var msg = '';
 				for (i=1; i<counter; i++) {
-					
-					if ($('#attr' + i).val().length <= 0){
+					/* if ($('#attr' + i).val().length <= 0){
 						alert("Some fields are empty");
 						return false;
-					}
+					} */
 					msg += $('#attr' + i).val() + " : " + $('#val' + i).val() + "\n";
 				}
 				$('#attrVals').val(msg);
