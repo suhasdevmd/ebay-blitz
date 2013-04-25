@@ -351,6 +351,13 @@ public class PaymentAction extends ActionSupport {
 			
 		}
 
+		
+		
+		sessionCart=CartService.fetchCartItems(ud.getUserID());
+		
+		session.put("SessionCart" , sessionCart);
+		
+		
 		return "success";
 	}
 
