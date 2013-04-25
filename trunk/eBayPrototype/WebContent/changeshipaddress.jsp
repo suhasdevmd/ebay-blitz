@@ -1105,7 +1105,7 @@
 																						value="save"><input type="submit"
 																						value="Add New Address"> -->
 																						
-																						
+																						<s:hidden name="sellerID"/>
 																					<s:submit name="addnewaddress" value="Add New Address"></s:submit>	
 																						
 																					</td>

@@ -40,8 +40,13 @@ public class CancelOrderAction extends ActionSupport {
 		CancelOrderService cancelOrderService = new CancelOrderService();//could have used the TrackItemStatusService class itself but for clarity's sake using a new one
 		Map<String,Object>session = ActionContext.getContext().getSession();
 		UserDetails ud = (UserDetails)session.get("userdetails");
-		int userID = ud.getUserID();//hard code for now get from session
-		//orderID=2;
+		int userID = ud.getUserID();
+		double amount =0.0;
+		double balance = 0.0;
+		int sellerID = 0;
+		String mode = null;
+		int paymentMode = 0;
+		
 		System.out.println("cancel order orderid="+this.getOrderID());
 		//from db get shipping status if shipping status is 'shipped' print "order cant be cancelled" o/w print "order has been cancelled"
 		String orderStatus = cancelOrderService.getOrderStatus("orderID='"+orderID+"'"+"and userID='"+userID+"'");
@@ -49,6 +54,36 @@ public class CancelOrderAction extends ActionSupport {
 		 if (orderStatus.equalsIgnoreCase("NOT_YET_SHIPPED")){
 			
 			 cancelOrderService.updateDB(orderID,"Order Canceled by user","CANCELED");
+			 
+			 /* Revert the transactions to buyer */
+			 mode = PaymentInfoService.getParam("mode", "WHERE orderID ="+this.getOrderID());
+			 amount = Double.parseDouble(PaymentInfoService.getParam("amount", "WHERE orderID ="+this.getOrderID()));
+			 sellerID = Integer.parseInt(OrderService.getParam("sellerID", "orders", "WHERE orderID="+this.getOrderID()));
+			 
+			 if(mode.equalsIgnoreCase("paisaPay"))
+				 paymentMode = paisaPay;
+			 else if(mode.equalsIgnoreCase("credit"))
+				 paymentMode = credit;
+			 else if(mode.equalsIgnoreCase("debit"))
+				 paymentMode = debit;
+			 else if(mode.equalsIgnoreCase("cash"))
+				 paymentMode = cash;
+
+				/* debit seller */
+				balance = PaymentService.checkBalance(paymentMode, sellerID);
+				PaymentService.updateAmount(paymentMode, balance - amount, sellerID);
+				
+				/* credit buyer */
+				balance = PaymentService.checkBalance(paymentMode, userID);
+				PaymentService.updateAmount(paymentMode, balance + amount, userID);
+			 
+				/* Transaction from eBay to Seller */
+				TransactionService.makeTransaction(
+						"Money Refunded from Seller "+ sellerID +" to Buyer "+ userID +" Amount = Rs."
+								+ amount ,
+						TransactionService.getDateNow(), sellerID,userID);
+			 
+			 
 			 return "success";
 		 }
 		 else if (orderStatus.equalsIgnoreCase("SHIPPED") || orderStatus.equalsIgnoreCase("DELIVERED") || orderStatus.equalsIgnoreCase("CANCELLED") ){		 		 
