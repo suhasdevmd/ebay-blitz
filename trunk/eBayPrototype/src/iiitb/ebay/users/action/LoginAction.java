@@ -97,7 +97,7 @@ public class LoginAction extends ActionSupport{
 		// to be replaced by actual value
 		
 		
-		int sellerid=2;
+		int sellerid=ud.getUserID();
 		
 		
 		
