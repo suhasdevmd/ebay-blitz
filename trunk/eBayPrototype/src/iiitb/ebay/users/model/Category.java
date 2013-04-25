@@ -1,5 +1,7 @@
 package iiitb.ebay.users.model;
 
+import iiitb.ebay.model.SpecialDeals;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -21,6 +23,12 @@ public class Category {
 	private String isNew;
 	
 	private String image1;
+	
+	/* Special Deal Properties */
+	private SpecialDeals deal;
+	private boolean spclDeal;
+	private String spclDealPrice;
+	
 	/*
 	private Blob image2;
 	private Blob image3;
@@ -146,11 +154,30 @@ public class Category {
 	public void setQuantitySelected(String quantitySelected) {
 		this.quantitySelected = quantitySelected;
 	}
+	public SpecialDeals getDeal() {
+		return deal;
+	}
+	public void setDeal(SpecialDeals deal) {
+		this.deal = deal;
+	}
 	public String getQuantitySelected() {
 		return quantitySelected;
 	}
 	public String getIsNew() {
 		return isNew;
+	}
+	
+	public boolean isSpclDeal() {
+		return spclDeal;
+	}
+	public void setSpclDeal(boolean spclDeal) {
+		this.spclDeal = spclDeal;
+	}
+	public String getSpclDealPrice() {
+		return spclDealPrice;
+	}
+	public void setSpclDealPrice(String spclDealPrice) {
+		this.spclDealPrice = spclDealPrice;
 	}
 	public void setIsNew(String isNew) {
 		this.isNew = isNew;

@@ -1,5 +1,7 @@
 package iiitb.ebay.users.model;
 
+import iiitb.ebay.model.SpecialDeals;
+
 import java.util.ArrayList;
 
 public class Cart {
@@ -10,6 +12,11 @@ public class Cart {
 	private float positiveFeedback;
 	private Double total;
 	private ArrayList<Category> cartProduct = new ArrayList<Category>();
+	
+	/* Special Deals Fields */
+	private SpecialDeals deal;
+	private boolean spclDeal = false;
+		
 	
 	public String getSellerID() {
 		return sellerID;
@@ -47,6 +54,19 @@ public class Cart {
 	}
 	public void setTotal(Double total) {
 		this.total = total;
+	}
+	
+	public boolean isSpclDeal() {
+		return spclDeal;
+	}
+	public void setSpclDeal(boolean spclDeal) {
+		this.spclDeal = spclDeal;
+	}
+	public SpecialDeals getDeal() {
+		return deal;
+	}
+	public void setDeal(SpecialDeals deal) {
+		this.deal = deal;
 	}
 	
 }
