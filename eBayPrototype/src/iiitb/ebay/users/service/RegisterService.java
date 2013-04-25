@@ -105,25 +105,28 @@ int userid;
 	}
 
 	public int insertIntoUserAddress(UserAddress user) {
-		//System.out.println("hello \n\n");
-		int val=0;
+		// System.out.println("hello \n\n");
+		int val = 0;
 		Connection con;
 		Statement stmt;
 		ResultSet rs;
 		try {
-			con=DB.getConnection();
-			stmt=con.createStatement();
+			con = DB.getConnection();
+			stmt = con.createStatement();
 			String insertSQL = "insert into useraddress "
-				+ "(userID, address) " + 
-				"values(" + user.getUserID() + ", '" + user.getAddress1() + "');";
+					+ "(userID, address, contactName, city, state, pincode, country, isPrimary) "
+					+ "values(" + user.getUserID() + ", '" + user.getAddress1()
+					+ "', '" + user.getContactName() + "', '" + user.getCity()
+					+ "', '" + user.getState() + "', " + user.getPinCode()
+					+ ", '" + user.getCountry() + "', 'Y');";
 			stmt.executeUpdate(insertSQL, Statement.RETURN_GENERATED_KEYS);
 
 			int autoIncKeyFromApi = -1;
 
-			rs=stmt.getGeneratedKeys();
-			if(rs.next()){
-				autoIncKeyFromApi=rs.getInt(1);
-			}else{
+			rs = stmt.getGeneratedKeys();
+			if (rs.next()) {
+				autoIncKeyFromApi = rs.getInt(1);
+			} else {
 				try {
 					throw new Exception("key not generated!");
 				} catch (Exception e) {
@@ -133,10 +136,10 @@ int userid;
 			}
 			rs.close();
 
-            if (stmt != null) 
+			if (stmt != null)
 				DB.close(stmt);
 			DB.close(con);
-			//returns the patient id
+			// returns the patient id
 			return autoIncKeyFromApi;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

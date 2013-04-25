@@ -33,7 +33,7 @@
 
 		<action name="register" method="execute"
 			class="iiitb.ebay.action.RegisterAction">
-			<result name="success" type="tiles">/homepage.tiles</result>
+			<result name="success">welcome.jsp</result>
 			<result name="duplicate" type="tiles">/error.tiles</result>
 			<result name="error" type="tiles">/error.tiles</result>
 		</action>
