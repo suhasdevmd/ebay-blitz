@@ -597,6 +597,7 @@ public class CartAction extends ActionSupport {
 	public String updateTotal() {
 
 		System.out.println("inside update total ");
+		System.out.println("SellerID "+this.getSellerID());
 		Double total = 0.0;
 		/*
 		 * for (Cart crt : this.getSessionCart()) {
@@ -613,12 +614,12 @@ public class CartAction extends ActionSupport {
 		session = ActionContext.getContext().getSession();
 		sessionCart = (ArrayList<Cart>) session.get("SessionCart");
 		Double subTotal = 0.0;
-
-		for (int i = 0; i < sessionCart.size(); i++) {
+		int i,l;
+		for ( i = 0,l = 0; i < sessionCart.size() && l < tempCart.size() ; i++, l++) {
 			for (int j = 0; j < sessionCart.get(i).getCartProduct().size(); j++) {
 
 				if (sessionCart.get(i).getSellerID()
-						.equalsIgnoreCase(tempCart.get(i).getSellerID())) {
+						.equalsIgnoreCase(this.getSellerID())) {
 					Double price = Double.parseDouble(sessionCart.get(i)
 							.getCartProduct().get(j).getPrice());
 					/*
@@ -626,7 +627,7 @@ public class CartAction extends ActionSupport {
 					 * Double.parseDouble(sessionCart.get(i).getCartProduct
 					 * ().get(j).getQuantitySelected());
 					 */
-					Double qty = Double.parseDouble(tempCart.get(i)
+					Double qty = Double.parseDouble(tempCart.get(l)
 							.getCartProduct().get(j).getQuantitySelected());
 					System.out.println("---------------0-0-0-0-0-0- > qty = "
 							+ qty);
@@ -636,12 +637,12 @@ public class CartAction extends ActionSupport {
 							+ qtyAvail);
 					if (qty > qtyAvail) {
 						addActionError("invalid quantity");
-						tempCart.get(i).getCartProduct().get(j)
+						tempCart.get(l).getCartProduct().get(j)
 								.setQuantitySelected("1");
 						sessionCart.get(i).getCartProduct().get(j)
 								.setQuantitySelected("1");
 					}
-					qty = Double.parseDouble(tempCart.get(i).getCartProduct()
+					qty = Double.parseDouble(tempCart.get(l).getCartProduct()
 							.get(j).getQuantitySelected());
 
 					/* For specialDeals Product */
@@ -687,7 +688,7 @@ public class CartAction extends ActionSupport {
 							.getCartProduct()
 							.get(j)
 							.setQuantitySelected(
-									tempCart.get(i).getCartProduct().get(j)
+									tempCart.get(l).getCartProduct().get(j)
 											.getQuantitySelected());
 				}
 			}
