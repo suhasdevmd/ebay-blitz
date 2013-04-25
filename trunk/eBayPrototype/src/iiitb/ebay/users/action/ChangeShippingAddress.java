@@ -202,7 +202,7 @@ public class ChangeShippingAddress extends ActionSupport{
 		//telephone=saddress.getTelephone();
 		//isPrimary=saddress.getIsPrimary();
 
-
+		System.out.println("Change addr execute sellerID="+this.getSellerID());
 		
 		contactName="";
 		address="";
