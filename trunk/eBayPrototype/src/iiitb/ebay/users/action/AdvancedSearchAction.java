@@ -75,9 +75,29 @@ public String execute(){
 				//System.out.println("to is less than from to " + to + to.isEmpty());
 			}
 		}
-			
-		
-		
+	//search only by price range 		
+if(mysearch.isEmpty() && category.isEmpty())		
+{
+	
+	if(!from.isEmpty() && to.isEmpty()){
+		selectionModifier = "CAST(val as DECIMAL) >"+from+" )" ;
+							
+		setProductList(searchService.getItemsByPriceOnly(from,to,selectionModifier));
+		return "success";
+	}
+	else if(from.isEmpty() && !to.isEmpty()){
+		selectionModifier =" CAST(val as DECIMAL) BETWEEN 0 AND "+to +" ) ";
+							
+		setProductList(searchService.getItemsByPriceOnly(from,to,selectionModifier));
+		return "success";
+	}
+	else{
+		selectionModifier = "CAST(val as DECIMAL) BETWEEN "+from +" and " + to +") ";
+							
+		setProductList(searchService.getItemsByPriceOnly(from,to,selectionModifier));
+		return "success";
+	}
+}
 		
 if(from.isEmpty() && to.isEmpty()){
 		
