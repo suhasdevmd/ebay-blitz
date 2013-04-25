@@ -116,11 +116,12 @@ public class PaymentAction extends ActionSupport {
 			for (int i = 0; i < sessionCart.size(); i++) {
 				if (sessionCart.get(i).getSellerID()
 						.equalsIgnoreCase(String.valueOf(sellerID))) {
+					//shipping charges code
+					/*double totalAmnt = sessionCart.get(i).getTotal()  + getShippingCharges(pincode);
 					
-					double totalAmnt = sessionCart.get(i).getTotal()  + getShippingCharges(pincode);
-					//update the cart's total amount so that if order summary is asked we can display the order with the shipping charges applied
 					sessionCart.get(i).setTotal(totalAmnt);
-					this.setAmount(totalAmnt);
+					this.setAmount(totalAmnt);*/
+					this.setAmount( sessionCart.get(i).getTotal());
 					
 				}
 			}
@@ -389,8 +390,8 @@ public class PaymentAction extends ActionSupport {
 		return "success";
 	}
 
-	
-	private double getShippingCharges(int pincode) {
+	//for shipping charges 
+	/*private double getShippingCharges(int pincode) {
 		
 		try{
 			String pinStr = String.valueOf(pincode);
@@ -406,7 +407,7 @@ public class PaymentAction extends ActionSupport {
 		}
 		return charges;
 		
-	}
+	}*/
 
 	public double getAmount() {
 		return amount;
