@@ -100,6 +100,7 @@
 
 																<s:actionerror />
 																<s:iterator value="sessionCart" var="sC" status="stat1">
+																	<!-- <div style="width: 100%; height: 200px; overflow: auto;">-->
 																	<s:form name="cartform" action="updateCart"
 																		method="post">
 																		<s:hidden name="sellerID"/>
@@ -273,6 +274,7 @@
 																			<div></div>
 																		</div>
 																	</s:form>
+																	<!-- </div>-->
 																</s:iterator>
 
 															</div>
