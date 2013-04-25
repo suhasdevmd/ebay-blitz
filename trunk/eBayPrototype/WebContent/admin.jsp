@@ -158,13 +158,13 @@
 											</dl>
 											<div class="sep"></div>
 											
-											<dl id="c">
+											<!-- <dl id="c">
 												<dt class="notgreylabel">
 													<a href="manageorder" id="my_MyeBayShoppingCart">Manage
 														Order </a>
 												</dt>
 											</dl>
-											<div class="sep"></div>
+											<div class="sep"></div> -->
 										</td>
 									</tr>
 								</table>
