@@ -206,6 +206,7 @@ public class CategoryService {
 				String query = "select val from producteav where entity = '"
 						+ resultSetProductID.getString("entity")
 						+ "' and attr = 'startdate'";
+				System.out.println("START DATE QUERY : " + query);
 				ResultSet rs = DB.readFromDB(query, connectionProductID);
 				if(rs.next()) startDate = rs.getString(1);
 				

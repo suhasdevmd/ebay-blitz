@@ -400,7 +400,17 @@ public class ProductService {
 	/* USING users.FeedBack */
 	public int insertIntoFeedback(Feedback feedback) {
 		// System.out.println("hello \n\n");
-
+		String feedbackValue = null;
+		
+		if(feedback.getFeedbackType().equalsIgnoreCase("1"))
+			feedbackValue = "positive";
+		else if(feedback.getFeedbackType().equalsIgnoreCase("2"))
+			feedbackValue = "neutral";
+		else if(feedback.getFeedbackType().equalsIgnoreCase("3"))
+			feedbackValue = "negative";
+		else 
+			feedbackValue = "later";
+		
 		String insertSQL = "insert into feedback "
 				+ " (fromUserID, details, date, descriptionRating, communicationRating, shippingRating, shipChargesRating, toUserID, productID, orderID, overallFeedback) "
 				+ " values("
@@ -424,7 +434,7 @@ public class ProductService {
 				+ ", "
 				+ feedback.getOrderID()
 				+ ", '"
-				+ feedback.getFeedbackType() + "');";
+				+ feedbackValue + "');";
 		System.out.println(insertSQL);
 		return DB.update(insertSQL);
 	}

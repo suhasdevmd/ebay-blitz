@@ -35,13 +35,7 @@ public class HomepageAction extends ActionSupport {
 		session.put("homepageMenu", this.getHomepageMenu());
 
 		
-		/* Print the menu 
-		for (int i = 0; i < this.getHomepageMenu().size(); i++) {
-			System.out.println("Menu Has the following data : \n"
-					+ this.getHomepageMenu().get(i).toString());
-		}
 		
-		*/
 
 		/*
 		 * Fetches data of the first 4 products from the database to populate
