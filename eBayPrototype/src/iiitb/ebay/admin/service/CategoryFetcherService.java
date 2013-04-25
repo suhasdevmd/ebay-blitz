@@ -52,7 +52,7 @@ public class CategoryFetcherService {
 				}
 			}
 			try {
-				if (parentName != null){
+				if (parentName != null) {
 					productList.get(i).setName(
 							parentName + "->" + productList.get(i).getName());
 					productListForPage.add(productList.get(i));
@@ -64,19 +64,20 @@ public class CategoryFetcherService {
 			}
 		}
 
-		//return productList;
+		// return productList;
 		return productListForPage;
 	}
 
-	public static String insertToEav(String image,String categoryId, String productName,
-			String productPrice, String productQty, String productBrand,
-			String condition, String[] av, boolean additional,int userID) {
+	public static String insertToEav(String image, String categoryId,
+			String productName, String productPrice, String productQty,
+			String productBrand, String condition, String[] av,
+			boolean additional, int userID) {
 		long entityNum = -1;
-		/* This userID is taken to be 1 as default.
-		 * Needs to be changed as and when userID
-		 * is put into the session
-		 * */
-		//int userID = 1;	
+		/*
+		 * This userID is taken to be 1 as default. Needs to be changed as and
+		 * when userID is put into the session
+		 */
+		// int userID = 1;
 
 		con = DB.getConnection();
 		query = "SELECT MAX(entity) from producteav";
@@ -101,33 +102,43 @@ public class CategoryFetcherService {
 				+ ", 'categoryid', '" + categoryId.trim() + "')";
 		DB.update(con, query);
 
-		query = "INSERT into producteav values(" + entityNum
-				+ ", 'price', '" + productPrice.trim() + "')";
+		query = "INSERT into producteav values(" + entityNum + ", 'price', '"
+				+ productPrice.trim() + "')";
 		DB.update(con, query);
-		
+
 		query = "INSERT into producteav values(" + entityNum
 				+ ", 'quantity', '" + productQty.trim() + "')";
 		DB.update(con, query);
-		
-		query = "INSERT into producteav values(" + entityNum
-				+ ", 'brand', '" + productBrand.trim() + "')";
+
+		query = "INSERT into producteav values(" + entityNum + ", 'brand', '"
+				+ productBrand.trim() + "')";
 		DB.update(con, query);
-		
+
 		query = "INSERT into producteav values(" + entityNum
 				+ ", 'condition', '" + condition.trim() + "')";
 		DB.update(con, query);
-		
+
 		query = "INSERT into producteav values(" + entityNum
 				+ ", 'sellerid', '" + userID + "')";
 		DB.update(con, query);
-		
-		/* Here again the userID is hard coded as 1.
-		 * Change as and when required
-		 * */
-		query = "UPDATE userdetails set role = 'both' where userID ="+userID;
+
+		/*
+		 * Here again the userID is hard coded as 1. Change as and when required
+		 */
+		query = "SELECT role from userdetails where userID =" + userID;
+		rs = DB.readFromDB(query, con);
+		try {
+			if (rs.next() && rs.getString(1).equalsIgnoreCase("admin"))
+				query = "UPDATE userdetails set role = 'both' where userID ="
+						+ userID;
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+			System.out
+					.println("Error closing database connection in CategoryFetcherService->insertIntoEav()");
+		}
 		DB.update(con, query);
-		
-		if(additional) {
+
+		if (additional) {
 			for (int i = 0; i < av.length; i++) {
 				String[] temp = av[i].split(" : ");
 				query = "INSERT into producteav values(" + entityNum + ", '"
@@ -137,8 +148,9 @@ public class CategoryFetcherService {
 		}
 
 		try {
-			query = "INSERT into productimage(productID,image1) values("+entityNum+",'"+image+"')";
-			System.out.println("Image "+query);
+			query = "INSERT into productimage(productID,image1) values("
+					+ entityNum + ",'" + image + "')";
+			System.out.println("Image " + query);
 			DB.update(con, query);
 			con.close();
 		} catch (SQLException e) {

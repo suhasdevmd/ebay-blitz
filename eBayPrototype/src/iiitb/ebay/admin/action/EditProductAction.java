@@ -106,6 +106,15 @@ public class EditProductAction extends ActionSupport {
 				additional);
 		return "success";
 	}
+	
+	public String deleteProduct() {
+		Map<String, Object> session;
+		session = ActionContext.getContext().getSession();
+		if (null == session.get("login") || !(Boolean) session.get("login"))
+			return "login";
+		
+		return EditProductService.delete(productID);
+	}
 
 	public ArrayList<CategoryHierarchy> getProductList() {
 		return productList;

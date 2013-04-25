@@ -15,6 +15,7 @@
 			<td>Brand</td>
 			<td>Product Price</td>
 			<td>Update</td>
+			<td>Delete</td>
 		</tr>
 		<s:iterator value="productDetails">
 			<tr>
@@ -22,6 +23,7 @@
 				<td><s:property value="brand"/></td>
 				<td><s:property value="price"/></td>
 				<td><a href="editProduct.action?productID=<s:property value="productID"/>">Update</a></td>
+				<td><a href="deleteProduct.action?productID=<s:property value="productID"/>">Delete</a></td>
 			</tr>
 		</s:iterator>
 	</table>
