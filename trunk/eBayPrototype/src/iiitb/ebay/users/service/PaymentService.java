@@ -259,17 +259,28 @@ public class PaymentService {
 		}
 		else if (method == ebay) {
 			// Hard coded for Ebay
-			if( userID != paisaPay)
+			if( userID != paisaPay){
 				query = "select balance from accountdetails where accID=1";
-			else
-				query = "select paisaPayBalance from accountdetails where accID=1";
-			rs = DB.readFromDB(query, con);
-			try {
-				if (rs.next())
-					balance = rs.getDouble("paisaPayBalance");
-			} catch (SQLException e) {
-				e.printStackTrace();
+				rs = DB.readFromDB(query, con);
+				try {
+					if (rs.next())
+						balance = rs.getDouble("balance");
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
 			}
+			else{
+				query = "select paisaPayBalance from accountdetails where accID=1";
+				rs = DB.readFromDB(query, con);
+				try {
+					if (rs.next())
+						balance = rs.getDouble("paisaPayBalance");
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+				
+			}
+			
 		}
 		try {
 			con.close();
