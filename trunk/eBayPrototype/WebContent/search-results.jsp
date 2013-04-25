@@ -30,6 +30,9 @@ function update(value){
 				<!-- <th><h3>Duration</h3></th> -->
 				<th><h3>Description</h3></th>
 			</tr>
+	</table>
+	<div style="width: 100%; height: 400px; overflow: auto;">
+	<table>
 			<s:iterator value="productList" var="obj">
 				<tr>
 				    <td><img src="productimages/<s:property value="image1"/>"  alt="<s:property value="image1"/>"></td> 
@@ -45,6 +48,7 @@ function update(value){
 				<td><s:property value="Description"/></td>
 				</tr>
 			</s:iterator>
+			
 			<tr>
 				<td></td>
 				<td></td>
@@ -55,7 +59,7 @@ function update(value){
 				<td></td>
 			</tr>
 		</table>
-	
+	</div>
 	
 	
 	

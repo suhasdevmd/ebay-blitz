@@ -120,7 +120,7 @@
 									class="mt12" style="min-height: 500px;">
 									<tr class="nbg">
 										<td width="1" class="nlb" height="20"><img
-											src="http://pics.ebaystatic.com/aw/pics/s.gif" width="1"
+											src="" width="1"
 											height="1" alt=""></td>
 										<td class="mev" height="20" valign="middle" align="left"
 											width="140">
@@ -129,7 +129,7 @@
 											</h2>
 										</td>
 										<td class="roundtop" width="19" height="20" bgcolor="#d6dcfe"><img
-											src="http://pics.ebaystatic.com/aw/pics/s.gif" width="19"
+											src="" width="19"
 											height="20" alt=""></td>
 									</tr>
 									<tr>
@@ -334,7 +334,7 @@
 			<s:iterator value="productDetails">
 			 <s:hidden name="productID" value="productID"></s:hidden>
 				<tr>
-					<td><img src="" alt="<s:property value="name"/>" /></td>
+					<td><img src="productimages/<s:property value="image1"/>" alt="<s:property value="name"/>" /></td>
 					<td><a href="products.action?productID=<s:property value = "productID" />"><s:property value = "name" /></a></td>
 					<td><s:property value="price" /></td>
 					<td><a href="deletewishlist.action?productID=<s:property value = "productID" />">Delete</a>
