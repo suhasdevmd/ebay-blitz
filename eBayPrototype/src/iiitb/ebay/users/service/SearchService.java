@@ -47,11 +47,11 @@ public class SearchService {
 				+"(SELECT entity "
 				+"FROM producteav "
 				+"WHERE attr collate utf8_general_ci ='categoryid' and val "
-				+"LIKE CONCAT((select phKey from producthierarchy where name collate utf8_general_ci LIKE '"+category+"'),'%'))"
+				+"LIKE CONCAT((select phKey from producthierarchy where name collate utf8_general_ci LIKE '%"+category+"%'),'%'))"
 				+ selectionModifier  
 				+ " group by entity" ;
 
-			System.out.println("query_getEntityID  " + query_getEntityID);
+			//System.out.println("query_getEntityID  " + query_getEntityID);
 
 			ResultSet rs_getEntityID = DB.readFromBmtcDB(query_getEntityID);
 			while(rs_getEntityID.next()){
@@ -64,7 +64,7 @@ public class SearchService {
 				ProductModellist.add(productMeta);
 			}
 
-			System.out.println("NoOfAttrs  " + NoOfAttrs);
+			//System.out.println("NoOfAttrs  " + NoOfAttrs);
 
 			if(NoOfAttrs==0 && selectionModifier.isEmpty()){
 				ProductModellist = getAllItems();
@@ -80,12 +80,12 @@ public class SearchService {
 					+"(SELECT entity "
 					+"FROM producteav "
 					+"WHERE attr collate utf8_general_ci ='categoryid' and val "
-					+"LIKE CONCAT((select phKey from producthierarchy where name collate utf8_general_ci LIKE '"+category+"'),'%'))"
+					+"LIKE CONCAT((select phKey from producthierarchy where name collate utf8_general_ci LIKE '%"+category+"%'),'%'))"
 					+ selectionModifier  
 					+ " group by entity" ;
 
 
-				System.out.println("query_getProdMeta   = "  + query_getProdMeta );	
+				//System.out.println("query_getProdMeta   = "  + query_getProdMeta );	
 
 				ResultSet rs = DB.readFromBmtcDB(query_getProdMeta);
 				while(rs.next()){
@@ -111,13 +111,13 @@ public class SearchService {
 				+"(SELECT entity "
 				+"FROM producteav "
 				+"WHERE attr collate utf8_general_ci ='categoryid' and val "
-				+"LIKE CONCAT((select phKey from producthierarchy where name collate utf8_general_ci LIKE '"+category+"'),'%'))"
+				+"LIKE CONCAT((select phKey from producthierarchy where name collate utf8_general_ci LIKE '%"+category+"%'),'%'))"
 				+ selectionModifier  
 				+"order by entity";
 
 
 			ResultSet resultSet_getProductAttrs = DB.readFromBmtcDB(query_getProductAttrs);
-			System.out.println("size = "+ProductModellist.size());
+			//System.out.println("size = "+ProductModellist.size());
 			for(int i=0;i<ProductModellist.size();i++){
 				int count=0;
 				while(count < ProductModellist.get(i).getNumberOfAttributes() && resultSet_getProductAttrs.next() ){
@@ -126,45 +126,45 @@ public class SearchService {
 					//				System.out.println("###################### noofAttributes = "+ProductModellist.get(i).getNumberOfAttributes()+"################## productID = "+ProductModellist.get(i).getProductID());
 
 					String prodIDTemp = resultSet_getProductAttrs.getString("entity");
-					System.out.println("temp ProdID"+prodIDTemp);
+				//	System.out.println("temp ProdID"+prodIDTemp);
 
 					if(prodIDTemp.equalsIgnoreCase(ProductModellist.get(i).getProductID())){
 						String attrTemp = resultSet_getProductAttrs.getString("attr");
 
 						if(attrTemp.equalsIgnoreCase("Name")){							
-							System.out.println("if for name");
+							//System.out.println("if for name");
 							ProductModellist.get(i).setName(resultSet_getProductAttrs.getString("val"));
 						}
 						else if(attrTemp.equalsIgnoreCase("price")){
-							System.out.println("if for price");
+							//System.out.println("if for price");
 							ProductModellist.get(i).setPrice(resultSet_getProductAttrs.getString("val"));
 						}
 						else if(attrTemp.equalsIgnoreCase("quantity")){
-							System.out.println("if for quantity");
+							//System.out.println("if for quantity");
 							ProductModellist.get(i).setQuantityAvailable(resultSet_getProductAttrs.getString("val"));
 						}
 						else if(attrTemp.equalsIgnoreCase("condition")){
-							System.out.println("if for condition");
+							//System.out.println("if for condition");
 							ProductModellist.get(i).setProductCondition(resultSet_getProductAttrs.getString("val"));
 						}
 						else if(attrTemp.equalsIgnoreCase("brand")){
-							System.out.println("if for brand");
+							//System.out.println("if for brand");
 							ProductModellist.get(i).setBrand(resultSet_getProductAttrs.getString("val"));
 						}
 						else if(attrTemp.equalsIgnoreCase("sellerID")){
-							System.out.println("if for sellerID");
+							//System.out.println("if for sellerID");
 							ProductModellist.get(i).setSellerID(resultSet_getProductAttrs.getString("val"));
 						}
 						else if(attrTemp.equalsIgnoreCase("CategoryID")){
-							System.out.println("if for categoryID");
+							//System.out.println("if for categoryID");
 							ProductModellist.get(i).setCategoryID(resultSet_getProductAttrs.getString("val"));
 						}
 						else if(attrTemp.equalsIgnoreCase("duration")){
-							System.out.println("if for duration");
+							//System.out.println("if for duration");
 							ProductModellist.get(i).setDuration(resultSet_getProductAttrs.getString("val"));
 						}
 						else {
-							System.out.println("if for other things");
+							//System.out.println("if for other things");
 							String valTemp = resultSet_getProductAttrs.getString("val");
 							ProductModellist.get(i).getDescription().put(attrTemp, valTemp);
 
@@ -181,7 +181,7 @@ public class SearchService {
 
 
 		//test
-		System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+		/*System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
 		for (int i = 0; i < ProductModellist.size(); i++) {
 			System.out.println(" ProductID = "+ProductModellist.get(i).getProductID());
 			System.out.println(" SellerID= "+ProductModellist.get(i).getSellerID());
@@ -197,7 +197,7 @@ public class SearchService {
 			System.out.println("\tName: "+ProductModellist.get(i).getDescription());
 			System.out.println("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
 
-		}
+		}*/
 
 
 		return ProductModellist;
@@ -216,7 +216,7 @@ public class SearchService {
 				+" group by entity";
 
 
-			System.out.println("query_getProductAttrs  " + query_getEntityID);
+//			System.out.println("query_getProductAttrs  " + query_getEntityID);
 
 
 			ResultSet rs_getEntityID = DB.readFromBmtcDB(query_getEntityID);
@@ -230,7 +230,7 @@ public class SearchService {
 				ProductModellist.add(productMeta);
 			}
 
-			System.out.println("NoOfAttrs  " + NoOfAttrs);
+//			System.out.println("NoOfAttrs  " + NoOfAttrs);
 
 			//---------------------------------------------------------------------------------------------------------------
 
@@ -238,7 +238,7 @@ public class SearchService {
 
 
 			ResultSet resultSet_getProductAttrs = DB.readFromBmtcDB(query_getProductAttrs);
-			System.out.println("size = "+ProductModellist.size());
+		//	System.out.println("size = "+ProductModellist.size());
 			for(int i=0;i<ProductModellist.size();i++){
 				int count=0;
 				while(count < ProductModellist.get(i).getNumberOfAttributes() && resultSet_getProductAttrs.next() ){
@@ -247,45 +247,45 @@ public class SearchService {
 					//						System.out.println("###################### noofAttributes = "+ProductModellist.get(i).getNumberOfAttributes()+"################## productID = "+ProductModellist.get(i).getProductID());
 
 					String prodIDTemp = resultSet_getProductAttrs.getString("entity");
-					System.out.println("temp ProdID"+prodIDTemp);
+				//	System.out.println("temp ProdID"+prodIDTemp);
 
 					if(prodIDTemp.equalsIgnoreCase(ProductModellist.get(i).getProductID())){
 						String attrTemp = resultSet_getProductAttrs.getString("attr");
 
 						if(attrTemp.equalsIgnoreCase("Name")){							
-							System.out.println("if for name");
+							//System.out.println("if for name");
 							ProductModellist.get(i).setName(resultSet_getProductAttrs.getString("val"));
 						}
 						else if(attrTemp.equalsIgnoreCase("price")){
-							System.out.println("if for price");
+							//System.out.println("if for price");
 							ProductModellist.get(i).setPrice(resultSet_getProductAttrs.getString("val"));
 						}
 						else if(attrTemp.equalsIgnoreCase("quantity")){
-							System.out.println("if for quantity");
+							//System.out.println("if for quantity");
 							ProductModellist.get(i).setQuantityAvailable(resultSet_getProductAttrs.getString("val"));
 						}
 						else if(attrTemp.equalsIgnoreCase("condition")){
-							System.out.println("if for condition");
+							//System.out.println("if for condition");
 							ProductModellist.get(i).setProductCondition(resultSet_getProductAttrs.getString("val"));
 						}
 						else if(attrTemp.equalsIgnoreCase("brand")){
-							System.out.println("if for brand");
+							//System.out.println("if for brand");
 							ProductModellist.get(i).setBrand(resultSet_getProductAttrs.getString("val"));
 						}
 						else if(attrTemp.equalsIgnoreCase("sellerID")){
-							System.out.println("if for sellerID");
+							//System.out.println("if for sellerID");
 							ProductModellist.get(i).setSellerID(resultSet_getProductAttrs.getString("val"));
 						}
 						else if(attrTemp.equalsIgnoreCase("CategoryID")){
-							System.out.println("if for categoryID");
+							//System.out.println("if for categoryID");
 							ProductModellist.get(i).setCategoryID(resultSet_getProductAttrs.getString("val"));
 						}
 						else if(attrTemp.equalsIgnoreCase("duration")){
-							System.out.println("if for duration");
+							//System.out.println("if for duration");
 							ProductModellist.get(i).setDuration(resultSet_getProductAttrs.getString("val"));
 						}
 						else {
-							System.out.println("if for other things");
+							//System.out.println("if for other things");
 							String valTemp = resultSet_getProductAttrs.getString("val");
 							ProductModellist.get(i).getDescription().put(attrTemp, valTemp);
 
@@ -315,16 +315,16 @@ public class SearchService {
 				+"(SELECT entity "
 				+"FROM producteav "
 				+"WHERE attr collate utf8_general_ci ='categoryid' and val "
-				+"LIKE CONCAT((select phKey from producthierarchy where name collate utf8_general_ci LIKE '"+category+"'),'%'))" 
+				+"LIKE CONCAT((select phKey from producthierarchy where name collate utf8_general_ci LIKE '%"+category+"%'),'%'))" 
 				+"AND entity in (select entity from producteav where attr collate utf8_general_ci  ='name' and val collate utf8_general_ci  LIKE '%"+name+"%')"	
 				+ selectionModifier  
 				+ " group by entity";
 
 
-			System.out.println("query_getEntityID  " + query_getEntityID);
+			//System.out.println("query_getEntityID  " + query_getEntityID);
 
 
-			System.out.println("query_getEntityID   = "  + query_getEntityID );
+			//System.out.println("query_getEntityID   = "  + query_getEntityID );
 			ResultSet rs_getEntityID = DB.readFromBmtcDB(query_getEntityID);
 			while(rs_getEntityID.next()){
 
@@ -336,7 +336,7 @@ public class SearchService {
 				ProductModellist.add(productMeta);
 			}
 
-			System.out.println("NoOfAttrs  " + NoOfAttrs);
+			//System.out.println("NoOfAttrs  " + NoOfAttrs);
 
 
 			if(NoOfAttrs==0 && selectionModifier.isEmpty()){
@@ -353,12 +353,12 @@ public class SearchService {
 					+"(SELECT entity "
 					+"FROM producteav "
 					+"WHERE attr collate utf8_general_ci ='categoryid' and val "
-					+"LIKE CONCAT((select phKey from producthierarchy where name collate utf8_general_ci LIKE '"+category+"'),'%'))" 
+					+"LIKE CONCAT((select phKey from producthierarchy where name collate utf8_general_ci LIKE '%"+category+"%'),'%'))" 
 					+"AND entity in (select entity from producteav where attr collate utf8_general_ci  ='name' and val collate utf8_general_ci  LIKE '%"+name+"%')"	
 					+ selectionModifier  
 					+ " group by entity";
 
-				System.out.println("query_getProdMeta   = "  + query_getProdMeta );	
+				//System.out.println("query_getProdMeta   = "  + query_getProdMeta );	
 
 				ResultSet rs = DB.readFromBmtcDB(query_getProdMeta);
 				while(rs.next()){
@@ -386,13 +386,13 @@ public class SearchService {
 				+"(SELECT entity "
 				+	"FROM producteav "
 				+	"WHERE attr collate utf8_general_ci ='categoryid' and val "
-				+	"LIKE CONCAT((select phKey from producthierarchy where name collate utf8_general_ci LIKE '"+category+"'),'%'))" 
+				+	"LIKE CONCAT((select phKey from producthierarchy where name collate utf8_general_ci LIKE '%"+category+"%'),'%'))" 
 				+   "AND entity in (select entity from producteav where attr collate utf8_general_ci  ='name' and val collate utf8_general_ci  LIKE '%"+name+"%')"	
 				+ selectionModifier  
 				+ " order by entity" ;
 
 			ResultSet resultSet_getProductAttrs = DB.readFromBmtcDB(query_getProductAttrs);
-			System.out.println("size = "+ProductModellist.size());
+			//System.out.println("size = "+ProductModellist.size());
 			for(int i=0;i<ProductModellist.size();i++){
 				int count=0;
 				while(count < ProductModellist.get(i).getNumberOfAttributes() && resultSet_getProductAttrs.next() ){
@@ -401,45 +401,45 @@ public class SearchService {
 					//					System.out.println("###################### noofAttributes = "+ProductModellist.get(i).getNumberOfAttributes()+"################## productID = "+ProductModellist.get(i).getProductID());
 
 					String prodIDTemp = resultSet_getProductAttrs.getString("entity");
-					System.out.println("temp ProdID"+prodIDTemp);
+					//System.out.println("temp ProdID"+prodIDTemp);
 
 					if(prodIDTemp.equalsIgnoreCase(ProductModellist.get(i).getProductID())){
 						String attrTemp = resultSet_getProductAttrs.getString("attr");
 
 						if(attrTemp.equalsIgnoreCase("Name")){							
-							System.out.println("if for name");
+							//System.out.println("if for name");
 							ProductModellist.get(i).setName(resultSet_getProductAttrs.getString("val"));
 						}
 						else if(attrTemp.equalsIgnoreCase("price")){
-							System.out.println("if for price");
+							//System.out.println("if for price");
 							ProductModellist.get(i).setPrice(resultSet_getProductAttrs.getString("val"));
 						}
 						else if(attrTemp.equalsIgnoreCase("quantity")){
-							System.out.println("if for quantity");
+							//System.out.println("if for quantity");
 							ProductModellist.get(i).setQuantityAvailable(resultSet_getProductAttrs.getString("val"));
 						}
 						else if(attrTemp.equalsIgnoreCase("condition")){
-							System.out.println("if for condition");
+							//System.out.println("if for condition");
 							ProductModellist.get(i).setProductCondition(resultSet_getProductAttrs.getString("val"));
 						}
 						else if(attrTemp.equalsIgnoreCase("brand")){
-							System.out.println("if for brand");
+							//System.out.println("if for brand");
 							ProductModellist.get(i).setBrand(resultSet_getProductAttrs.getString("val"));
 						}
 						else if(attrTemp.equalsIgnoreCase("sellerID")){
-							System.out.println("if for sellerID");
+							//System.out.println("if for sellerID");
 							ProductModellist.get(i).setSellerID(resultSet_getProductAttrs.getString("val"));
 						}
 						else if(attrTemp.equalsIgnoreCase("CategoryID")){
-							System.out.println("if for categoryID");
+							//System.out.println("if for categoryID");
 							ProductModellist.get(i).setCategoryID(resultSet_getProductAttrs.getString("val"));
 						}
 						else if(attrTemp.equalsIgnoreCase("duration")){
-							System.out.println("if for duration");
+							//System.out.println("if for duration");
 							ProductModellist.get(i).setDuration(resultSet_getProductAttrs.getString("val"));
 						}
 						else {
-							System.out.println("if for other things");
+							//System.out.println("if for other things");
 							String valTemp = resultSet_getProductAttrs.getString("val");
 							ProductModellist.get(i).getDescription().put(attrTemp, valTemp);
 
@@ -470,7 +470,7 @@ public class SearchService {
 				+selectionModifier
 				+" group by entity";
 
-			System.out.println("query_getEntityID   = "  + query_getEntityID );
+			//System.out.println("query_getEntityID   = "  + query_getEntityID );
 			ResultSet rs_getEntityID = DB.readFromBmtcDB(query_getEntityID);
 			while(rs_getEntityID.next()){
 
@@ -482,7 +482,7 @@ public class SearchService {
 				ProductModellist.add(productMeta);
 			}
 
-			System.out.println("NoOfAttrs  " + NoOfAttrs);
+			//System.out.println("NoOfAttrs  " + NoOfAttrs);
 
 
 			if(NoOfAttrs==0 && selectionModifier.isEmpty()){
@@ -529,7 +529,7 @@ public class SearchService {
 				+ selectionModifier +"order by entity";
 
 			ResultSet resultSet_getProductAttrs = DB.readFromBmtcDB(query_getProductAttrs);
-			System.out.println("size = "+ProductModellist.size());
+			//System.out.println("size = "+ProductModellist.size());
 			for(int i=0;i<ProductModellist.size();i++){
 				int count=0;
 				while(count < ProductModellist.get(i).getNumberOfAttributes() && resultSet_getProductAttrs.next() ){
@@ -538,45 +538,45 @@ public class SearchService {
 					//					System.out.println("###################### noofAttributes = "+ProductModellist.get(i).getNumberOfAttributes()+"################## productID = "+ProductModellist.get(i).getProductID());
 
 					String prodIDTemp = resultSet_getProductAttrs.getString("entity");
-					System.out.println("temp ProdID"+prodIDTemp);
+					//System.out.println("temp ProdID"+prodIDTemp);
 
 					if(prodIDTemp.equalsIgnoreCase(ProductModellist.get(i).getProductID())){
 						String attrTemp = resultSet_getProductAttrs.getString("attr");
 
 						if(attrTemp.equalsIgnoreCase("Name")){							
-							System.out.println("if for name");
+							//System.out.println("if for name");
 							ProductModellist.get(i).setName(resultSet_getProductAttrs.getString("val"));
 						}
 						else if(attrTemp.equalsIgnoreCase("price")){
-							System.out.println("if for price");
+							//System.out.println("if for price");
 							ProductModellist.get(i).setPrice(resultSet_getProductAttrs.getString("val"));
 						}
 						else if(attrTemp.equalsIgnoreCase("quantity")){
-							System.out.println("if for quantity");
+							//System.out.println("if for quantity");
 							ProductModellist.get(i).setQuantityAvailable(resultSet_getProductAttrs.getString("val"));
 						}
 						else if(attrTemp.equalsIgnoreCase("condition")){
-							System.out.println("if for condition");
+							//System.out.println("if for condition");
 							ProductModellist.get(i).setProductCondition(resultSet_getProductAttrs.getString("val"));
 						}
 						else if(attrTemp.equalsIgnoreCase("brand")){
-							System.out.println("if for brand");
+							//System.out.println("if for brand");
 							ProductModellist.get(i).setBrand(resultSet_getProductAttrs.getString("val"));
 						}
 						else if(attrTemp.equalsIgnoreCase("sellerID")){
-							System.out.println("if for sellerID");
+							//System.out.println("if for sellerID");
 							ProductModellist.get(i).setSellerID(resultSet_getProductAttrs.getString("val"));
 						}
 						else if(attrTemp.equalsIgnoreCase("CategoryID")){
-							System.out.println("if for categoryID");
+							//System.out.println("if for categoryID");
 							ProductModellist.get(i).setCategoryID(resultSet_getProductAttrs.getString("val"));
 						}
 						else if(attrTemp.equalsIgnoreCase("duration")){
-							System.out.println("if for duration");
+							//System.out.println("if for duration");
 							ProductModellist.get(i).setDuration(resultSet_getProductAttrs.getString("val"));
 						}
 						else {
-							System.out.println("if for other things");
+							//System.out.println("if for other things");
 							String valTemp = resultSet_getProductAttrs.getString("val");
 							ProductModellist.get(i).getDescription().put(attrTemp, valTemp);
 
@@ -635,10 +635,9 @@ public class SearchService {
 				+"FROM producteav "
 				+"WHERE attr collate utf8_general_ci ='price' and "
 				+selectionModifier 
-				/*+"CAST(val as DECIMAL) BETWEEN "+from +" and " + to +") "  */
 				+"group by entity";
 
-			System.out.println("query_getEntityID  " + query_getEntityID);
+			//System.out.println("query_getEntityID  " + query_getEntityID);
 
 			ResultSet rs_getEntityID = DB.readFromBmtcDB(query_getEntityID);
 			while(rs_getEntityID.next()){
@@ -651,7 +650,7 @@ public class SearchService {
 				ProductModellist.add(productMeta);
 			}
 
-			System.out.println("NoOfAttrs  " + NoOfAttrs);
+			//System.out.println("NoOfAttrs  " + NoOfAttrs);
 
 			if(NoOfAttrs==0){
 				ProductModellist = getAllItems();
@@ -665,14 +664,13 @@ public class SearchService {
 				+"(SELECT entity "
 				+"FROM producteav "
 				+"WHERE attr collate utf8_general_ci ='price' and "
-				/*+"CAST(val as DECIMAL) BETWEEN "+from +" and " + to +") "  */
 				+ selectionModifier 
 				+"order by entity";
 
-			System.out.println("query_getProductAttrs  " + query_getProductAttrs);
+			//System.out.println("query_getProductAttrs  " + query_getProductAttrs);
 
 			ResultSet resultSet_getProductAttrs = DB.readFromBmtcDB(query_getProductAttrs);
-			System.out.println("size = "+ProductModellist.size());
+			//System.out.println("size = "+ProductModellist.size());
 			for(int i=0;i<ProductModellist.size();i++){
 				int count=0;
 				while(count < ProductModellist.get(i).getNumberOfAttributes() && resultSet_getProductAttrs.next() ){
@@ -681,45 +679,45 @@ public class SearchService {
 					//				System.out.println("###################### noofAttributes = "+ProductModellist.get(i).getNumberOfAttributes()+"################## productID = "+ProductModellist.get(i).getProductID());
 
 					String prodIDTemp = resultSet_getProductAttrs.getString("entity");
-					System.out.println("temp ProdID"+prodIDTemp);
+				//	System.out.println("temp ProdID"+prodIDTemp);
 
 					if(prodIDTemp.equalsIgnoreCase(ProductModellist.get(i).getProductID())){
 						String attrTemp = resultSet_getProductAttrs.getString("attr");
 
 						if(attrTemp.equalsIgnoreCase("Name")){							
-							System.out.println("if for name");
+					//		System.out.println("if for name");
 							ProductModellist.get(i).setName(resultSet_getProductAttrs.getString("val"));
 						}
 						else if(attrTemp.equalsIgnoreCase("price")){
-							System.out.println("if for price");
+						//	System.out.println("if for price");
 							ProductModellist.get(i).setPrice(resultSet_getProductAttrs.getString("val"));
 						}
 						else if(attrTemp.equalsIgnoreCase("quantity")){
-							System.out.println("if for quantity");
+					//		System.out.println("if for quantity");
 							ProductModellist.get(i).setQuantityAvailable(resultSet_getProductAttrs.getString("val"));
 						}
 						else if(attrTemp.equalsIgnoreCase("condition")){
-							System.out.println("if for condition");
+						//	System.out.println("if for condition");
 							ProductModellist.get(i).setProductCondition(resultSet_getProductAttrs.getString("val"));
 						}
 						else if(attrTemp.equalsIgnoreCase("brand")){
-							System.out.println("if for brand");
+						//	System.out.println("if for brand");
 							ProductModellist.get(i).setBrand(resultSet_getProductAttrs.getString("val"));
 						}
 						else if(attrTemp.equalsIgnoreCase("sellerID")){
-							System.out.println("if for sellerID");
+						//	System.out.println("if for sellerID");
 							ProductModellist.get(i).setSellerID(resultSet_getProductAttrs.getString("val"));
 						}
 						else if(attrTemp.equalsIgnoreCase("CategoryID")){
-							System.out.println("if for categoryID");
+							//System.out.println("if for categoryID");
 							ProductModellist.get(i).setCategoryID(resultSet_getProductAttrs.getString("val"));
 						}
 						else if(attrTemp.equalsIgnoreCase("duration")){
-							System.out.println("if for duration");
+							//System.out.println("if for duration");
 							ProductModellist.get(i).setDuration(resultSet_getProductAttrs.getString("val"));
 						}
 						else {
-							System.out.println("if for other things");
+							//System.out.println("if for other things");
 							String valTemp = resultSet_getProductAttrs.getString("val");
 							ProductModellist.get(i).getDescription().put(attrTemp, valTemp);
 
@@ -736,7 +734,7 @@ public class SearchService {
 
 
 		//test
-		System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+	/*	System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
 		for (int i = 0; i < ProductModellist.size(); i++) {
 			System.out.println(" ProductID = "+ProductModellist.get(i).getProductID());
 			System.out.println(" SellerID= "+ProductModellist.get(i).getSellerID());
@@ -752,7 +750,7 @@ public class SearchService {
 			System.out.println("\tName: "+ProductModellist.get(i).getDescription());
 			System.out.println("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
 
-		}
+		}*/
 
 
 		return ProductModellist;
