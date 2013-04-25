@@ -704,7 +704,7 @@ div.btnMsgBar input.btnMsgBar-bTxt {
 																			<!-- Change address to be done //////////	 -->			
 																						
 																						<div style="padding-top: 10px;">
-																							<a name="uaddress" href="changeshippingaddress"
+																							<a name="uaddress" href="changeshippingaddress?sellerID=<s:property value="sellerID"/>&pageFlag=Buy"
 																								class="ChangeAddressLink"
 																								style="color: #0033ff;">Change shipping
 																								address</a>

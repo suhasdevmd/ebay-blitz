@@ -43,7 +43,7 @@
 							<table id="gh-t">
 								<tbody>
 									<tr>
-										<td id="gh-l"><a href="http://www.ebay.in"
+										<td id="gh-l"><a href="homepage.action"
 											_sp="m570.l2586" id="gh-la">eBay<img alt=""
 												src="http://p.ebaystatic.com/aw/pics/s.gif" id="gh-logo"
 												border="0">
@@ -290,7 +290,7 @@
 																				<s:hidden name="pincode"></s:hidden>
 																				<s:hidden name="country"></s:hidden>
 																				<s:hidden name="telephone"></s:hidden>
-																						
+																				<s:hidden name="sellerID"/>
 																						
 																						
 																						
