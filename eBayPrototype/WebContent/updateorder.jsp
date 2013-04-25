@@ -115,7 +115,7 @@
 								</tr>
 							</table>
 						</div>
-						<div id="bodyContent">
+						<%-- <div id="bodyContent">
 							<div class="leftClass" id="LeftNav">
 								<table cellpadding="0" cellspacing="0" border="0" width="165"
 									class="mt12" style="min-height: 500px;">
@@ -173,7 +173,7 @@
 									width="1" alt=""><a name="" id="Anchor"></a> <img
 									src="http://pics.ebaystatic.com/aw/pics/s.gif" height="15"
 									width="1" alt="">
-							</div>
+							</div> --%>
 							<div class="centerClass" id="ContainerWrapper">
 								<div id="Container">
 									<a name="" id="Anchor"></a>
