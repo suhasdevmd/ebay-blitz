@@ -14,8 +14,11 @@ import iiitb.ebay.users.model.UserDetails;
 import iiitb.ebay.users.service.CartService;
 import iiitb.ebay.users.service.PaymentService;
 import iiitb.ebay.users.service.SignOutService;
+import iiitb.ebay.utilities.DB;
 
+import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Map;
 
 import com.opensymphony.xwork2.ActionContext;
@@ -40,6 +43,7 @@ public class PaymentAction extends ActionSupport {
 	private String productName = new String();
 	private String errorMsg;
 	double balance;
+	private double charges ;
 	public ArrayList<Transactions> transactionList = new ArrayList<Transactions>();
 	public ArrayList<Balance> balanceList = new ArrayList<Balance>();
 	public ArrayList<OrderItemwithProductName> orderItemwithProductName = new ArrayList<OrderItemwithProductName>();
@@ -86,7 +90,7 @@ public class PaymentAction extends ActionSupport {
 		int shippingID = 0 ;
 		int orderID = 0;
 		
-		
+		System.out.println("********AMOUNT*******" + amount);
 		ArrayList<Cart> sessionCart = null;
 		session = ActionContext.getContext().getSession();
 
@@ -112,7 +116,12 @@ public class PaymentAction extends ActionSupport {
 			for (int i = 0; i < sessionCart.size(); i++) {
 				if (sessionCart.get(i).getSellerID()
 						.equalsIgnoreCase(String.valueOf(sellerID))) {
-					this.setAmount(sessionCart.get(i).getTotal());
+					
+					double totalAmnt = sessionCart.get(i).getTotal()  + getShippingCharges(pincode);
+					//update the cart's total amount so that if order summary is asked we can display the order with the shipping charges applied
+					sessionCart.get(i).setTotal(totalAmnt);
+					this.setAmount(totalAmnt);
+					
 				}
 			}
 			
@@ -128,7 +137,10 @@ public class PaymentAction extends ActionSupport {
 		} else {
 			// ud = (UserDetails) session.get("userdetails");
 			if (paymentMethod == cash) {
+				System.out.println("IN CASH");
 				balance = PaymentService.checkBalance(cash, ud.getUserID());
+				System.out.println("BALANCE  " + balance );
+				System.out.println("AMOUNT " + amount );
 				if (amount > balance) {
 					errorMsg = "Insufficient balance in user account";
 					balanceList = PaymentService.fetchBalance(ud.getUserID());
@@ -238,8 +250,9 @@ public class PaymentAction extends ActionSupport {
 		if (paymentMethod != paisaPay) {
 			/* add 5% commission to ebay account */
 			balance = PaymentService.checkBalance(ebay, 1);
-			System.out.println("ebay balance " + balance);
+			System.out.println("ebay balance bef update" + balance);
 			PaymentService.updateAmount(ebay, balance + (amount * 0.05), 1);
+			System.out.println("ebay balance after update" + balance);
 
 			/* deduct ebay share of 5% and pass on money to seller */
 			balance = PaymentService.checkBalance(cash, sellerID);
@@ -376,6 +389,25 @@ public class PaymentAction extends ActionSupport {
 		return "success";
 	}
 
+	
+	private double getShippingCharges(int pincode) {
+		
+		try{
+			String pinStr = String.valueOf(pincode);
+		String query_fetchCharges = "select  charges from shippingcharges where pincode = '" + pinStr + "'" ;
+		System.out.println("query_fetchCharges  " +  query_fetchCharges);
+		ResultSet rs = DB.readFromBmtcDB(query_fetchCharges);
+			while(rs.next()){
+				this.setCharges(rs.getDouble("charges"));
+			}					
+		}
+		catch(Exception ex){
+			ex.printStackTrace();
+		}
+		return charges;
+		
+	}
+
 	public double getAmount() {
 		return amount;
 	}
@@ -486,5 +518,13 @@ public class PaymentAction extends ActionSupport {
 
 	public void setCountry(String country) {
 		this.country = country;
+	}
+
+	public double getCharges() {
+		return charges;
+	}
+
+	public void setCharges(double charges) {
+		this.charges = charges;
 	}
 }
