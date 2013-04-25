@@ -20,7 +20,7 @@
 		<s:textfield name="amount" label="Amount" disabled="true">Amount :</s:textfield>
 		<s:hidden name="amount"/>
 				<br />
-				Inclusive of all shipping charges <s:property value="charges"/> 
+				<%-- Inclusive of all shipping charges <s:property value="charges"/>  --%> <!-- for shipping cahrges  -->
 		<s:radio id="radios" label="Payment method" name="paymentMethod"
 			list="#{'1':'Cash','2':'Credit card','3':'Debit card','4':'PaisaPay'}" value="1" />
 		<s:div id="cardDetails">
