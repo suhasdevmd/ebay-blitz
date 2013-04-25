@@ -78,6 +78,14 @@ public class CreateOrderAction extends ActionSupport{
 
 
 			ArrayList<Cart> temp = (ArrayList<Cart>) session.get("SessionCart");
+			
+			for(int i=0;i<temp.size();i++){
+				System.out.println("sellerID = "+temp.get(i).getSellerID());
+				for(int j=0;j<temp.get(i).getCartProduct().size();j++){
+					System.out.println("product name = "+temp.get(i).getCartProduct().get(j).getName());
+				}
+			}
+			
 			sessionCart = new ArrayList<Cart>();
 
 			for(int i=0;i<temp.size();i++){

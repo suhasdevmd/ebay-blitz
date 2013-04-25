@@ -11,6 +11,7 @@ public class Cart {
 	private int feedbackScore;
 	private float positiveFeedback;
 	private Double total;
+	/* Category represents Product Details */
 	private ArrayList<Category> cartProduct = new ArrayList<Category>();
 	
 	/* Special Deals Fields */

@@ -5,7 +5,9 @@ import iiitb.ebay.model.SpecialDeals;
 import java.util.HashMap;
 import java.util.Map;
 
+/* Is being used for Products  */
 public class Category {
+	
 	private int numberOfAttributes;
 	private String productID;
 	private String sellerID;

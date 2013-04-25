@@ -12,30 +12,30 @@
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <script>
-	$(document)
-			.ready(
-					function() {
-						$("#quantityTF").hide();
+	$(document).ready(function() {
+		$("#quantityAvail").hide();
 
-						$("#v4-37qtyId")
-								.change(
-										function() {
-											var qtyTF = parseInt(($("#v4-37qtyId").val()),10);
-											//alert(qtyTF);
-											var qtyAvail = parseInt($("#quantityTF")
-													.val(),10);
-											//alert(qtyAvail);
-											if (qtyTF <= 0) {
-												alert("Quantity selected cannot be Zero or lesser. Please select a different Quantity");
-												$("#v4-37qtyId").val("1");
-											}
-											if (qtyTF > qtyAvail) {
-												alert("Exceeded the maximum Quantity Available.");
-												$("#v4-37qtyId").val("1");
-											}
-										});
+		$("#v4-37qtyId").change(function() {
+			var qtyTF = parseInt(($("#v4-37qtyId").val()),10);
+			//alert(qtyTF);
+			var qtyAvail = parseInt($("#quantityAvail").val(),10);
+			//alert(qtyAvail);
+			if(qtyAvail == 0){
+				alert("Available Quantity is 0. This product cannot be bought");
+				$("#v4-37qtyId").val("1");
+				
+			}
+			if (qtyTF <= 0) {
+				alert("Quantity selected cannot be Zero or lesser. Please select a different Quantity");
+				$("#v4-37qtyId").val("1");
+			}
+			if (qtyTF > qtyAvail) {
+				alert("Exceeded the maximum Quantity Available.");
+				$("#v4-37qtyId").val("1");
+			}
+		});
 
- 					});
+	});
 </script>
 
 
@@ -377,7 +377,7 @@
 																	</s:iterator>
 																</s:iterator> <s:hidden name="price" value="%{#chk}" /> <s:hidden
 																	name="name" /> <s:hidden name="sellerID" /> <s:hidden
-																	name="fromProductjsp" value="1" /> <s:hidden name="quantityAvailable"></s:hidden> <b id="txt_v4-23">Add
+																	name="fromProductjsp" value="1" /> <s:hidden id="quantityAvail" name="quantityAvailable"></s:hidden> <b id="txt_v4-23">Add
 																	to Cart</b> </span> </b>
 													</div>
 												</td>

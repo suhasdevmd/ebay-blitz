@@ -115,6 +115,14 @@ public class PaymentAction extends ActionSupport {
 					this.setAmount(sessionCart.get(i).getTotal());
 				}
 			}
+			
+
+			for (int i = 0; i < sessionCart.size(); i++) {
+				System.out.println(sessionCart.get(i).getSellerID());
+				for (int j = 0; j < sessionCart.get(i).getCartProduct().size(); j++) {
+					System.out.println(sessionCart.get(i).getCartProduct().get(j).getName());
+				}
+			}
 
 			return "success";
 		} else {
@@ -316,6 +324,9 @@ public class PaymentAction extends ActionSupport {
 							String.valueOf(sellerID), ud.getUserID());
 			}
 		}
+		
+		
+		
 
 		for (int i = 0; i < sessionCart.size(); i++) {
 			if (sessionCart.get(i).getSellerID().equals(sellerID)) {
@@ -329,27 +340,31 @@ public class PaymentAction extends ActionSupport {
 				System.out.println("  wooooorking      -------------- ");
 
 				sessionCart.remove(i);
-				session.put("SessionCart", sessionCart);
+				//session.put("SessionCart", sessionCart);
+				break;
 			}
+
 
 			if (sessionCart.get(i).getCartProduct().size() == 0) {
 				sessionCart.remove(i);
 			}
 			
 			
-			/* Payment Information */
-			String mode="invalid";
-			if(paymentMethod == cash)
-				mode = "cash";
-			else if(paymentMethod == credit)
-				mode = "credit";
-			else if(paymentMethod == debit)
-				mode = "debit";
-			else if(paymentMethod == paisaPay)
-				mode = "paisaPay";
-			PaymentInfoService.addPaymentInfo(mode, transactionID, PaymentInfoService.getDateNow(), orderID, shippingID,amount);
-			
 		}
+		
+		/* Payment Information */
+		String mode="invalid";
+		if(paymentMethod == cash)
+			mode = "cash";
+		else if(paymentMethod == credit)
+			mode = "credit";
+		else if(paymentMethod == debit)
+			mode = "debit";
+		else if(paymentMethod == paisaPay)
+			mode = "paisaPay";
+		PaymentInfoService.addPaymentInfo(mode, transactionID, PaymentInfoService.getDateNow(), orderID, shippingID,amount);
+		
+		session.put("SessionCart", sessionCart);
 
 		
 		

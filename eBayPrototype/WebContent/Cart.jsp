@@ -306,7 +306,7 @@
 
 
 
-	<div style="min-height: 400px; height: auto;"></div>
+	<div style="min-height: 600px; height: auto;"></div>
 
 
 
