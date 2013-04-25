@@ -102,6 +102,7 @@
 																<s:iterator value="sessionCart" var="sC" status="stat1">
 																	<s:form name="cartform" action="updateCart"
 																		method="post">
+																		<s:hidden name="sellerID"/>
 																		<div>
 																			<div
 																				style="margin: 10px 7px 10px 7px; font-size: small;"
