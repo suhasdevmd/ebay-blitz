@@ -28,7 +28,7 @@
 		<action name="registration" method="execute"
 			class="iiitb.ebay.users.action.LoginFirst">
 			<result name="success" type="tiles">/register.tiles</result>
-			
+
 		</action>
 
 		<action name="register" method="execute"
@@ -58,21 +58,24 @@
 			<result name="success" type="tiles">/cart.tiles</result>
 			<result name="error" type="tiles">/error.tiles</result>
 		</action>
-		
-		<action name="buynow" method="buyNow" class="iiitb.ebay.users.action.CartAction">
+
+		<action name="buynow" method="buyNow"
+			class="iiitb.ebay.users.action.CartAction">
 			<result name="createorder" type="redirectAction">buynowPage</result>
 			<result name="no-login">login.jsp</result>
 			<result name="success" type="tiles">/cart.tiles</result>
 			<result name="error" type="tiles">/error.tiles</result>
 		</action>
-		
-		<action name="buynowPage" method="buyNowOrder" class="iiitb.ebay.users.action.CreateOrderAction">
+
+		<action name="buynowPage" method="buyNowOrder"
+			class="iiitb.ebay.users.action.CreateOrderAction">
 			<result name="no-login">login.jsp</result>
 			<result name="success">/createorder.jsp</result>
 			<result name="error" type="tiles">/error.tiles</result>
 		</action>
-		
-		<action name="updateCart" method="updateTotal" class="iiitb.ebay.users.action.CartAction">
+
+		<action name="updateCart" method="updateTotal"
+			class="iiitb.ebay.users.action.CartAction">
 			<result name="success" type="tiles">/cart.tiles</result>
 			<result name="error" type="tiles">/error.tiles</result>
 		</action>
@@ -224,6 +227,13 @@
 			<result name="error" type="tiles">/error.tiles</result>
 		</action>
 
+		<action name="deleteProduct" class="iiitb.ebay.admin.action.EditProductAction"
+			method="deleteProduct">
+			<result name="success" type="tiles">/showProducts.tiles</result>
+			<result name="login">/login.jsp</result>
+			<result name="error" type="tiles">/error.tiles</result>
+		</action>
+
 		<action name="addProductToDB" method="addProductToDB"
 			class="iiitb.ebay.admin.action.AddProductAction">
 			<result name="success" type="tiles">/add-product.tiles</result>
@@ -301,12 +311,14 @@
 			class="iiitb.ebay.users.action.DealsAction">
 			<result name="success">/homepage.jsp</result>
 		</action>
-		
-		<action name="seller" class="iiitb.ebay.users.action.SellerAction" method="passOn">
+
+		<action name="seller" class="iiitb.ebay.users.action.SellerAction"
+			method="passOn">
 			<result name="success" type="tiles">/Seller.tiles</result>
 		</action>
-		
-		<action name="showProducts" class="iiitb.ebay.users.action.SellerAction" method="showProducts">
+
+		<action name="showProducts" class="iiitb.ebay.users.action.SellerAction"
+			method="showProducts">
 			<result name="success" type="tiles">/showProducts.tiles</result>
 			<result name="no-login">/login.jsp</result>
 		</action>
@@ -318,56 +330,47 @@
 			<result name="success">/createorder.jsp</result>
 			<result name="error">/error.jsp</result>
 		</action>
-	
-
-		<!-- <action name="changeshippingaddress" method="execute"
-			class="iiitb.ebay.users.action.ChangeShippingAddress">
-			<result name="success">/changeshipaddress.jsp</result>
-			<result name="error">/error.jsp</result>
-		</action> -->
 
 
-		<!-- <action name="addshippingaddress" method="addaddress"
-			class="iiitb.ebay.users.action.ChangeShippingAddress">
-			<result name="success">/changeshipaddress.jsp</result>
-			<result name="error">/error.jsp</result>
-		</action>
+		<!-- <action name="changeshippingaddress" method="execute" class="iiitb.ebay.users.action.ChangeShippingAddress"> 
+			<result name="success">/changeshipaddress.jsp</result> <result name="error">/error.jsp</result> 
+			</action> -->
 
 
-		<action name="editshippingaddress" method="editaddress"
-			class="iiitb.ebay.users.action.ChangeShippingAddress">
-			<result name="success">/changeshipaddress.jsp</result>
-			<result name="error">/error.jsp</result>
-		</action> -->
+		<!-- <action name="addshippingaddress" method="addaddress" class="iiitb.ebay.users.action.ChangeShippingAddress"> 
+			<result name="success">/changeshipaddress.jsp</result> <result name="error">/error.jsp</result> 
+			</action> <action name="editshippingaddress" method="editaddress" class="iiitb.ebay.users.action.ChangeShippingAddress"> 
+			<result name="success">/changeshipaddress.jsp</result> <result name="error">/error.jsp</result> 
+			</action> -->
 
 		<!-- End -->
-		
-		
+
+
 		<action name="manageorder" method="execute"
 			class="iiitb.ebay.admin.action.ManageOrderAction">
 			<result name="success" type="tiles">/manage-order.tiles</result>
 
 		</action>
-		
+
 		<action name="updateorder" method="updateOrder"
 			class="iiitb.ebay.admin.action.ManageOrderAction">
 			<result name="success" type="tiles">/update-order.tiles</result>
 			<result name="error">/error.jsp</result>
 		</action>
-				
+
 		<action name="updateorderstatus" method="updateOrderStatus"
 			class="iiitb.ebay.admin.action.ManageOrderAction">
 			<result name="success" type="tiles">/manage-order.tiles</result>
 			<result name="error">/error.jsp</result>
 		</action>
-		
-	
+
+
 		<action name="createorder" method="execute"
 			class="iiitb.ebay.users.action.CreateOrderAction">
 			<result name="success">/createorder.jsp</result>
 			<result name="error">/error.jsp</result>
 		</action>
-	
+
 
 		<action name="changeshippingaddress" method="execute"
 			class="iiitb.ebay.users.action.ChangeShippingAddress">
@@ -388,31 +391,36 @@
 			<result name="success">/changeshipaddress.jsp</result>
 			<result name="error">/error.jsp</result>
 		</action>
-		
-		
+
+
 		<action name="shiptoaddress" method="shiptoaddress"
 			class="iiitb.ebay.users.action.ChangeShippingAddress">
 			<result name="success">/createorder.jsp</result>
 			<result name="error">/error.jsp</result>
 		</action>
-		
-		
-		<action name="myEbayFeedback" method="execute" class="iiitb.ebay.users.action.MyEbayFeedbackAction">
-			<result name="products-bought" type="tiles">/MyEbayFeedback.tiles</result>
+
+
+		<action name="myEbayFeedback" method="execute"
+			class="iiitb.ebay.users.action.MyEbayFeedbackAction">
+			<result name="products-bought" type="tiles">/MyEbayFeedback.tiles
+			</result>
 			<result name="error">/login.jsp</result>
 		</action>
-		
-		<action name="GiveFeedback" method="execute" class="iiitb.ebay.users.action.GiveFeedbackAction">
+
+		<action name="GiveFeedback" method="execute"
+			class="iiitb.ebay.users.action.GiveFeedbackAction">
 			<result name="success" type="tiles">/LeaveFeedback.tiles</result>
 			<result name="error">/login.jsp</result>
 		</action>
-		
-		<action name="LeaveFeedback" method="execute" class="iiitb.ebay.users.action.LeaveFeedbackAction">
+
+		<action name="LeaveFeedback" method="execute"
+			class="iiitb.ebay.users.action.LeaveFeedbackAction">
 			<result name="success">/welcome.jsp</result>
 			<result name="error">/login.jsp</result>
 		</action>
-		
-		<action name="ViewOrdersList" method="execute" class="iiitb.ebay.action.ViewOrdersListAction">
+
+		<action name="ViewOrdersList" method="execute"
+			class="iiitb.ebay.action.ViewOrdersListAction">
 			<result name="success" type="tiles">/myOrders.tiles</result>
 			<result name="error">/login.jsp</result>
 		</action>
@@ -422,13 +430,13 @@
 			<result name="success" type="tiles">/balance.tiles</result>
 			<result name="error">/login.jsp</result>
 		</action>
-		
+
 		<action name="delivered-order" method="delivered"
 			class="iiitb.ebay.users.action.CancelOrderAction">
 			<result name="success" type="redirectAction">ViewOrdersList</result>
 			<result name="error" type="tiles">/error.tiles</result>
 		</action>
-		
+
 
 
 	</package>

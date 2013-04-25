@@ -166,4 +166,13 @@ public class EditProductService {
 		}
 		return "success";
 	}
+	
+	public static String delete(int productID) {
+		con = DB.getConnection();
+		query = "delete from producteav where entity = " + productID;
+		if(DB.update(con, query) > 0) {
+			return "success";			
+		}
+		return "false";
+	}
 }
