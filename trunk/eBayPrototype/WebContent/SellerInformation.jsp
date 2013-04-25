@@ -88,6 +88,8 @@ div#MyWorldPageContent div.ModContent { /*_width: 100%;*/
 					<!-- End eBay Header -->
 					<script type="text/javascript" language="JavaScript1.1"
 						src="http://include.ebaystatic.com/js/e815/in/features/my_world/change_style_e8153in.js"> </script>
+						
+					<script type="text/javascript" language="javascript" src="js/sellerFeed.js"></script>	
 					<div id="MyWorldGlobal">
 						<div class="bcmod">
 							<div class="bc g-nav fl" xmlns="http://www.w3.org/1999/xhtml">
