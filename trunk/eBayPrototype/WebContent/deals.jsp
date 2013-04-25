@@ -6,8 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>eBay.in Deals - All Deals in One Place. Deals on Mobiles,
 	DSLR's, Compact Cameras, LCDs & LEDs, Tablets, Laptops and more</title>
-<link rel="Shortcut Icon" href="img/favicon.ico"
-	type="image/x-icon" />
+<link rel="Shortcut Icon" href="img/favicon.ico" type="image/x-icon" />
 <meta name="Keywords"
 	content="deals,bargains,mobile phones,digicams,lpatops,lcd,computers,eBay,india" />
 <meta name="Description"
@@ -15,21 +14,16 @@
 <meta http-equiv="expires" content="0" />
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="pragma" content="no-cache" />
-<link rel="stylesheet" type="text/css"
-	href="css/font.css" />
-<script type="text/javascript"
-	src="js/jquery-1.7.1.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/font.css" />
+<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
 <script type="text/javascript" src="js/jquery.sudoSlider.js"></script>
 </head>
 <body id="body">
 	<div class="no-container" id="bgDivLeft" style="width: 272px;"></div>
 	<div class="container1 container1Main">
 		<div class="container1">
-			<link rel="Shortcut Icon"
-				href="img/fav.ico"
-				type="image/x-icon" />
-			<link rel="stylesheet" type="text/css"
-				href="css/modify.css">
+			<link rel="Shortcut Icon" href="img/fav.ico" type="image/x-icon" />
+			<link rel="stylesheet" type="text/css" href="css/modify.css">
 			<!--cacheStatus: false-->
 			<script>
 				var _GlobalNavHeaderUtf8Encoding = true;
@@ -164,8 +158,8 @@
 								style="position: relative; top: 12px;" width="224" height="53"
 								border="0" usemap="#Map_header" />
 							<map name="Map_header" id="Map_header">
-								<area shape="rect" coords="4,5,114,52"
-									href="homepage.action" target="_top" alt="ebay homepage" />
+								<area shape="rect" coords="4,5,114,52" href="homepage.action"
+									target="_top" alt="ebay homepage" />
 								<area shape="rect" coords="116,5,222,51" href="homepage.action"
 									target="_top" alt="dealfinder homepage" />
 							</map>
@@ -205,8 +199,7 @@
 												" | You have <a href=\"http://my.ebay.in/ws/eBayISAPI.dll?MyEbay&amp;gbh=1&amp;ssPageName=STRK:ME:LNLK&amp;CurrentPage=MyeBayMyMessages\">##1## alert<\/a>.",
 												" | You have <a href=\"http://my.ebay.in/ws/eBayISAPI.dll?MyEbay&amp;gbh=1&amp;ssPageName=STRK:ME:LNLK&amp;CurrentPage=MyeBayMyMessages\">##1## alerts<\/a>.",
 												"1", "", true)
-							</script>
-							</span>
+							</script> </span>
 						</div>
 						<div style="clear: both;"></div>
 						<!--span class="gh-lg"><a href="http://www.ebay.in" rel="nofollow"> <img src="https://securepics.ebaystatic.com/aw/pics/in/logos/logoEbay_x45.gif" alt="eBay" border="0"></img></a></span><span class="coupon rebate" id="rbt" style="display:none"><img src="https://securepics.ebaystatic.com/aw/pics/promo/magic/pmoGleam10_150x23.gif" alt="">Must use Buy It Now and PayPal.<br/> <a href="http://www.ebay.in" target="_blank">See conditions</a><script type="text/javascript">vjo.darwin.core.ebayheader.rebate.RebateBox.Refresh("rbt", "10", "<img src=\"https://securepics.ebaystatic.com/aw/pics/icons/iconRedeemCoupon20x20.gif\" alt=\"Coupon\" border=\"0\" height=\"20\" width=\"20\"><\/img> <a href=\"http://my.ebay.in/ws/eBayISAPI.dll?MyeBay&amp;CurrentPage=MyeBayIncentives&amp;gbh=1\">You have coupons available<\/a>")</script></span><span></span-->
@@ -225,10 +218,8 @@
 					<script type="text/javascript">
 						var includeHost = "http://include.ebaystatic.com/";
 					</script>
-					<script
-						src="js/ebaybase_v4_e7461in.js"></script>
-					<script
-						src="js/ebaysup_e7461in.js"></script>
+					<script src="js/ebaybase_v4_e7461in.js"></script>
+					<script src="js/ebaysup_e7461in.js"></script>
 					<script type="text/javascript">
 						if (document.documentMode != 8
 								&& document.compatMode != "CSS1Compat")
@@ -266,11 +257,14 @@
 		<div class="container1 containerTextHldr">
 			<div class="containerText">
 				<div class="containerTextCont" style="float: left;">
-					<a href="list.php?cat=1"> Mobiles </a> <!-- nbsp;<span class="tlct">(&nbsp;<s:iterator value="productTypeList1" status="type1List" var="tl1"><s:property value="#type1List.count"/></s:iterator>
+					<a href="list.php?cat=1"> Mobiles </a>
+					<!-- nbsp;<span class="tlct">(&nbsp;<s:iterator value="productTypeList1" status="type1List" var="tl1"><s:property value="#type1List.count"/></s:iterator>
 						items&nbsp;)</span> -->
 				</div>
 				<div class="moreDeals">
-					<a href="categories.action?CategoryID=<s:property value="categoryID1"/>">See more &gt;&gt;</a>
+					<a
+						href="categories.action?CategoryID=<s:property value="categoryID1"/>">See
+						more &gt;&gt;</a>
 				</div>
 				<div style="clear: both;"></div>
 			</div>
@@ -282,56 +276,67 @@
 						<li><table width="792" border="0" cellspacing="0"
 								cellpadding="0">
 								<tr align="center">
-								<s:iterator value="productTypeList1" status="type1List" var="tl1">
-								<s:if test="%{#type1List.index < 4}">
-									<td width="4" class="nodealCol">&nbsp;</td>
-									<td width="193" class="dealCol"><div class="mdt"><s:property value="name"/> </div>
-										<div class="dealImg">
-											<a
-												href="#"
-												target="_top" style="text-decoration: none;"><img
-												src="productimages/<s:property value="image1"/>"
-												class="lazy"
-												data-original="productimages/<s:property value="image1"/>"
-												width="93" height="140" border="0" style="top: 0px;">
-											<noscript>
-													<img src="productimages/<s:property value="image1"/>" alt="Product Image" border="0" height="80px" width="80px">
-												</noscript>
-											</a>
-										</div>
-										<!--div class="mdtSubTitle"></div-->
-										<div class="priceDiv">
-										<s:iterator value="#tl1.description" var="map">
-										<s:if test='%{#map.key == "newprice"}'><span class="WebRupee WebRupeeMain">Rs.</span><s:property value="#map.value" /></s:if>
-										</s:iterator>
-										</div>
-										<div class="priceinfoDiv">
-											MRP <span class="WebRupee WebRupeeInfo">Rs.</span> <s:property value="price"/> |
-											Save <span class="WebRupee WebRupeeInfo">Rs.</span> <s:iterator value="#tl1.description" var="map">
-										<s:if test='%{#map.key == "save"}'><s:property value="#map.value" /></s:if>
-										</s:iterator>
-										</div>
-										<div class="dealButton">
-											<div style="float: left;">
-												<span class="discDiv">-<s:iterator value="#tl1.description" var="map">
-										 <s:if test='%{#map.key == "discount"}'><s:property value="#map.value" /></s:if>
-										</s:iterator><s:property value="disc" />%</span>
-											</div>
-											<div style="float: right; padding-right: 5px;">
-												<a
-													href="products.action?productID=<s:property value="productID"/>"
-													target="_top" style="text-decoration: none;"><img
-													height="20" border="0" width="70" src="img/Deals/getit.jpg" />
-												</a>
-											</div>
-										</div>
-									</td>
-									<td width="4" class="nodealCol">&nbsp;</td>
-									</s:if>
+									<s:iterator value="productTypeList1" status="type1List"
+										var="tl1">
+										<s:if test="%{#type1List.index < 4}">
+											<td width="4" class="nodealCol">&nbsp;</td>
+											<td width="193" class="dealCol"><div class="mdt">
+													<s:property value="name" />
+												</div>
+												<div class="dealImg">
+													<a href="#" target="_top" style="text-decoration: none;"><img
+														src="productimages/<s:property value="image1"/>"
+														class="lazy"
+														data-original="productimages/<s:property value="image1"/>"
+														width="93" height="140" border="0" style="top: 0px;">
+														<noscript>
+															<img src="productimages/<s:property value="image1"/>"
+																alt="Product Image" border="0" height="80px"
+																width="80px">
+														</noscript> </a>
+												</div> <!--div class="mdtSubTitle"></div-->
+												<div class="priceDiv">
+													<s:iterator value="#tl1.description" var="map">
+														<s:if test='%{#map.key == "newprice"}'>
+															<span class="WebRupee WebRupeeMain">Rs.</span>
+															<s:property value="#map.value" />
+														</s:if>
+													</s:iterator>
+												</div>
+												<div class="priceinfoDiv">
+													MRP <span class="WebRupee WebRupeeInfo">Rs.</span>
+													<s:property value="price" />
+													| Save <span class="WebRupee WebRupeeInfo">Rs.</span>
+													<s:iterator value="#tl1.description" var="map">
+														<s:if test='%{#map.key == "save"}'>
+															<s:property value="#map.value" />
+														</s:if>
+													</s:iterator>
+												</div>
+												<div class="dealButton">
+													<div style="float: left;">
+														<span class="discDiv">-<s:iterator
+																value="#tl1.description" var="map">
+																<s:if test='%{#map.key == "discount"}'>
+																	<s:property value="#map.value" />
+																</s:if>
+															</s:iterator>
+															<s:property value="disc" />%
+														</span>
+													</div>
+													<div style="float: right; padding-right: 5px;">
+														<a
+															href="products.action?productID=<s:property value="productID"/>"
+															target="_top" style="text-decoration: none;"><img
+															height="20" border="0" width="70"
+															src="img/Deals/getit.jpg" /> </a>
+													</div>
+												</div></td>
+											<td width="4" class="nodealCol">&nbsp;</td>
+										</s:if>
 									</s:iterator>
 								</tr>
-							</table>
-						</li>
+							</table></li>
 					</ul>
 				</div>
 			</div>
@@ -339,11 +344,14 @@
 		<div class="container1 containerTextHldr">
 			<div class="containerText">
 				<div class="containerTextCont" style="float: left;">
-					<a href="list.php?cat=1"> Movies </a> <!-- &nbsp;<span class="tlct">(&nbsp;<s:iterator value="productTypeList2" status="type2List" var="tl2"><s:property value="#type2List.count"/></s:iterator>
+					<a href="list.php?cat=1"> Movies </a>
+					<!-- &nbsp;<span class="tlct">(&nbsp;<s:iterator value="productTypeList2" status="type2List" var="tl2"><s:property value="#type2List.count"/></s:iterator>
 						items&nbsp;)</span> -->
 				</div>
 				<div class="moreDeals">
-					<a href="categories.action?CategoryID=<s:property value="categoryID2"/>">See more &gt;&gt;</a>
+					<a
+						href="categories.action?CategoryID=<s:property value="categoryID2"/>">See
+						more &gt;&gt;</a>
 				</div>
 				<div style="clear: both;"></div>
 			</div>
@@ -355,58 +363,67 @@
 						<li><table width="792" border="0" cellspacing="0"
 								cellpadding="0">
 								<tr align="center">
-								<s:iterator value="productTypeList2" status="type2List" var="tl1">
-								<s:if test="%{#type2List.index < 4}">
-									<td width="4" class="nodealCol">&nbsp;</td>
-									<td width="193" class="dealCol"><div class="mdt"><s:property value="name"/> </div>
-										<div class="dealImg">
-											<a
-												href="http://www.ebay.in/itm/ws/eBayISAPI.dll?ViewItem&item=251257716096"
-												target="_top" style="text-decoration: none;"><img
-												src="http://deals.ebay.in/resources/s_images/single.gif"
-												class="lazy"
-												data-original="http://thumbs.ebaystatic.com/d/l140/pict/251257716096_1.jpg"
-												width="93" height="140" border="0" style="top: 0px;">
-											<noscript>
-													<img
-														src="http://i.ebayimg.com/00/s/MzU0WDIzNg==/z/~XwAAMXQfFJROvN3/$T2eC16JHJI!E9qSO8DMPBROvN2wypQ~~60_1.JPG?set_id=8800005007"
+									<s:iterator value="productTypeList2" status="type2List"
+										var="tl1">
+										<s:if test="%{#type2List.index < 4}">
+											<td width="4" class="nodealCol">&nbsp;</td>
+											<td width="193" class="dealCol"><div class="mdt">
+													<s:property value="name" />
+												</div>
+												<div class="dealImg">
+													<a href="#" target="_top" style="text-decoration: none;"><img
+														src="productimages/<s:property value="image1"/>"
+														class="lazy"
+														data-original="productimages/<s:property value="image1"/>"
 														width="93" height="140" border="0" style="top: 0px;">
-												</noscript>
-											</a>
-										</div>
-										<!--div class="mdtSubTitle"></div-->
-										<div class="priceDiv">
-										<s:iterator value="#tl2.description" var="map">
-										<s:if test='%{#map.key == "newprice"}'><span class="WebRupee WebRupeeMain">Rs.</span><s:property value="#map.value" /></s:if>
-										</s:iterator>
-										</div>
-										<div class="priceinfoDiv">
-											MRP <span class="WebRupee WebRupeeInfo">Rs.</span> <s:property value="price"/> |
-											Save <span class="WebRupee WebRupeeInfo">Rs.</span> <s:iterator value="#tl2.description" var="map">
-										<s:if test='%{#map.key == "save"}'><s:property value="#map.value" /></s:if>
-										</s:iterator>
-										</div>
-										<div class="dealButton">
-											<div style="float: left;">
-												<span class="discDiv">-<s:iterator value="#tl2.description" var="map">
-										 <s:if test='%{#map.key == "discount"}'><s:property value="#map.value" /></s:if>
-										</s:iterator><s:property value="disc" />%</span>
-											</div>
-											<div style="float: right; padding-right: 5px;">
-												<a
-													href="products.action?productID=<s:property value="productID"/>"
-													target="_top" style="text-decoration: none;"><img
-													height="20" border="0" width="70" src="img/Deals/getit.jpg" />
-												</a>
-											</div>
-										</div>
-									</td>
-									<td width="4" class="nodealCol">&nbsp;</td>
-									</s:if>
+														<noscript>
+															<img src="productimages/<s:property value="image1"/>"
+																alt="Product Image" border="0" height="80px"
+																width="80px">
+														</noscript> </a>
+												</div> <!--div class="mdtSubTitle"></div-->
+												<div class="priceDiv">
+													<s:iterator value="#tl2.description" var="map">
+														<s:if test='%{#map.key == "newprice"}'>
+															<span class="WebRupee WebRupeeMain">Rs.</span>
+															<s:property value="#map.value" />
+														</s:if>
+													</s:iterator>
+												</div>
+												<div class="priceinfoDiv">
+													MRP <span class="WebRupee WebRupeeInfo">Rs.</span>
+													<s:property value="price" />
+													| Save <span class="WebRupee WebRupeeInfo">Rs.</span>
+													<s:iterator value="#tl2.description" var="map">
+														<s:if test='%{#map.key == "save"}'>
+															<s:property value="#map.value" />
+														</s:if>
+													</s:iterator>
+												</div>
+												<div class="dealButton">
+													<div style="float: left;">
+														<span class="discDiv">-<s:iterator
+																value="#tl2.description" var="map">
+																<s:if test='%{#map.key == "discount"}'>
+																	<s:property value="#map.value" />
+																</s:if>
+															</s:iterator>
+															<s:property value="disc" />%
+														</span>
+													</div>
+													<div style="float: right; padding-right: 5px;">
+														<a
+															href="products.action?productID=<s:property value="productID"/>"
+															target="_top" style="text-decoration: none;"><img
+															height="20" border="0" width="70"
+															src="img/Deals/getit.jpg" /> </a>
+													</div>
+												</div></td>
+											<td width="4" class="nodealCol">&nbsp;</td>
+										</s:if>
 									</s:iterator>
 								</tr>
-							</table>
-						</li>
+							</table></li>
 					</ul>
 				</div>
 			</div>
@@ -414,11 +431,14 @@
 		<div class="container1 containerTextHldr">
 			<div class="containerText">
 				<div class="containerTextCont" style="float: left;">
-					<a href="list.php?cat=1"> Books </a> <!-- &nbsp;<span class="tlct">(&nbsp;<s:iterator value="productTypeList3" status="type3List" var="tl3"><s:property value="#type3List.count"/></s:iterator>
+					<a href="list.php?cat=1"> Books </a>
+					<!-- &nbsp;<span class="tlct">(&nbsp;<s:iterator value="productTypeList3" status="type3List" var="tl3"><s:property value="#type3List.count"/></s:iterator>
 						items&nbsp;)</span> -->
 				</div>
 				<div class="moreDeals">
-					<a href="categories.action?CategoryID=<s:property value="categoryID3"/>">See more &gt;&gt;</a>
+					<a
+						href="categories.action?CategoryID=<s:property value="categoryID3"/>">See
+						more &gt;&gt;</a>
 				</div>
 				<div style="clear: both;"></div>
 			</div>
@@ -430,58 +450,67 @@
 						<li><table width="792" border="0" cellspacing="0"
 								cellpadding="0">
 								<tr align="center">
-								<s:iterator value="productTypeList3" status="type3List" var="tl3">
-								<s:if test="%{#type3List.index < 4}">
-									<td width="4" class="nodealCol">&nbsp;</td>
-									<td width="193" class="dealCol"><div class="mdt"><s:property value="name"/> </div>
-										<div class="dealImg">
-											<a
-												href="http://www.ebay.in/itm/ws/eBayISAPI.dll?ViewItem&item=251257716096"
-												target="_top" style="text-decoration: none;"><img
-												src="http://deals.ebay.in/resources/s_images/single.gif"
-												class="lazy"
-												data-original="http://thumbs.ebaystatic.com/d/l140/pict/251257716096_1.jpg"
-												width="93" height="140" border="0" style="top: 0px;">
-											<noscript>
-													<img
-														src="http://i.ebayimg.com/00/s/MzU0WDIzNg==/z/~XwAAMXQfFJROvN3/$T2eC16JHJI!E9qSO8DMPBROvN2wypQ~~60_1.JPG?set_id=8800005007"
+									<s:iterator value="productTypeList3" status="type3List"
+										var="tl3">
+										<s:if test="%{#type3List.index < 4}">
+											<td width="4" class="nodealCol">&nbsp;</td>
+											<td width="193" class="dealCol"><div class="mdt">
+													<s:property value="name" />
+												</div>
+												<div class="dealImg">
+													<a href="#" target="_top" style="text-decoration: none;"><img
+														src="productimages/<s:property value="image1"/>"
+														class="lazy"
+														data-original="productimages/<s:property value="image1"/>"
 														width="93" height="140" border="0" style="top: 0px;">
-												</noscript>
-											</a>
-										</div>
-										<!--div class="mdtSubTitle"></div-->
-										<div class="priceDiv">
-										<s:iterator value="#tl3.description" var="map">
-										<s:if test='%{#map.key == "newprice"}'><span class="WebRupee WebRupeeMain">Rs.</span><s:property value="#map.value" /></s:if>
-										</s:iterator>
-										</div>
-										<div class="priceinfoDiv">
-											MRP <span class="WebRupee WebRupeeInfo">Rs.</span> <s:property value="price"/> |
-											Save <span class="WebRupee WebRupeeInfo">Rs.</span> <s:iterator value="#tl3.description" var="map">
-										<s:if test='%{#map.key == "save"}'><s:property value="#map.value" /></s:if>
-										</s:iterator>
-										</div>
-										<div class="dealButton">
-											<div style="float: left;">
-												<span class="discDiv">-<s:iterator value="#tl3.description" var="map">
-										 <s:if test='%{#map.key == "discount"}'><s:property value="#map.value" /></s:if>
-										</s:iterator><s:property value="disc" />%</span>
-											</div>
-											<div style="float: right; padding-right: 5px;">
-												<a
-													href="products.action?productID=<s:property value="productID"/>"
-													target="_top" style="text-decoration: none;"><img
-													height="20" border="0" width="70" src="img/Deals/getit.jpg" />
-												</a>
-											</div>
-										</div>
-									</td>
-									<td width="4" class="nodealCol">&nbsp;</td>
-									</s:if>
+														<noscript>
+															<img src="productimages/<s:property value="image1"/>"
+																alt="Product Image" border="0" height="80px"
+																width="80px">
+														</noscript> </a>
+												</div> <!--div class="mdtSubTitle"></div-->
+												<div class="priceDiv">
+													<s:iterator value="#tl3.description" var="map">
+														<s:if test='%{#map.key == "newprice"}'>
+															<span class="WebRupee WebRupeeMain">Rs.</span>
+															<s:property value="#map.value" />
+														</s:if>
+													</s:iterator>
+												</div>
+												<div class="priceinfoDiv">
+													MRP <span class="WebRupee WebRupeeInfo">Rs.</span>
+													<s:property value="price" />
+													| Save <span class="WebRupee WebRupeeInfo">Rs.</span>
+													<s:iterator value="#tl3.description" var="map">
+														<s:if test='%{#map.key == "save"}'>
+															<s:property value="#map.value" />
+														</s:if>
+													</s:iterator>
+												</div>
+												<div class="dealButton">
+													<div style="float: left;">
+														<span class="discDiv">-<s:iterator
+																value="#tl3.description" var="map">
+																<s:if test='%{#map.key == "discount"}'>
+																	<s:property value="#map.value" />
+																</s:if>
+															</s:iterator>
+															<s:property value="disc" />%
+														</span>
+													</div>
+													<div style="float: right; padding-right: 5px;">
+														<a
+															href="products.action?productID=<s:property value="productID"/>"
+															target="_top" style="text-decoration: none;"><img
+															height="20" border="0" width="70"
+															src="img/Deals/getit.jpg" /> </a>
+													</div>
+												</div></td>
+											<td width="4" class="nodealCol">&nbsp;</td>
+										</s:if>
 									</s:iterator>
 								</tr>
-							</table>
-						</li>
+							</table></li>
 					</ul>
 				</div>
 			</div>
@@ -489,15 +518,12 @@
 		<!--div class="container1 moreDeals"><a href="list.php?cat=17">See more &gt;&gt;</a></div-->
 		<div style="clear: both;" class="container1"></div>
 		<div class="container1 authTop">
-			<link
-				href="js/jquery-ui.css"
-				rel="stylesheet" type="text/css" />
-			<script
-				src="js/jquery-ui.min.js"></script>
+			<link href="js/jquery-ui.css" rel="stylesheet" type="text/css" />
+			<script src="js/jquery-ui.min.js"></script>
 			<div class="authText">
-				eBay.in Deals - Your Deal Retreat! <br />
-				<br />A new user-friendly platform that showcases all the deals
-				featured on eBay while making your search much easier!
+				eBay.in Deals - Your Deal Retreat! <br /> <br />A new
+				user-friendly platform that showcases all the deals featured on eBay
+				while making your search much easier!
 			</div>
 			<div class="authAccord">
 				<div id="accordion">
@@ -509,8 +535,7 @@
 						you, there's a lot of room for confusion! We admit that searching
 						for the right deals on specific products is not an easy job. So we
 						got down to business and created the <b>eBay.in Deals</b>, just
-						for you! <br />
-						<br />Find the best of deals under one roof at <b>eBay.in
+						for you! <br /> <br />Find the best of deals under one roof at <b>eBay.in
 							Deals</b> - A deal haven where you can trace all active deals on eBay
 						India! Save time on extensive searching and let retail therapy
 						work its wonder!
@@ -541,10 +566,9 @@
 						All the deals featured on <b>eBay.in Deals</b> provide shipping
 						services that are absolutely free! Most of these deals provide
 						flexible payment modes like EMI, Debit Card, Credit Cards and Cash
-						on Delivery. <br />
-						<br />So when looking for a great shopping experience and
-						discounted rates on all your favourite products and new launches,
-						let <b>eBay.in Deals</b> lead the way for you!
+						on Delivery. <br /> <br />So when looking for a great shopping
+						experience and discounted rates on all your favourite products and
+						new launches, let <b>eBay.in Deals</b> lead the way for you!
 					</div>
 				</div>
 			</div>
@@ -566,7 +590,7 @@
 				</div>
 				<div style="clear:both;"></div>
 			</div-->
-			
+
 
 	</div>
 	<div class="no-container" id="bgDivRight" style="width: 272px;">
@@ -585,8 +609,7 @@
 		var google_remarketing_only = true;
 		/*     */
 	</script>
-	<script type="text/javascript"
-		src="js/conversion.js"></script>
+	<script type="text/javascript" src="js/conversion.js"></script>
 	<noscript>
 		<div style="display: inline;">
 			<img height="1" width="1" style="border-style: none;" alt=""
