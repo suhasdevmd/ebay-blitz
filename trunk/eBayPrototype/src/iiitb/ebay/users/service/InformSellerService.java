@@ -29,7 +29,7 @@ public class InformSellerService {
 			rs=DB.readFromDB(query, con);
 
 			while(rs.next()) {
-				outofstock.add(getValue(String.valueOf(rs.getInt("entity")),"Name").get(0));
+				outofstock.add(getValue(String.valueOf(rs.getInt("entity")),"name").get(0));
 			}
 
 			con.close();
