@@ -258,7 +258,7 @@ public class CartAction extends ActionSupport {
 						 * Remove the special Offer if removing a product
 						 * invalidates it for Type H/L
 						 */
-						
+/*						
 						if (sessionCart.get(i).isSpclDeal()) {
 							if ((sessionCart.get(i).getDeal().getType()
 									.equalsIgnoreCase("L") || sessionCart
@@ -270,7 +270,7 @@ public class CartAction extends ActionSupport {
 								sessionCart.get(i).setSpclDeal(false);
 								sessionCart.get(i).setDeal(null);
 								total = 0.0;
-								/* Iterate and remove the deal(update subtotals) */
+								// Iterate and remove the deal(update subtotals) 
 									for (int l = 0; l < sessionCart.get(i).getCartProduct().size(); l++){
 										sessionCart.get(i).getCartProduct().get(l).setSpclDeal(false);
 										sessionCart.get(i).getCartProduct().get(l).setDeal(null);
@@ -282,16 +282,16 @@ public class CartAction extends ActionSupport {
 												.get(i).getCartProduct().get(l)
 												.getPrice());
 										
-										/* Update Sub Total */
+										// Update Sub Total 
 										sessionCart.get(i).getCartProduct().get(l).setSubTotal(price*qty);
-										/* Update Total */
+										// Update Total 
 										total += sessionCart.get(i).getCartProduct()
 												.get(l).getSubTotal();
 									}
 
 							}
 						}
-
+*/
 						/* Remove from cart and update session */
 						sessionCart.get(i).getCartProduct().remove(j);
 						session.put("SessionCart", sessionCart);
@@ -408,7 +408,8 @@ public class CartAction extends ActionSupport {
 
 						sessionCart.get(i).getCartProduct().add(productDetails);
 
-						/* check for special Deal */
+						/* check for special Deal*/
+						/*
 						String dealType = null;
 						if (!sessionCart.get(i).isSpclDeal())
 							for (SpecialDeals specialDeals : spDealsList) {
@@ -422,7 +423,7 @@ public class CartAction extends ActionSupport {
 												.get(i).getCartProduct().size()) {
 									System.out.println("Applying Deal");
 
-									/* Find lowest price pdt */
+									// Find lowest price pdt 
 									double lowestPrice = Double
 											.parseDouble(sessionCart.get(i)
 													.getCartProduct().get(0)
@@ -446,10 +447,7 @@ public class CartAction extends ActionSupport {
 									System.out.println("Applying Deal for pID="
 											+ id);
 
-									/*
-									 * sessionCart.get(i).getCartProduct().get(id
-									 * ).setPrice("0.0");
-									 */
+									
 
 									sessionCart.get(i).getCartProduct().get(id)
 											.setSubTotal(0.0);
@@ -464,7 +462,7 @@ public class CartAction extends ActionSupport {
 									break;
 								}
 							}
-
+						*/
 						total = 0.0;
 						for (int k = 0; k < sessionCart.get(i).getCartProduct()
 								.size(); k++) {
@@ -646,36 +644,32 @@ public class CartAction extends ActionSupport {
 							.get(j).getQuantitySelected());
 
 					/* For specialDeals Product */
+					/*
 					if (sessionCart.get(i).getCartProduct().get(j).isSpclDeal()) {
 						System.out.println("Deal applied for pdt "+ sessionCart.get(i).getCartProduct().get(j).getName());
-						/* for H/L Type of Special Deal with Quantity > 1 */
+						// for H/L Type of Special Deal with Quantity > 1 
 						if ((sessionCart.get(i).getCartProduct().get(j).getDeal()
 								.getType().equalsIgnoreCase("L") || sessionCart
 								.get(i).getCartProduct().get(j).getDeal()
 								.getType().equalsIgnoreCase("H"))
 								&& qty > 1) {
-							/*
-							 * price = Double.parseDouble(ProductService
-							 * .fetchSingleProductDetails(
-							 * tempCart.get(i).getCartProduct().get(j)
-							 * .getProductID()).get(0) .getPrice());
-							 */
+							
 							System.out.println("quantity = "+qty);
 							qty = qty - 1;
 							subTotal = price * qty;
 						}
 
-						/* for H/L Type of Special Deal with qty == 1 */
+						// for H/L Type of Special Deal with qty == 1 
 						else if ((sessionCart.get(i).getCartProduct().get(j).getDeal()
 								.getType().equalsIgnoreCase("L") || sessionCart
 								.get(i).getCartProduct().get(j).getDeal()
 								.getType().equalsIgnoreCase("H"))
 								&& qty == 1) {
-							/* Item is free */
+							// Item is free 
 							subTotal = 0.0 * qty;
 						}
 
-					} else {
+					} else */{
 						subTotal = price * qty;
 					}
 					sessionCart.get(i).getCartProduct().get(j)
