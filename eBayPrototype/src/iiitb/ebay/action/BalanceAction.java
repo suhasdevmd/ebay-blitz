@@ -18,6 +18,8 @@ public class BalanceAction  extends ActionSupport {
 	public ArrayList<Balance> balanceList=new ArrayList<Balance>();
 	
 	public String execute(){
+		System.out.println("Entering Class:BalanceAction :: Method:execute :: package:iiitb.ebay.action");
+
 		Map<String,Object>session=ActionContext.getContext().getSession();
 		UserDetails ud = (UserDetails)session.get("userdetails");
 		
