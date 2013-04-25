@@ -200,152 +200,6 @@ public class SearchService {
 		}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-		/*	String query2 = "select count(*) as mycount from ("+ query1 + ") as mytable";
-		System.out.println("query2  " + query2);
-
-		ResultSet rs2 = DB.readFromBmtcDB(query2);
-
-
-
-		try{
-
-			if(rs2.next()){ 					
-				Count = rs2.getInt("mycount");
-			}
-
-		System.out.println("Count  " + Count);
-
-		/*if(rs1.next() == false){
-
-		System.out.println("rs1.next() == false");	
-		ProductModellist =getItemsByCategory(Name, selectionModifier);
-		return ProductModellist;
-
-		}
-		else{
-		if(Count==0 && selectionModifier.isEmpty()){
-			ProductModellist = getAllItems();
-			return ProductModellist;
-
-		}
-		//This is for adv search ; if search returns null because of incorrect price range then we should do a normal search 
-		else if(Count==0 && !selectionModifier.isEmpty()){
-
-			selectionModifier = "";
-			int cnt = 0;
-
-			String query3 = "select *  from producteav where entity in"
-					+"(SELECT entity "
-					+	"	FROM producteav "
-					+	"	WHERE attr collate utf8_general_ci ='CategoryID' and val "
-					+	"	LIKE CONCAT((select phKey from producthierarchy where name collate utf8_general_ci LIKE '"+category+"'),'%'))"+ selectionModifier  ;
-
-
-			System.out.println("query3   = "  + query3 );	
-			String query4 = "select count(*) as mycount from ("+ query3 + ") as mytable";
-			System.out.println("query4  " + query4);
-
-			ResultSet rs3 = DB.readFromBmtcDB(query4);
-
-			if(rs3.next()){ 					 
-				cnt = rs3.getInt("mycount");
-				System.out.println("cnt " + cnt);
-				query1 = query3;
-			}
-			if(cnt==0){
-				ProductModellist = getAllItems();
-				return ProductModellist;
-			}
-
-		}
-		ResultSet rs1 = DB.readFromBmtcDB(query1);
-		//else{
-			while (rs1.next()) {
-			Category model = new Category();
-			System.out.println("Test  " + rs1.getString("attr"));
-			System.out.println("Value " + rs1.getString("val"));
-
-			if (rs1.getString("attr").equalsIgnoreCase("price")) {
-				System.out.println(rs1.getString("val"));
-				model.setPrice(rs1.getString("val"));
-			}
-			 else if(rs1.getString("attr").equalsIgnoreCase("Name")){//does nt come inside this for second time 
-				System.out.println(rs1.getString("val"));
-				model.setName(rs1.getString("val"));
-			} else if (rs1.getString("attr").equalsIgnoreCase("quantity")) {
-				System.out.println(rs1.getString("val"));
-				model.setQuantity(rs1.getString("val"));
-			} else if (rs1.getString("attr").equalsIgnoreCase("brand")) {
-				System.out.println(rs1.getString("val"));
-				model.setBrand(rs1.getString("val"));
-			} else if (rs1.getString("attr").equalsIgnoreCase("sellerID")) {
-				System.out.println(rs1.getString("val"));
-				model.setSellerID(rs1.getString("val"));
-			} else if (rs1.getString("attr").equalsIgnoreCase("CategoryID")) {
-				System.out.println(rs1.getString("val"));
-				model.setCategoryID(rs1.getString("val"));
-			} else if (rs1.getString("attr").equalsIgnoreCase("duration")) {
-				System.out.println(rs1.getString("val"));
-				model.setDuration(rs1.getString("val"));
-			}
-
-			ProductModellist.add(model);
-		}//eof while
-	//}//eof else 
-rs1.close();
-rs2.close();
-
-
-
-	//test
-		for(int i=0;i<ProductModellist.size();i++){
-			System.out.println("ProductModellist.get(i).getName() "   + ProductModellist.get(i).getName());
-			//System.out.println("ProductModellist.get(i).getColor() "   + ProductModellist.get(i).getColor());
-			System.out.println("ProductModellist.get(i).getPrice() "   + ProductModellist.get(i).getPrice());
-			//System.out.println("ProductModellist.get(i).getCondition() "   + ProductModellist.get(i).getCondition());
-			System.out.println("ProductModellist.get(i).getDuration() "   + ProductModellist.get(i).getDuration());
-			//System.out.println("ProductModellist.get(i).getModel() "   + ProductModellist.get(i).getModel());
-			System.out.println("ProductModellist.get(i).getQuantity() "   + ProductModellist.get(i).getQuantity());
-			System.out.println("ProductModellist.get(i).getcategory() "   + ProductModellist.get(i).getCategoryID());
-
-
-		}
-
-		}//eof try
-		catch(Exception ex){
-		ex.printStackTrace();	
-		}//eof catch
-		 */	
 		return ProductModellist;
 	}//eof mtd
 
@@ -439,8 +293,6 @@ rs2.close();
 					}
 				}
 			}
-
-
 		}
 		catch(Exception ex){
 			ex.printStackTrace();
@@ -768,6 +620,144 @@ rs2.close();
 
 		return ProductModellist;
 	}
+
+
+	public ArrayList<Category> getItemsByPriceOnly(String from, String to,String selectionModifier) {
+
+		ArrayList<Category> ProductModellist = new ArrayList<Category>();
+		int NoOfAttrs = 0;
+		
+
+		try{
+			String query_getEntityID = "select p.entity, count(*) as NoOfAttrs ,i.image1 from producteav p, productimage i " 
+				+"where p.entity = i.productID and entity in "
+				+"(SELECT entity "
+				+"FROM producteav "
+				+"WHERE attr collate utf8_general_ci ='price' and "
+				+selectionModifier 
+				/*+"CAST(val as DECIMAL) BETWEEN "+from +" and " + to +") "  */
+				+"group by entity";
+
+			System.out.println("query_getEntityID  " + query_getEntityID);
+
+			ResultSet rs_getEntityID = DB.readFromBmtcDB(query_getEntityID);
+			while(rs_getEntityID.next()){
+
+				Category productMeta = new Category();
+				productMeta.setProductID(rs_getEntityID.getString("entity"));
+				productMeta.setNumberOfAttributes(rs_getEntityID.getInt("NoOfAttrs"));
+				NoOfAttrs = rs_getEntityID.getInt("NoOfAttrs");
+				productMeta.setImage1(rs_getEntityID.getString("image1")); 
+				ProductModellist.add(productMeta);
+			}
+
+			System.out.println("NoOfAttrs  " + NoOfAttrs);
+
+			if(NoOfAttrs==0){
+				ProductModellist = getAllItems();
+				return ProductModellist;
+
+			}
+			//-----------------------------------------------------------------------------------------------
+
+
+			String query_getProductAttrs = "select *  from producteav where entity in"
+				+"(SELECT entity "
+				+"FROM producteav "
+				+"WHERE attr collate utf8_general_ci ='price' and "
+				/*+"CAST(val as DECIMAL) BETWEEN "+from +" and " + to +") "  */
+				+ selectionModifier 
+				+"order by entity";
+
+			System.out.println("query_getProductAttrs  " + query_getProductAttrs);
+
+			ResultSet resultSet_getProductAttrs = DB.readFromBmtcDB(query_getProductAttrs);
+			System.out.println("size = "+ProductModellist.size());
+			for(int i=0;i<ProductModellist.size();i++){
+				int count=0;
+				while(count < ProductModellist.get(i).getNumberOfAttributes() && resultSet_getProductAttrs.next() ){
+					++count;
+					//				System.out.println("###################### count = "+count);
+					//				System.out.println("###################### noofAttributes = "+ProductModellist.get(i).getNumberOfAttributes()+"################## productID = "+ProductModellist.get(i).getProductID());
+
+					String prodIDTemp = resultSet_getProductAttrs.getString("entity");
+					System.out.println("temp ProdID"+prodIDTemp);
+
+					if(prodIDTemp.equalsIgnoreCase(ProductModellist.get(i).getProductID())){
+						String attrTemp = resultSet_getProductAttrs.getString("attr");
+
+						if(attrTemp.equalsIgnoreCase("Name")){							
+							System.out.println("if for name");
+							ProductModellist.get(i).setName(resultSet_getProductAttrs.getString("val"));
+						}
+						else if(attrTemp.equalsIgnoreCase("price")){
+							System.out.println("if for price");
+							ProductModellist.get(i).setPrice(resultSet_getProductAttrs.getString("val"));
+						}
+						else if(attrTemp.equalsIgnoreCase("quantity")){
+							System.out.println("if for quantity");
+							ProductModellist.get(i).setQuantityAvailable(resultSet_getProductAttrs.getString("val"));
+						}
+						else if(attrTemp.equalsIgnoreCase("condition")){
+							System.out.println("if for condition");
+							ProductModellist.get(i).setProductCondition(resultSet_getProductAttrs.getString("val"));
+						}
+						else if(attrTemp.equalsIgnoreCase("brand")){
+							System.out.println("if for brand");
+							ProductModellist.get(i).setBrand(resultSet_getProductAttrs.getString("val"));
+						}
+						else if(attrTemp.equalsIgnoreCase("sellerID")){
+							System.out.println("if for sellerID");
+							ProductModellist.get(i).setSellerID(resultSet_getProductAttrs.getString("val"));
+						}
+						else if(attrTemp.equalsIgnoreCase("CategoryID")){
+							System.out.println("if for categoryID");
+							ProductModellist.get(i).setCategoryID(resultSet_getProductAttrs.getString("val"));
+						}
+						else if(attrTemp.equalsIgnoreCase("duration")){
+							System.out.println("if for duration");
+							ProductModellist.get(i).setDuration(resultSet_getProductAttrs.getString("val"));
+						}
+						else {
+							System.out.println("if for other things");
+							String valTemp = resultSet_getProductAttrs.getString("val");
+							ProductModellist.get(i).getDescription().put(attrTemp, valTemp);
+
+						}
+					}
+				}
+			}
+
+
+		}
+		catch(Exception ex){
+			ex.printStackTrace();
+		}
+
+
+		//test
+		System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+		for (int i = 0; i < ProductModellist.size(); i++) {
+			System.out.println(" ProductID = "+ProductModellist.get(i).getProductID());
+			System.out.println(" SellerID= "+ProductModellist.get(i).getSellerID());
+			System.out.println(" CategoryID = "+ProductModellist.get(i).getCategoryID());
+			System.out.println(" Name = "+ProductModellist.get(i).getName());
+			System.out.println(" Price = "+ProductModellist.get(i).getPrice());
+			System.out.println(" Quantity = "+ProductModellist.get(i).getQuantityAvailable());
+			System.out.println(" Condition = "+ProductModellist.get(i).getProductCondition());
+			System.out.println(" Brand = "+ProductModellist.get(i).getBrand());
+			System.out.println(" Duration = "+ProductModellist.get(i).getDuration());
+			//System.out.println(" Image1 = "+productList.get(i).getImage1());
+			System.out.println("Description :-");
+			System.out.println("\tName: "+ProductModellist.get(i).getDescription());
+			System.out.println("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
+
+		}
+
+
+		return ProductModellist;
+	}//eof mtd
+
 
 
 }
