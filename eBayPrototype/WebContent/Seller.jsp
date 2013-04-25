@@ -14,5 +14,10 @@
 	<s:form action="showProducts.action">
 		<s:submit value="Edit products" />
 	</s:form>
+	
+	<s:form action="manageorder">
+		<s:submit value="Manage Order" />	
+	</s:form>
+	
 </body>
 </html>
