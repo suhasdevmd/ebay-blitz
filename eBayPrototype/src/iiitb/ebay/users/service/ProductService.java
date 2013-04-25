@@ -162,6 +162,7 @@ public class ProductService {
 				while (resultSetProductDetails.next()) {
 
 					product.setProductID(productID);
+					product.setImage1(getProductImage(product.getProductID()));
 
 					if (resultSetProductDetails.getString("attr")
 							.equalsIgnoreCase("Name")) {
@@ -231,6 +232,7 @@ public class ProductService {
 			return null;
 		}
 
+		
 		return productDetails;
 	}
 		
