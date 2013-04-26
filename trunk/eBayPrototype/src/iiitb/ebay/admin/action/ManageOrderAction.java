@@ -2,9 +2,12 @@ package iiitb.ebay.admin.action;
 
 import iiitb.ebay.admin.model.ManageOrder;
 import iiitb.ebay.admin.service.ManageOrderService;
+import iiitb.ebay.users.model.UserDetails;
 
 import java.util.ArrayList;
+import java.util.Map;
 
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class ManageOrderAction extends ActionSupport{
@@ -13,7 +16,7 @@ public class ManageOrderAction extends ActionSupport{
 	ArrayList<ManageOrder> orderList=new ArrayList<ManageOrder>();
 	ManageOrderService mos=new ManageOrderService();
 	private int orderID;
-
+	Map<String,Object> session;
 
 	private String username;
 	private String productName;
@@ -73,7 +76,10 @@ public class ManageOrderAction extends ActionSupport{
 
 	public String execute(){
 		System.out.println("I am Here in MOA");
-		orderList=mos.getOrderlist();
+		session=ActionContext.getContext().getSession();
+		int userid=((UserDetails)session.get("userdetails")).getUserID();
+		
+		orderList=mos.getOrderlist(userid);
 		//System.out.println(" order list ----> "+(orderList.get(0).getUsername()));
 
 		return SUCCESS;
@@ -84,12 +90,15 @@ public class ManageOrderAction extends ActionSupport{
 
 		// update order status 
 
+		session=ActionContext.getContext().getSession();
+		int userid=((UserDetails)session.get("userdetails")).getUserID();
+		
 		System.out.println(" the order id to update in update order "+orderID);
 
 		System.out.println(" Suahsssssssss "+username+" "+productName);
 
 
-		orderList=mos.getOrderlist();
+		orderList=mos.getOrderlist(userid);
 		//System.out.println(" order list up----> "+(orderList.get(0).getUsername()));
 
 
@@ -101,6 +110,10 @@ public class ManageOrderAction extends ActionSupport{
 
 		// update order status 
 
+		session=ActionContext.getContext().getSession();
+		int userid=((UserDetails)session.get("userdetails")).getUserID();
+		
+		
 		System.out.println(" the order id to update"+orderID);
 
 
@@ -113,7 +126,7 @@ public class ManageOrderAction extends ActionSupport{
 			
 		
 
-		orderList=mos.getOrderlist();
+		orderList=mos.getOrderlist(userid);
 		//System.out.println(" order list up----> "+(orderList.get(0).getUsername()));
 
 
