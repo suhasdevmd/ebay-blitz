@@ -121,6 +121,12 @@ public class CategoryFetcherService {
 		query = "INSERT into producteav values(" + entityNum
 				+ ", 'sellerid', '" + userID + "')";
 		DB.update(con, query);
+		
+		
+		/* Setting flag buy 3 flag to false */
+		query = "INSERT into producteav values(" + entityNum
+				+ ", 'buy3', 'false')";
+		DB.update(con, query);
 
 		/*
 		 * Here again the userID is hard coded as 1. Change as and when required

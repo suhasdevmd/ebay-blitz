@@ -615,15 +615,16 @@ div#MyWorldPageContent div.ModContent { /*_width: 100%;*/
 																							<tr>
 																								<td class="latestFeedbackTitle"><b>Latest
 																										Feedback</b>
-																								</td>
+																								</td><!-- 
 																								<td align="right" class="seeAllLatestFeedback"><img
 																									src="img/seller/iconPrevious_7X10.gif"
 																									id="butPrev" alt="Previous" /> <img
 																									src="img/seller/iconPause_7X10.gif"
 																									id="butPause" alt="Pause" /> <img
 																									src="img/seller/iconNext_7X10.gif" id="butNext"
-																									alt="Next" /> <!-- All Feedback --> <a
+																									alt="Next" />  <a
 																									href="#">See all</a>
+																									-->
 																								</td>
 																							</tr>
 																						</tbody>
@@ -689,23 +690,21 @@ div#MyWorldPageContent div.ModContent { /*_width: 100%;*/
 																																		value="date" /> </span>
 																															</div>
 																															<div class="userLink">
-																																<span>Buyer: </span><a
+																																<span>Buyer: </span><!-- <a
 																																	class="findresulttitle"
-																																	href="http://myworld.ebay.in/platinum123i/"><s:property
-																																		value="fromUserID" /> </a><img
+																																	href="">--><s:property
+																																		value="fromUserID" /> <img
 																																	src="http://pics.ebaystatic.com/aw/pics/s.gif"
-																																	width="4" border="0" alt=" " />(<a
+																																	width="4" border="0" alt=" " />(<!-- <a
 																																	id="feedBackScoreDiv3"
-																																	href="http://feedback.ebay.in/ws/eBayISAPI.dll?ViewFeedback&amp;myWorld=true&amp;rt=nc&amp;userid=platinum123i">7</a>)<span>
+																																	href="">-->7)<span>
 																																	<img
 																																	src="http://pics.ebaystatic.com/aw/pics/s.gif"
 																																	width="4" border="0" alt=" " /> </span>
 																															</div>
 																														</td>
 																														<td width="200" align="right" valign="top"
-																															class="itemLink" nowrap="nowrap">Item
-																															#: <a
-																															href="http://cgi.ebay.in/ws/eBayISAPI.dll?ViewItem&amp;item=300862095096">300862095096</a>
+																															class="itemLink" nowrap="nowrap"><a href="products.action?productID=<s:property value="productID"/>">Item#: <s:property value="productID"/></a>
 																														</td>
 																													</tr>
 																												</table>
