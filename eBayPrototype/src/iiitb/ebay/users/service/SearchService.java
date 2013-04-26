@@ -47,11 +47,11 @@ public class SearchService {
 				+"(SELECT entity "
 				+"FROM producteav "
 				+"WHERE attr collate utf8_general_ci ='categoryid' and val "
-				+"LIKE CONCAT((select phKey from producthierarchy where name collate utf8_general_ci LIKE '%"+category+"%'),'%'))"
+				+"LIKE CONCAT((select phKey from producthierarchy where name collate utf8_general_ci LIKE '"+category+"'),'%'))"
 				+ selectionModifier  
 				+ " group by entity" ;
 
-			//System.out.println("query_getEntityID  " + query_getEntityID);
+			System.out.println("query_getEntityID  " + query_getEntityID);
 
 			ResultSet rs_getEntityID = DB.readFromBmtcDB(query_getEntityID);
 			while(rs_getEntityID.next()){
@@ -80,7 +80,7 @@ public class SearchService {
 					+"(SELECT entity "
 					+"FROM producteav "
 					+"WHERE attr collate utf8_general_ci ='categoryid' and val "
-					+"LIKE CONCAT((select phKey from producthierarchy where name collate utf8_general_ci LIKE '%"+category+"%'),'%'))"
+					+"LIKE CONCAT((select phKey from producthierarchy where name collate utf8_general_ci LIKE '"+category+"'),'%'))"
 					+ selectionModifier  
 					+ " group by entity" ;
 
@@ -111,7 +111,7 @@ public class SearchService {
 				+"(SELECT entity "
 				+"FROM producteav "
 				+"WHERE attr collate utf8_general_ci ='categoryid' and val "
-				+"LIKE CONCAT((select phKey from producthierarchy where name collate utf8_general_ci LIKE '%"+category+"%'),'%'))"
+				+"LIKE CONCAT((select phKey from producthierarchy where name collate utf8_general_ci LIKE '"+category+"'),'%'))"
 				+ selectionModifier  
 				+"order by entity";
 
@@ -315,7 +315,7 @@ public class SearchService {
 				+"(SELECT entity "
 				+"FROM producteav "
 				+"WHERE attr collate utf8_general_ci ='categoryid' and val "
-				+"LIKE CONCAT((select phKey from producthierarchy where name collate utf8_general_ci LIKE '%"+category+"%'),'%'))" 
+				+"LIKE CONCAT((select phKey from producthierarchy where name collate utf8_general_ci LIKE '"+category+"'),'%'))" 
 				+"AND entity in (select entity from producteav where attr collate utf8_general_ci  ='name' and val collate utf8_general_ci  LIKE '%"+name+"%')"	
 				+ selectionModifier  
 				+ " group by entity";
@@ -353,7 +353,7 @@ public class SearchService {
 					+"(SELECT entity "
 					+"FROM producteav "
 					+"WHERE attr collate utf8_general_ci ='categoryid' and val "
-					+"LIKE CONCAT((select phKey from producthierarchy where name collate utf8_general_ci LIKE '%"+category+"%'),'%'))" 
+					+"LIKE CONCAT((select phKey from producthierarchy where name collate utf8_general_ci LIKE '"+category+"'),'%'))" 
 					+"AND entity in (select entity from producteav where attr collate utf8_general_ci  ='name' and val collate utf8_general_ci  LIKE '%"+name+"%')"	
 					+ selectionModifier  
 					+ " group by entity";
@@ -386,7 +386,7 @@ public class SearchService {
 				+"(SELECT entity "
 				+	"FROM producteav "
 				+	"WHERE attr collate utf8_general_ci ='categoryid' and val "
-				+	"LIKE CONCAT((select phKey from producthierarchy where name collate utf8_general_ci LIKE '%"+category+"%'),'%'))" 
+				+	"LIKE CONCAT((select phKey from producthierarchy where name collate utf8_general_ci LIKE '"+category+"'),'%'))" 
 				+   "AND entity in (select entity from producteav where attr collate utf8_general_ci  ='name' and val collate utf8_general_ci  LIKE '%"+name+"%')"	
 				+ selectionModifier  
 				+ " order by entity" ;
