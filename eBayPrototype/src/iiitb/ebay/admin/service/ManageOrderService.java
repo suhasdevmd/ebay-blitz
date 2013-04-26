@@ -11,7 +11,7 @@ import java.util.ArrayList;
 public class ManageOrderService {
 	
 	
-	public ArrayList<ManageOrder> getOrderlist(){
+	public ArrayList<ManageOrder> getOrderlist(int userid){
 		
 		ArrayList<ManageOrder> orders=new ArrayList<ManageOrder>();
 		
@@ -23,7 +23,7 @@ public class ManageOrderService {
 		try {
 			con=DB.getConnection();
 		
-			query="select o.orderID,userID,totalAmt,productID,quantity,shippingStatus from orders o,orderitems oi where o.orderID=oi.orderID";
+			query="select o.orderID,userID,totalAmt,productID,quantity,shippingStatus from orders o,orderitems oi where o.orderID=oi.orderID and o.sellerid="+userid+"'";
 			
 			
 			System.out.println(" The order list query --> "+query);
