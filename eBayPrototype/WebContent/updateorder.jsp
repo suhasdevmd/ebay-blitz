@@ -304,7 +304,7 @@
 
 													<tr><b>
 														<s:select label="Change Status"
-															list="#{'SHIPPED':'SHIPPED', 'NOT_YET_SHIPPED':'NOT_YET_SHIPPED', 'IN_TRANSIT':'IN_TRANSIT', 'DELIVERED':'DELIVERED'}"
+															list="#{'SHIPPED':'SHIPPED', 'NOT_YET_SHIPPED':'NOT_YET_SHIPPED', 'IN_TRANSIT':'IN_TRANSIT'}"
 															name="shippingStatus" value="shippingStatus" />
 													</b></tr>
 
