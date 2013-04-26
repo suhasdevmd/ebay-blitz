@@ -416,6 +416,7 @@
 		<action name="LeaveFeedback" method="execute"
 			class="iiitb.ebay.users.action.LeaveFeedbackAction">
 			<result name="success">/welcome.jsp</result>
+			<result name="duplicate" type="tiles">/error.jsp</result>
 			<result name="error">/login.jsp</result>
 		</action>
 
